@@ -29,6 +29,10 @@ body {
     color: green;
 } */
 
+img {
+    height: 50px;
+}
+
 #topnav {
     background: #050f56
 }
@@ -53,9 +57,10 @@ body {
 .what-we-do-button {
     background: #cb9d3f;
     color: white;
-    min-width: 260px;
+    min-width: 185px;
     margin-left: -61px;
     margin-top: -30px;
+    border-color: #050f56;
 }
 
 .btn-black {
@@ -107,7 +112,3 @@ body {
           padding-top: 164px;
       }
   }
-
-img {
-    height: 50px;
-}
