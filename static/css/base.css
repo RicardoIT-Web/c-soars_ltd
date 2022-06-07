@@ -18,9 +18,9 @@ html {
 }
 
 body {
-    background: url('/media/homepage_img.jpg') no-repeat center center fixed;
+    background: url('/media/drone_pilot.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    /* height: calc(100vh - 164px); */
     color: black;
 }
 
@@ -28,6 +28,10 @@ body {
     font-family: 'nevis'! important;
     color: green;
 } */
+
+#topnav {
+    background: #050f56
+}
 
 /* from bulma */
 .icon {
@@ -47,13 +51,15 @@ body {
 }
 
 .what-we-do-button {
-    background: black;
+    background: #cb9d3f;
     color: white;
     min-width: 260px;
+    margin-left: -61px;
+    margin-top: -30px;
 }
 
 .btn-black {
-    background: black;
+    background: #cb9d3f;
     color: white;
 }
 
@@ -63,16 +69,19 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #222;
+    background: rgb(149 143 143);
     color: white;
 }
 
 .text-black {
-    color: #000 !important;
+    color: #050f56 !important;
+    font-weight: 400;
+    margin-left: -64px;
+    margin-top: -60px;
 }
 
 .border-black {
-    border: 1px solid black !important;
+    border: 1px solid #cb9d3f !important;
 }
 
 /* -------------------------------- Media Queries */
