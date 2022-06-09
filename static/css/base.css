@@ -36,8 +36,14 @@ img {
 }
 
 .services {
-    color: white;
+    color: #050f56;
     text-align: center;
+    font-weight: bold;
+}
+
+#our-services-link {
+    color: #050f56;
+    font-weight: 600;
 }
 
 .collapse {
@@ -92,8 +98,7 @@ img {
 #main-title {
     color: #050f56 !important;
     font-weight: 400;
-    margin-left: -107px;
-    margin-top: -11px;
+    margin-left: -122px;
 }
 
 .border-black {
@@ -104,7 +109,11 @@ footer {
     background-color: #050f56;
     color: white;
     height: 40px;
-    padding: 0 10px 0 10px;
+
+}
+
+.footer-style {
+    padding: 0 80px;
 }
 
 /* mobile phone styling */
