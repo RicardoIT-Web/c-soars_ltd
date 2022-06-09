@@ -78,11 +78,11 @@
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                                <a href="" class="dropdown-item">Services</a>
-                            {% endif %}
-                                <a href="" class="dropdown-item">My Profile</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                {% if request.user.is_superuser %}
+                                    <a href="" class="dropdown-item">Services</a>
+                                {% endif %}
+                                    <a href="" class="dropdown-item">My Profile</a>
+                                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -107,8 +107,8 @@
                 </ul>
             </div>
         </div>
-        <div class="row bg-white">
-            <nav class="navbar navbar-expand-lg navbar-light w-100">
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-dark w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav"
                     aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -120,7 +120,7 @@
     </header>
 
     {% if messages %}
-    <div class="message-container"></div>
+        <div class="message-container"></div>
     {% endif %}
 
     {% block page_header %}
@@ -132,7 +132,17 @@
     {% block postloadjs %}
     {% endblock %}
 
-
+    <footer class="container-fluid fixed-bottom d-flex w-100">
+        <div class="mt-2">
+            <i class="far fa-copyright"></i> C-Soars Ltd
+        </div>
+        <div class="ml-auto mt-2">
+            <i class="far fa-phone-laptop"></i> Contact Us
+        </div>
+        <div class="ml-auto mt-2">
+            <i class="fas fa-users"></i> Join Us on Social Media
+        </div>
+    </footer>
 </body>
 
 </html>

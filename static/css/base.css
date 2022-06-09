@@ -27,6 +27,10 @@ img {
     height: 60px;
 }
 
+.logo-icon {
+    height: 80px;
+}
+
 #topnav {
     background: #050f56
 }
@@ -36,12 +40,12 @@ img {
     text-align: center;
 }
 
-#mainnav {
-    color: #050f56;
+.collapse {
+    height: 15px;
 }
 
 .navbar {
-    background-color: #050f56;
+    background-color: #cb9d3f;
 }
 
 /* from bulma */
@@ -85,7 +89,7 @@ img {
     color: white;
 }
 
-.text-black {
+#main-title {
     color: #050f56 !important;
     font-weight: 400;
     margin-left: -107px;
@@ -94,6 +98,13 @@ img {
 
 .border-black {
     border: 1px solid #cb9d3f !important;
+}
+
+footer {
+    background-color: #050f56;
+    color: white;
+    height: 40px;
+    padding: 0 10px 0 10px;
 }
 
 /* mobile phone styling */
