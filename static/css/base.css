@@ -20,21 +20,28 @@ html {
 body {
     background: url('/media/drone_pilot.jpg') no-repeat center center fixed;
     background-size: cover;
-    /* height: calc(100vh - 164px); */
     color: black;
 }
 
-/* #main-title {
-    font-family: 'nevis'! important;
-    color: green;
-} */
-
 img {
-    height: 50px;
+    height: 60px;
 }
 
 #topnav {
     background: #050f56
+}
+
+.services {
+    color: white;
+    text-align: center;
+}
+
+#mainnav {
+    color: #050f56;
+}
+
+.navbar {
+    background-color: #050f56;
 }
 
 /* from bulma */
@@ -58,7 +65,7 @@ img {
     background: #cb9d3f;
     color: white;
     min-width: 185px;
-    margin-left: -61px;
+    margin-left: -105px;
     margin-top: -30px;
     border-color: #050f56;
 }
@@ -81,8 +88,8 @@ img {
 .text-black {
     color: #050f56 !important;
     font-weight: 400;
-    margin-left: -64px;
-    margin-top: -60px;
+    margin-left: -107px;
+    margin-top: -11px;
 }
 
 .border-black {
