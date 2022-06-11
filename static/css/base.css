@@ -35,15 +35,32 @@ img {
     background: #050f56
 }
 
+#account-options {
+    margin-top: 6px;
+}
+
 .services {
     color: #050f56;
     text-align: center;
     font-weight: bold;
+    margin: 0 150px 0 50px;
 }
 
 #our-services-link {
     color: #050f56;
     font-weight: 600;
+}
+
+#civil-engineering-link {
+    color: #050f56;
+}
+
+#external-fire-risk-link {
+    color: #050f56;
+}
+
+#domestic-commercial-link {
+    color: #050f56;
 }
 
 .collapse {
@@ -118,7 +135,7 @@ footer {
 
 /* mobile phone styling */
 .phoneheader {
-    background-color: #050f56;
+    background-color: #cb9d3f;
 }
 
 /* -------------------------------- Media Queries */
@@ -130,17 +147,74 @@ footer {
     }
   }
   
-  /* fixed top navbar only on medium and up */
-  @media (min-width: 992px) {
-      .fixed-top-desktop-only {
-          position: fixed;
-          top: 0;
-          right: 0;
-          left: 0;
-          z-index: 1030;
-      }
-  
-      .header-container {
-          padding-top: 164px;
-      }
-  }
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* Mobile navbar styling on 991px and less */
+@media (max-width: 991px) {
+    body {
+        background: url('/media/drone_pilot4.jpg') no-repeat center center;
+        background-size: cover;
+        /* background-size: contain; */
+        height: 100vh;
+    }
+
+    .navbar {
+        background-color: #050f56;
+    }
+
+    #mobile-search {
+        color: white;
+    }
+
+    #user-options {
+        color: white;
+    }
+
+    #briefcase {
+        color: white;
+    }
+
+    .services {
+        color: white;
+        text-align: inherit;
+    }
+
+    #civil-engineering-link {
+        color: white;
+    }
+    
+    #external-fire-risk-link {
+        color: white;
+    }
+    
+    #domestic-commercial-link {
+        color: white;
+    }
+
+    .collapse {
+        height: 150px;
+    }
+
+    .dropdown-menu.show {
+        margin-top: 8px;
+        width: 50%;
+        padding: 0;
+    }
+
+    .dropdown-item {
+        color: #050f56;
+    }
+}
