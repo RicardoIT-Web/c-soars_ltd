@@ -13,11 +13,13 @@ class ServiceAdmin(admin.ModelAdmin):
         'total_price',
     )
 
+
 class CategoryAdmin(admin.ModelAdmin):
     list_display = (
         'name',
         'friendly_name',
     )
+
 
 admin.site.register(Service, ServiceAdmin)
 admin.site.register(Category, CategoryAdmin)

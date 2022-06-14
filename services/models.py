@@ -47,10 +47,10 @@ class Service(models.Model):
     description = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
-    total_price = models.DecimalField(max_digits=100, decimal_places=3, default=0)
 
     def __str__(self):
         return self.name
 
-    def get_cost(self):
+    @property
+    def total_price(self):
         return self.price + self.spotters
