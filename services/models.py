@@ -21,7 +21,14 @@ class Service(models.Model):
         ('Domestic & Commercial Surveys', 'D&CS'),
     )
     name = models.CharField(max_length=50, choices=TYPES)
-    includes = models.CharField(max_length=100)
+    FOR = (
+        ('Drone survey with photos', 'Drone survey with photos'),
+        ('Drone survey with Video & photos', 'Drone survey with Video & photos'),
+        ('Drone survey with videos & photos with thermal images', 'Drone survey with videos & photos with thermal images'),
+        ('Drone survey edited version & recommendations of work', 'Drone survey edited version & recommendations of work'),
+        ('Drone survey with surveyor report', 'Drone survey with surveyor report'),
+    )
+    includes = models.CharField(max_length=100, choices=FOR)
     description = models.CharField(max_length=254)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
