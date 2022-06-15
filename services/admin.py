@@ -1,5 +1,6 @@
 from django.contrib import admin
 from .models import Service, Category
+# from django.db.models import Sum
 
 
 class ServiceAdmin(admin.ModelAdmin):

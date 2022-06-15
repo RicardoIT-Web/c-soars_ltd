@@ -80,7 +80,7 @@
                         <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
-                                    <a href="" class="dropdown-item">Services</a>
+                                    <a href="{% url 'services' %}" class="dropdown-item">Services</a>
                                 {% endif %}
                                     <a href="" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
