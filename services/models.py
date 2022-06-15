@@ -1,4 +1,3 @@
-import datetime
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -8,8 +7,25 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
 
-    name = models.CharField(max_length=254)
-    friendly_name = models.CharField(max_length=254, null=True, blank=True)
+    TYPES = (
+        ('Civil Engineering Structures', 'Civil Engineering Structures'),
+        ('External Fire Risk Inspections', 'External Fire Risk Inspections'),
+        ('Domestic & Commercial Surveys - Chimney & Roof Inspections', 'Domestic & Commercial Surveys - Chimney & Roof Inspections'),
+        ('Domestic & Commercial Surveys - Roof Inspections All Areas', 'Domestic & Commercial Surveys - Roof Inspections All Areas'),
+        ('Domestic & Commercial Surveys - Gutter & Roof Inspections', 'Domestic & Commercial Surveys - Gutter & Roof Inspections'),
+        ('Domestic & Commercial Surveys - Dangerous Structures Inspections', 'Domestic & Commercial Surveys - Dangerous Structures Inspections'),
+    )
+    name = models.CharField(max_length=254, choices=TYPES)
+
+    FN_TYPES = (
+        ('CES', 'CES'),
+        ('EFRI', 'EFRI'),
+        ('D&CS I', 'D&CS I'),
+        ('D&CS II', 'D&CS II'),
+        ('D&CS III', 'D&CS III'),
+        ('D&CS IV', 'D&CS IV'),
+    )
+    friendly_name = models.CharField(max_length=50, choices=FN_TYPES)
 
     def __str__(self):
         return self.name
@@ -25,26 +41,43 @@ class Service(models.Model):
 
     created_on = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
+    category = models.ForeignKey('Category', null=True, blank=True,
+                                 on_delete=models.SET_NULL)
     TYPES = (
         ('Civil Engineering Structures', 'CES'),
         ('External Fire Risk Inspections', 'EFRI'),
-        ('Domestic & Commercial Surveys', 'D&CS'),
+        ('Domestic & Commercial Surveys - Chimney & Roof Inspections', 'D&CS I'),
+        ('Domestic & Commercial Surveys - Roof Inspections All Areas', 'D&CS II'),
+        ('Domestic & Commercial Surveys - Gutter & Roof Inspections', 'D&CS III'),
+        ('Domestic & Commercial Surveys - Dangerous Structures Inspections', 'D&CS IV'),
     )
-    name = models.CharField(max_length=50, choices=TYPES)
+    name = models.CharField(max_length=254, choices=TYPES)
+
     FOR = (
-        ('Drone survey with photos', 'Drone survey with photos'),
-        ('Drone survey with Video & photos',
-         'Drone survey with Video & photos'),
-        ('Drone survey with videos & photos with thermal images',
-         'Drone survey with videos & photos with thermal images'),
-        ('Drone survey edited version & recommendations of work',
-         'Drone survey edited version & recommendations of work'),
-        ('Drone survey with surveyor report',
-         'Drone survey with surveyor report'),
+        ('Drone Survey with Photos', 'Drone Survey with Photos'),
+        ('Drone Survey with Video & Photos',
+         'Drone Survey with Video & Photos'),
+        ('Drone Survey with Videos & Photos with Thermal Images',
+         'Drone Survey with Videos & Photos with Thermal Images'),
+        ('Drone Survey Edited Video & Recommendations of Works Required',
+         'Drone Survey Edited Video & Recommendations of Works Required'),
+        ('Drone Survey with Surveyor Report',
+         'Drone Survey with Surveyor Report'),
     )
-    includes = models.CharField(max_length=100, choices=FOR)
-    description = models.CharField(max_length=254)
+    description = models.CharField(max_length=254, choices=FOR)
+    OPTIONS = (
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Photos',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Photos'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos & Photos',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos & Photos'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Editied Video Presentation & Recommendations of Works Required',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Editied Video Presentation & Recommendations of Works Required'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report'),
+    )
+    includes = models.CharField(max_length=254, choices=OPTIONS)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
 

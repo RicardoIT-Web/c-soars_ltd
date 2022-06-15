@@ -4,10 +4,12 @@ from .models import Service, Category
 
 class ServiceAdmin(admin.ModelAdmin):
     list_display = (
+        'created_on',
+        'user',
         'category',
         'name',
-        'includes',
         'description',
+        'includes',
         'price',
         'spotters',
         'total_price',
