@@ -21,23 +21,10 @@
         <div class="row">
             <div class="service-container col-10 offset-1">
                 <div class="row mt-1 mb-2"></div>
-                <div class="row">
+                <div class="row service-card">
                     {% for service in services %}
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                <div class="card-body pb-0">
-                                    <strong>Service: </strong>
-                                    <p class="mb-0">{{ service.name }}</p>
-                                    <strong>Includes: </strong>
-                                    <p class="mb-0">{{ service.description }}</p>
-                                </div>
-                                <div class="card-footer bg-white pt-o border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            <p class="lead mb-0 text-left">£{{ service.price }}</p>
-                                        </div>
-                                    </div>
-                                </div>
                                 {% if service.images %}
                                 <a href="">
                                     <img class="card-img-top img-fluid" src="{{ service.images.url }}" alt="{{ service.images }}">
@@ -47,15 +34,19 @@
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.images }}">
                                 </a>
                                 {% endif %}
-                                {% if service.media %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ service.media.url }}" type="video/mp4" alt="{{ service.media }}">
-                                </a>
-                                {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}nomedia.png" alt="{{ service.media }}">
-                                </a>
-                                {% endif %}
+                                <div class="card-body pb-0">
+                                    <strong>Service: </strong>
+                                    <p class="mb-0">{{ service.name }}</p>
+                                    <strong>Includes: </strong>
+                                    <p class="mb-0">{{ service.description }}</p>
+                                </div>
+                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                    <div class="row">
+                                        <div class="col">
+                                            <p class="lead mb-0 text-left">£{{ service.price }}</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     {% endfor %}
