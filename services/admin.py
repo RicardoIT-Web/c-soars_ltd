@@ -11,6 +11,8 @@ class ServiceAdmin(admin.ModelAdmin):
         'name',
         'description',
         'includes',
+        'images',
+        'media',
         'price',
         'spotters',
         'total_price',
