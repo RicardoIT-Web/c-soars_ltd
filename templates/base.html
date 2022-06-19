@@ -70,6 +70,24 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
+                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-white text-center">
+                                <div>
+                                    <i class="fas fa-clipboard-list"></i>
+                                    <p class="my-0">Services</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Photos</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Video & Photos</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Videos & Photos with Thermal Imaging</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey Edited Version & Recommendations of Work</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Surveyor Report</a>
+                        </div>
+                    </li>
+                    <li class="list-inline-item dropdown">
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
@@ -79,9 +97,6 @@
                         </a>
                         <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-                                {% endif %}
                                     <a href="" class="dropdown-item">My Profile</a>
                                     <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
@@ -115,7 +130,15 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/phoneheader.html' %}
-                {% include 'includes/mainnav.html' %}
+                <div class="container h-100">
+                    <div class="row h-100">
+                        <div class="col-12 my-auto">
+                            <p id="main-title">
+                                The UAV/Drone Property Survey Company
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>

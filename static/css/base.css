@@ -164,8 +164,14 @@ footer {
     background: #d4be8c;
 }
 
+.btn-primary {
+    color: #050f56;
+    background-color: #dde3e3;
+    border-color: #050f56;
+}
+
 .service-container {
-    height: 110vh;
+    height: 120vh;
 }
 
 /* -------------------------------- Media Queries */
@@ -188,7 +194,7 @@ footer {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 127px;
     }
 }
 
