@@ -40,7 +40,7 @@
                                     <strong>Includes: </strong>
                                     <p class="mb-0">{{ service.description }}</p>
                                 </div>
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="card-footer pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left">£{{ service.price }}</p>
@@ -49,6 +49,31 @@
                                 </div>
                             </div>
                         </div>
+
+                        <div class="col-12 d-sm-none">
+                            <hr>
+                        </div>
+
+                        {% if forloop.counter|divisibleby:1 %}
+                        <div class="col-12 d-none d-sm-none mb-2">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-2">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:3 %}
+                        <div class="col-12 d-none d-lg-block d-xl-none mb-2">
+                            <hr>
+                        </div>
+                        {% endif %}
+                        {% if forloop.counter|divisibleby:4 %}
+                        <div class="col-12 d-none d-xl-block mb-2">
+                            <hr>
+                        </div>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
