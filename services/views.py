@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
-from .models import Service
+from .models import Service, Category
 
 
 def all_services(request):
@@ -9,8 +9,14 @@ def all_services(request):
 
     services = Service.objects.all()
     query = None
+    categories = None
 
     if request.GET:
+        if 'category' in request.GET:
+            categories = request.GET['category'].split(',')
+            services = services.filter(category__name__in=categories)
+            categories = Category.objects.filter(name__in=categories)
+
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
@@ -23,6 +29,7 @@ def all_services(request):
     context = {
         'services': services,
         'search': query,
+        'current_categories': categories,
     }
 
     return render(request, 'services/services.html', context)
