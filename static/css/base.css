@@ -104,6 +104,10 @@ footer {
     z-index: -1;
 }
 
+h2 {
+    color: #050f56;
+}
+
 .card-img-top {
     height: 150px;
     width: 90%;
@@ -155,7 +159,7 @@ strong {
 }
 
 .service-container {
-    height: 120vh;
+    height: 150vh;
 }
 
 /* -------------------------------- Media Queries */
@@ -187,12 +191,12 @@ strong {
     body {
         background: url('/media/drone_pilot4.jpg') no-repeat center center;
         background-size: cover;
-        /* background-size: contain; */
         height: 100vh;
     }
 
     .navbar {
         background-color: #050f56;
+        height: 70px;
     }
 
     #mobile-search {
@@ -236,5 +240,18 @@ strong {
 
     .dropdown-item {
         color: #050f56;
+    }
+
+    .header-container {
+        padding-top: 116px;
+        background-color: #cb9d3f;
+    }
+
+    #main-title {
+        padding-top: 9px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }

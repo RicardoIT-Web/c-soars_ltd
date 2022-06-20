@@ -26,11 +26,11 @@
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
                                 {% if service.images %}
-                                <a href="">
+                                <a href="{% url 'service_detail' service.id %}">
                                     <img class="card-img-top img-fluid" src="{{ service.images.url }}" alt="{{ service.images }}">
                                 </a>
                                 {% else %}
-                                <a href="">
+                                <a href="{% url 'service_detail' service.id %}">
                                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.images }}">
                                 </a>
                                 {% endif %}
@@ -44,7 +44,7 @@
                                     {% if request.user.is_authenticated %}
                                         <div class="row">
                                             <div class="col">
-                                                <p class="lead mb-0 text-center mt-1">£{{ service.price }}</p>
+                                                <p class="lead mb-0 text-center mt-1">£{{ service.total_price }}</p>
                                             </div>
                                         </div>
                                         <div class="card-btns">

@@ -21,6 +21,22 @@
     </div>
 </li>
 <li class="list-inline-item dropdown">
+    <a class="nav-link d-lg-none" href="#" id="user-options" data-toggle="dropdown"
+        aria-haspopup="true" aria-expanded="false">
+        <div class="text-white text-center">
+            <div>
+                <i class="fas fa-clipboard-list"></i>
+                <p class="my-0">Services</p>
+            </div>
+        </div>
+    </a>
+    <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+        <a href="{% url 'services' %}" class="dropdown-item">Civil Engineering Structures</a>
+        <a href="{% url 'services' %}" class="dropdown-item">External Fire Risk Inspections</a>
+        <a href="{% url 'services' %}" class="dropdown-item">Domestic & Commercial Surveys</a>
+    </div>
+</li>
+<li class="list-inline-item dropdown">
     <a class="nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fas fa-user-circle"></i></div>
