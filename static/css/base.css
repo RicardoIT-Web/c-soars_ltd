@@ -216,6 +216,11 @@ strong {
         text-align: inherit;
     }
 
+    #account-options {
+        margin-top: -2px;
+        width: auto;
+    }
+
     #civil-engineering-link {
         color: white;
     }
