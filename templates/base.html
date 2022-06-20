@@ -55,10 +55,10 @@
             <div class="navigation col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="">
                     <div class="input-group w-100">
-                        <input class="form-control border border-black rounded-0" type="text" name="q"
+                        <input class="form-control border rounded-0" type="text" name="q"
                             placeholder="Search">
                         <div class="input-group-append">
-                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                            <button class="form-control btn border rounded-0" type="submit">
                                 <span class="icon">
                                     <i class="fas fa-search"></i>
                                 </span>
@@ -80,11 +80,9 @@
                             </div>
                         </a>
                         <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
-                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Photos</a>
-                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Video & Photos</a>
-                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Videos & Photos with Thermal Imaging</a>
-                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey Edited Version & Recommendations of Work</a>
-                            <a href="{% url 'services' %}" class="dropdown-item">Drone Survey with Surveyor Report</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Civil Engineering Structures</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">External Fire Risk Inspections</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Domestic & Commercial Surveys</a>
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
@@ -130,14 +128,10 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/phoneheader.html' %}
-                <div class="container h-100">
-                    <div class="row h-100">
-                        <div class="col-12 my-auto">
-                            <p id="main-title">
-                                The UAV/Drone Property Survey Company
-                            </p>
-                        </div>
-                    </div>
+                <div class="col-12 h-100">
+                    <p id="main-title">
+                        The UAV/Drone Property Survey Company
+                    </p>
                 </div>
             </nav>
         </div>

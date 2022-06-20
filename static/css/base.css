@@ -31,6 +31,15 @@ img {
     height: 80px;
 }
 
+/* search feature*/
+.form-control {
+    color: #cb9d3f;
+}
+
+.form-control:hover {
+    color: green;
+}
+
 #topnav {
     background: #050f56
 }
@@ -39,36 +48,13 @@ img {
     margin-top: 6px;
 }
 
-.services {
-    color: #050f56;
-    text-align: center;
-    font-weight: bold;
-    margin: 0 150px 0 50px;
-}
-
-#our-services-link {
-    color: #050f56;
-    font-weight: 600;
-}
-
-#civil-engineering-link {
-    color: #050f56;
-}
-
-#external-fire-risk-link {
-    color: #050f56;
-}
-
-#domestic-commercial-link {
-    color: #050f56;
-}
-
 .collapse {
     height: 15px;
 }
 
 .navbar {
     background-color: #cb9d3f;
+    height: 40px;
 }
 
 /* from bulma */
@@ -80,46 +66,15 @@ img {
     width: 1.5rem;
 }
 
-.logo-font {
-    text-transform: uppercase;
-}
-
 .main-logo-link {
     width: fit-content;
 }
 
-.what-we-do-button {
-    background: #cb9d3f;
-    color: white;
-    min-width: 185px;
-    margin-left: -105px;
-    margin-top: -30px;
-    border-color: #050f56;
-}
-
-.btn-black {
-    background: #cb9d3f;
-    color: white;
-}
-
-.what-we-do-button:hover,
-.what-we-do-button:active,
-.what-we-do-button:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    background: rgb(149 143 143);
-    color: white;
-}
-
 #main-title {
-    color: #050f56 !important;
-    font-weight: 400;
-    margin-left: -122px;
-}
-
-.border-black {
-    border: 1px solid #cb9d3f !important;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
 }
 
 footer {
@@ -160,14 +115,43 @@ footer {
     background: #cb9d3f85;
 }
 
+strong {
+    color: #050f56;
+}
+
+.card-body p {
+    color: #050f56;
+}
+
 .card-footer {
     background: #d4be8c;
+}
+
+.card-footer p {
+    color: red;
+    text-align: center;
+}
+
+.card-btns {
+    text-align: center;
+    color: #050f56;
+    border-color: #050f56;
 }
 
 .btn-primary {
     color: #050f56;
     background-color: #dde3e3;
     border-color: #050f56;
+    padding: 5px;
+    width: 40%;
+}
+
+.btn-success {
+    color: #050f56;
+    background-color: #dde3e3;
+    border-color: #050f56 !important;
+    padding: 5px;
+    width: 75%;
 }
 
 .service-container {
