@@ -23,7 +23,60 @@
         <div class="row d-inline">
             {% if briefcase_items %}
                 <div class="table-responsive rounded">
-                    {{ briefcase_items }}
+                    <table class="table table-sm table-borderless">
+                        <thead class="text-black">
+                            <tr>
+                                <th scope="col">Service Summary</th>
+                                <th scope="col">Category</th>
+                                <th scope="col">Description</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+
+                        {% for item in briefcase_items %}
+                            <tr>
+                                <td class="p-3 w-25">
+                                    <img class="img-fluid rounded" src="{{ item.service.image.url }}" alt="">
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">{{ item.service.name }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">{{ item.service.description }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">£{{ item.service.price }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">{{ item.quantity }}</p>
+                                </td>
+                                <td class="py-3">
+                                    <p class="my-0">£{{ item.service.price }}</p>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="5" class="pt-5 text-right">
+                                <h6><strong>Briefcase Total: £{{ total|floatformat:2 }}</strong></h6>
+                                <h4><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="text-right">
+                                <a href="{% url 'services' %}" class="btn btn-primary rounded-0 btn-lg w-25">
+                                    <span class="rtn-btn">Return to Services</span>
+                                </a>
+                                <a href="" class="btn btn-success rounded-0 btn-lg mt-2">
+                                    <span>Secure Payment</span>
+                                    <span class="icon">
+                                        <i class="fas fa-lock"></i>
+                                    </span>
+                                </a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             {% else %}
                 <p class="lead mb-5">Your briefcase is empty</p>
