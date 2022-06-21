@@ -19,5 +19,4 @@ def add_to_briefcase(request, item_id):
         briefcase[item_id] = quantity
 
     request.session['briefcase'] = briefcase
-    print(request.session['briefcase'])
     return redirect(redirect_url)

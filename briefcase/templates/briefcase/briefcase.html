@@ -22,7 +22,9 @@
 
         <div class="row d-inline">
             {% if briefcase_items %}
-                <div class="table-responsive rounded"></div>
+                <div class="table-responsive rounded">
+                    {{ briefcase_items }}
+                </div>
             {% else %}
                 <p class="lead mb-5">Your briefcase is empty</p>
                 <a href="{% url 'services' %}" class="btn btn-primary btn-lg w-25">
