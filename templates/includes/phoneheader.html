@@ -21,7 +21,7 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="nav-link" href="{% url 'home' %}">
+    <a class="nav-link d-lg-none" href="{% url 'home' %}">
         <div class="text-center text-white">
             <div><i class="fas fa-home"></i></div>
             <p class="my-0">Home</p>
@@ -54,7 +54,7 @@
     <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Services</a>
+                <a href="{% url 'services' %}" class="dropdown-item">Services</a>
             {% endif %}
                 <a href="#" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -65,7 +65,7 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" id="briefcase" href="{% url 'view_briefcase' %}">
+    <a class="{% if grand_total %} font-weight-bold {% endif %} text-white nav-link d-block d-lg-none" id="briefcase" href="{% url 'view_briefcase' %}">
         <div class="text-center">
             <div><i class="fas fa-briefcase"></i></i></div>
             <p class="my-0">

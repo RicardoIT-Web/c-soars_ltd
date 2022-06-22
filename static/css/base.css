@@ -132,7 +132,8 @@ strong {
 }
 
 .card-footer p {
-    color: red;
+    color: #050f56;
+    font-weight: bold;
     text-align: center;
 }
 
@@ -164,6 +165,11 @@ strong {
 
 .btn-add-more {
     margin-bottom: 0;
+}
+
+/* service_details styling */
+.qty-box {
+    display: contents;
 }
 
 /* Briefcase page styling */
