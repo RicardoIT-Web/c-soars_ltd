@@ -168,6 +168,17 @@ strong {
 }
 
 /* service_details styling */
+.service-detail-name {
+    color: #050f56;
+    font-weight: bold;
+}
+
+.service-detail-desc {
+    color: #050f56;
+    font-weight: bold;
+    margin-bottom: 21px;
+}
+
 .qty-box {
     display: contents;
 }

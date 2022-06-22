@@ -28,9 +28,9 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="service-detail-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ service.name }}</p>
-                    <p class="lead mb-0 text-left ">£{{ service.total_price }}</p>
-                    <p class="mt-3">{{ service.description }}</p>
+                    <p class="service-detail-name mb-0">{{ service.name }}</p>
+                    <p class="service-detail-desc mt-3">{{ service.description }}</p>
+                    <p class="lead mb-3 mt-3 text-left ">£{{ service.total_price }}</p>
                     <form action="{% url 'add_to_briefcase' service.id %}" class="form" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -53,10 +53,10 @@
                                             <div class="input-group-append">
                                                 <button class="increment-qty btn btn-black rounded-0"
                                                 data-item_id="{{ service.id }}" id="increment-qty_{{ service.id }}">
-                                                <span class="icon">
-                                                    <i class="fas fa-plus"></i>
-                                                </span>
-                                            </button>
+                                                    <span class="icon">
+                                                        <i class="fas fa-plus"></i>
+                                                    </span>
+                                                </button>
                                             </div>
                                     </div>
                                 </div>

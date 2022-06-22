@@ -37,7 +37,7 @@
                         {% for item in briefcase_items %}
                             <tr>
                                 <td class="p-3 w-25 h-50 text-left">
-                                    <img class="img-fluid rounded-0" src="{{ item.service.images.url }}" alt="">
+                                    <img class="w-75 h-50 rounded-0" src="{{ item.service.images.url }}" alt="">
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">{{ item.service.name }}</p>
@@ -54,7 +54,7 @@
                             </tr>
                         {% endfor %}
                         <tr>
-                            <td colspan="5" class="pt-5 text-right">
+                            <td colspan="5" class="text-right">
                                 <h4><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h4>
                             </td>
                         </tr>
