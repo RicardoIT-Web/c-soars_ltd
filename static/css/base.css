@@ -162,6 +162,10 @@ strong {
     height: 150vh;
 }
 
+.btn-add-more {
+    margin-bottom: 0;
+}
+
 /* Briefcase page styling */
 .case-page {
     color: #050f56;

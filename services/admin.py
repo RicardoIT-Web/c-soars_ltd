@@ -1,6 +1,6 @@
 from django.contrib import admin
+from django_summernote.admin import SummernoteModelAdmin
 from .models import Service, Category
-# from django.db.models import Sum
 
 
 class ServiceAdmin(admin.ModelAdmin):
@@ -15,7 +15,12 @@ class ServiceAdmin(admin.ModelAdmin):
         'price',
         'spotters',
         'total_price',
+        'comment',
+        'status',
     )
+    search_fields = ('name', 'description', 'includes', 'price', 'status')
+    list_filter = ('name', 'description', 'price', 'status')
+    summernote_fields = ('comment')
 
 
 class CategoryAdmin(admin.ModelAdmin):

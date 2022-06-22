@@ -45,12 +45,9 @@
 
                             <div class="col-12">
                                 <a href="{% url 'services' %}" class="btn btn-primary rounded-0 mt-5">
-                                    <span class="icon">
-                                        <i class="fas fa-chevron-left"></i>
-                                    </span>
-                                    <p>Add more services</p>
+                                    <p class="btn-add-more">Add more services</p>
                                 </a>
-                                <input type="submit" class="btn btn-primary rounded-o mt-5" value="Add to briefcase">
+                                <input type="submit" class="btn btn-success rounded-0 mt-5" value="Add to briefcase">
                             </div>
                             <input type="hidden" name="redirect_url"value="{{ request.path }}">
                         </div>

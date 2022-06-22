@@ -47,20 +47,20 @@
                                     <p class="my-0">{{ item.service.description }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">£{{ item.service.price }}</p>
+                                    <p class="my-0">£{{ item.service.total_price }}</p>
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">{{ item.quantity }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">£{{ item.service.price }}</p>
+                                    <p class="my-0">£{{ item.service.total_price }}</p>
                                 </td>
                             </tr>
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="pt-5 text-right">
-                                <h6><strong>Briefcase Total: £{{ total|floatformat:2 }}</strong></h6>
-                                <h4><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h4>
+                                <h6><strong>Briefcase Total: £{{ total_price|floatformat:2 }}</strong></h6>
+                                <h4><strong>Grand Total: £{{ total_price|floatformat:2 }}</strong></h4>
                             </td>
                         </tr>
                         <tr>
@@ -68,11 +68,8 @@
                                 <a href="{% url 'services' %}" class="btn btn-primary rounded-0 btn-lg w-25">
                                     <span class="rtn-btn">Return to Services</span>
                                 </a>
-                                <a href="" class="btn btn-success rounded-0 btn-lg mt-2">
-                                    <span>Secure Payment</span>
-                                    <span class="icon">
-                                        <i class="fas fa-lock"></i>
-                                    </span>
+                                <a href="" class="btn btn-success rounded-0 btn-lg mt-2 w-25">
+                                    <span>Secure Payment <i class="fas fa-user-lock"></i></span>
                                 </a>
                             </td>
                         </tr>
@@ -81,7 +78,7 @@
             {% else %}
                 <p class="lead mb-5">Your briefcase is empty</p>
                 <a href="{% url 'services' %}" class="btn btn-primary btn-lg w-25">
-                    <span class="rtn-btn">Return to Services</span>
+                    <span class="rtn-btn">Add more Services</span>
                 </a>
             {% endif %}
         </div>
