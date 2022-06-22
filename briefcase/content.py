@@ -13,7 +13,7 @@ def briefcase_content(request):
 
     for item_id, quantity in briefcase.items():
         service = get_object_or_404(Service, pk=item_id)
-        total += quantity * service.price
+        total += quantity * (service.price + service.spotters)
         service_count += quantity
         briefcase_items.append({
             'item_id': item_id,

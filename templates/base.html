@@ -69,6 +69,14 @@
             </div>
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+                    <li class="list-inline-item">
+                        <a class="nav-link" href="{% url 'home' %}">
+                            <div class="text-center text-white">
+                                <div><i class="fas fa-home"></i></div>
+                                <p class="my-0">Home</p>
+                            </div>
+                        </a>
+                    </li>
                     <li class="list-inline-item dropdown">
                         <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -104,7 +112,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-white font-weight-bold{% endif %} nav-link"
+                        <a class="text-white nav-link {% if grand_total %} font-weight-bold {% endif %}"
                             href="{% url 'view_briefcase' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-briefcase"></i></div>

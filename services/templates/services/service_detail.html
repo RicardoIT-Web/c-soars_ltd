@@ -38,14 +38,14 @@
                                 <p class="mt-3"><strong>Quantity:</strong></p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
-                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ service.id }}">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ service.id }}" id="id_qty_{{ service.id }}">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="col-12">
                                 <a href="{% url 'services' %}" class="btn btn-primary rounded-0 mt-5">
-                                    <p class="btn-add-more">Add more services</p>
+                                    <p class="btn-add-more">Back to Services</p>
                                 </a>
                                 <input type="submit" class="btn btn-success rounded-0 mt-5" value="Add to briefcase">
                             </div>
