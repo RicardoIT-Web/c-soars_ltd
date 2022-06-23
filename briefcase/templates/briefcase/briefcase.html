@@ -123,7 +123,7 @@
     $('.remove-qty').click(function(e) {
         let csrfToken = "{{ csrf_token }}";
         let itemId = $(this).attr('id').split('remove_')[1];
-        let url = `/briefcase/remove/${itemId}`;
+        let url = `/briefcase/remove/${itemId}/`;
         let data = {'csrfmiddlewaretoken': csrfToken};
 
         $.post(url, data)
