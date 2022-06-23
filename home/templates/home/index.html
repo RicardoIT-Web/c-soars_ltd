@@ -2,11 +2,54 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="header-container">
-        <div class="row">
-            <div class="col"></div>
+<div class="wrapper">
+    <div class="slider">
+        <div class="items">
+            <div class="text">
+                <!-- <h4>{{ user.name }}</h4> -->
+                <div class="image">
+                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
+                </div>
+                <p class="review-text">Fantastic service with brilliant quality output!</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="text">
+                <!-- <h4>{{ user.name }}</h4> -->
+                <div class="image">
+                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
+                </div>
+                <p class="review-text">These guys are brilliant! Very efficient and proffesional</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="text">
+                <!-- <h4>{{ user.name }}</h4> -->
+                <div class="image">
+                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
+                </div>
+                <p class="review-text">We had some issues with timings and availability but other than that the service was great!</p>
+            </div>
+        </div>
+        <div class="items">
+            <div class="text">
+                <!-- <h4>{{ user.name }}</h4> -->
+                <div class="image">
+                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
+                </div>
+                <p class="review-text">some text</p>
+            </div>
         </div>
     </div>
+</div>
+
+<script type="text/javascript">
+    $('.slider').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+    });
+</script>
 {% endblock %}
 
 {% block content %}

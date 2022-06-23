@@ -93,6 +93,59 @@ footer {
     background-color: #cb9d3f;
 }
 
+/* review cards styling */
+.wrapper {
+    padding: 100px;
+    margin-top: 500px;
+}
+
+.wrapper:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    background-color: none;
+    z-index: -1;
+}
+
+.review-text {
+    font-size: 16px;
+    line-height: 26px;
+    margin: 0;
+}
+
+.text {
+    background-color: #cb9d3fd6;
+    position: relative;
+    padding: 25px;
+    min-height: 182px;
+    max-height: 182px;
+    max-width: 343px;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.24);
+}
+
+.image img {
+    width: 80px;
+    height: 80px;
+}
+
+/* .image h4 {
+    margin: 10px 0;
+    color: #fff;
+} */
+
+.items {
+    margin: 0 25px;
+}
+
+.slick-next:before,
+.slick-prev:before {
+    color: #050f56;
+    font-size: 30px;
+}
+
 /* services page styling */
 .overlay {
     height: 100%;
