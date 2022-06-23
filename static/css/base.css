@@ -192,6 +192,11 @@ strong {
     color: red;
 }
 
+.update-qty,
+.remove-qty {
+    cursor: pointer;
+}
+
 
 /* -------------------------------- Media Queries */
 

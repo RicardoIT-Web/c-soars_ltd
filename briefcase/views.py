@@ -1,10 +1,11 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 
 
 def view_briefcase(request):
     """ View to render briefcase page to show services booked"""
 
     return render(request, 'briefcase/briefcase.html')
+
 
 def add_to_briefcase(request, item_id):
     """ add qty of specified service to briefcase """
@@ -20,3 +21,33 @@ def add_to_briefcase(request, item_id):
 
     request.session['briefcase'] = briefcase
     return redirect(redirect_url)
+
+
+def adjust_briefcase(request, item_id):
+    """ adjust qty of specified service to briefcase """
+
+    quantity = int(request.POST.get('quantity'))
+    briefcase = request.session.get('briefcase', {})
+
+    if quantity > 0:
+        briefcase[item_id] = quantity
+    else:
+        briefcase.pop(item_id)
+
+    request.session['briefcase'] = briefcase
+    return redirect(reverse('view_briefcase'))
+
+
+# def remove_from_briefcase(request, item_id):
+#     """ adjust qty of specified service to briefcase """
+
+#     quantity = int(request.POST.get('quantity'))
+#     briefcase = request.session.get('briefcase', {})
+
+#     if quantity > 0:
+#         briefcase[item_id] = quantity
+#     else:
+#         briefcase.pop(item_id)
+
+#     request.session['briefcase'] = briefcase
+#     return redirect(reverse('view_briefcase'))

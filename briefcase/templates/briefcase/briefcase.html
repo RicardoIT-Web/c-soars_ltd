@@ -49,7 +49,35 @@
                                     <p class="my-0">£{{ item.service.total_price }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">{{ item.quantity }}</p>
+                                    <form class="update-form"  method="POST" action="{% url 'adjust_briefcase' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="form-group">
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0"
+                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <span>
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                    data-item_id="{{ item.item_id }}"
+                                                    id="id_qty_{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
+                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fas fa-plus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <a class="update-qty text-info"><small>Update</small></a>
+                                    <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                 </td>
                             </tr>
                         {% endfor %}
@@ -78,4 +106,30 @@
             {% endif %}
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'services/includes/quantity_input_script.html' %}
+
+<script type="text/javascript">
+    // update qty when clicked
+    $('.update-qty').click(function(e) {
+        let form = $(this).prev('.update-form');
+        form.submit();
+    })
+
+    // reduce qty when clicked
+    $('.remove-qty').click(function(e) {
+        let csrfToken = "{{ csrf_token }}";
+        let itemId = $(this).attr('id').split('remove_')[1];
+        let url = `/briefcase/remove/${itemId}`;
+        let data = {'csrfmiddlewaretoken': csrfToken};
+
+        $.post(url, data)
+        .done(function() {
+            location.reload();
+        });
+    })
+</script>
 {% endblock %}
