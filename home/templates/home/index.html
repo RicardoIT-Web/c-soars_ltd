@@ -2,54 +2,44 @@
 {% load static %}
 
 {% block page_header %}
-<div class="wrapper">
-    <div class="slider">
-        <div class="items">
-            <div class="text">
-                <!-- <h4>{{ user.name }}</h4> -->
-                <div class="image">
-                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
+<div class="customer-review row">
+    <div class="col-md-9">
+        <header class="heading">
+            <h6>Customer Reviews</h6>
+        </header>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <h5>Provide Your Review</h5>
+            <div>
+                <!-- rating stars -->
+                <label for="">Please rate this service</label>
+                <br>
+                <div class="rate">
+                    <input type="radio" name="rating" id="rating10" value="5" required><label for="rating10" title="5"></label>
+                    <input type="radio" name="rating" id="rating9" value="4.5" required><label for="rating9" title="4.5" class="half"></label>
+                    <input type="radio" name="rating" id="rating8" value="4" required><label for="rating8" title="4"></label>
+                    <input type="radio" name="rating" id="rating7" value="3.5" required><label for="rating7" title="3.5" class="half"></label>
+                    <input type="radio" name="rating" id="rating6" value="3" required><label for="rating6" title="3"></label>
+                    <input type="radio" name="rating" id="rating5" value="2.5" required><label for="rating5" title="2.5" class="half"></label>
+                    <input type="radio" name="rating" id="rating4" value="2" required><label for="rating4" title="2"></label>
+                    <input type="radio" name="rating" id="rating3" value="1.5" required><label for="rating3" title="1.5" class="half"></label>
+                    <input type="radio" name="rating" id="rating2" value="1" required><label for="rating2" title="1"></label>
+                    <input type="radio" name="rating" id="rating1" value="0.5" required><label for="rating1" title="0.5" class="half"></label>
                 </div>
-                <p class="review-text">Fantastic service with brilliant quality output!</p>
+                Review Title:
+                <input type="text" class="form-control" name="subject">
+                <br>
+                Review:
+                <textarea name="review" rows="3" class="form-control"></textarea>
+                <br>
+                <input type="submit" value="Submit Review" class="btn btn-success w-25">
             </div>
-        </div>
-        <div class="items">
-            <div class="text">
-                <!-- <h4>{{ user.name }}</h4> -->
-                <div class="image">
-                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
-                </div>
-                <p class="review-text">These guys are brilliant! Very efficient and proffesional</p>
-            </div>
-        </div>
-        <div class="items">
-            <div class="text">
-                <!-- <h4>{{ user.name }}</h4> -->
-                <div class="image">
-                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
-                </div>
-                <p class="review-text">We had some issues with timings and availability but other than that the service was great!</p>
-            </div>
-        </div>
-        <div class="items">
-            <div class="text">
-                <!-- <h4>{{ user.name }}</h4> -->
-                <div class="image">
-                    <img class="image" src="/media/pm_profile3.png" alt="Project Manager Profile picture">
-                </div>
-                <p class="review-text">some text</p>
-            </div>
-        </div>
+        </form>
     </div>
 </div>
 
-<script type="text/javascript">
-    $('.slider').slick({
-        infinite: true,
-        slidesToShow: 3,
-        slidesToScroll: 1
-    });
-</script>
+
 {% endblock %}
 
 {% block content %}

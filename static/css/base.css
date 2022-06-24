@@ -93,8 +93,14 @@ footer {
     background-color: #cb9d3f;
 }
 
+
+
 /* review cards styling */
-.wrapper {
+.customer-review {
+    margin-top: 200px;
+}
+
+/* .wrapper {
     padding: 100px;
     margin-top: 500px;
 }
@@ -129,14 +135,14 @@ footer {
 .image img {
     width: 80px;
     height: 80px;
-}
+} */
 
 /* .image h4 {
     margin: 10px 0;
     color: #fff;
 } */
 
-.items {
+/* .items {
     margin: 0 25px;
 }
 
@@ -144,7 +150,7 @@ footer {
 .slick-prev:before {
     color: #050f56;
     font-size: 30px;
-}
+} */
 
 /* services page styling */
 .overlay {

@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from services.models import Service, Category
+from django.shortcuts import redirect
 
 
 def index(request):
