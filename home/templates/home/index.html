@@ -4,16 +4,12 @@
 {% block page_header %}
 <div class="customer-review row">
     <div class="col-md-9">
-        <header class="heading">
-            <h6>Customer Reviews</h6>
-        </header>
-
-        <form method="POST" action="">
+        <form action="{% url 'user_review' service.id %}" method="POST">
             {% csrf_token %}
             <h5>Provide Your Review</h5>
             <div>
                 <!-- rating stars -->
-                <label for="">Please rate this service</label>
+                <label for="rating">Please rate this service</label>
                 <br>
                 <div class="rate">
                     <input type="radio" name="rating" id="rating10" value="5" required><label for="rating10" title="5"></label>
@@ -27,15 +23,24 @@
                     <input type="radio" name="rating" id="rating2" value="1" required><label for="rating2" title="1"></label>
                     <input type="radio" name="rating" id="rating1" value="0.5" required><label for="rating1" title="0.5" class="half"></label>
                 </div>
+                <br>
                 Review Title:
-                <input type="text" class="form-control" name="subject">
+                <input type="text" class="form-control" name="service">
                 <br>
                 Review:
-                <textarea name="review" rows="3" class="form-control"></textarea>
+                <textarea name="review" rows="4" class="form-control"></textarea>
                 <br>
-                <input type="submit" value="Submit Review" class="btn btn-success w-25">
+                {% if user.is_authenticated %}
+                    <input type="submit" value="Submit Review" class="btn btn-success w-25">
+                {% else %}
+                    <p>You must be logged in to post a review<span><a href="{% url 'login' %}"></a></span></p>
+                {% endif %}
             </div>
+    {% include 'includes/alerts.html' %}
         </form>
+    <header class="heading">
+        <h6>Customer Reviews</h6>
+    </header>
     </div>
 </div>
 
