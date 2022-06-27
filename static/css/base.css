@@ -88,6 +88,22 @@ footer {
     padding: 0 80px;
 }
 
+/* toasts */
+.message-container {
+    position: fixed;
+    top: 84px;
+    right: 15px;
+    z-index: 9999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 6px;
+}
+
 /* mobile phone styling */
 .phoneheader {
     background-color: #cb9d3f;

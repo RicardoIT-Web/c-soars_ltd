@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.contrib import messages
+from services.models import Service
 
 
 def view_briefcase(request):
@@ -10,6 +12,7 @@ def view_briefcase(request):
 def add_to_briefcase(request, item_id):
     """ add qty of specified service to briefcase """
 
+    service = Service.objects.get(pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     briefcase = request.session.get('briefcase', {})
@@ -18,6 +21,7 @@ def add_to_briefcase(request, item_id):
         briefcase[item_id] += quantity
     else:
         briefcase[item_id] = quantity
+        messages.success(request, f'{service.description} added to your briefcase')
 
     request.session['briefcase'] = briefcase
     return redirect(redirect_url)
