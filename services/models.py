@@ -81,7 +81,7 @@ class Service(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
     images = models.ImageField(default='noimage.png', blank=True)
-    grande_total = models.DecimalField(max_digits=10, decimal_places=2,
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
                                        null=False, default=0)
     comment = models.TextField(blank=True)
     STATUS = (

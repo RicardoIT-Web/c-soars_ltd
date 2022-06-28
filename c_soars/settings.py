@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'home',
     'services',
     'briefcase',
+    'payment',
 ]
 
 MIDDLEWARE = [
