@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'services',
     'briefcase',
     'payment',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -60,6 +61,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'c_soars.urls'
+
+CRSIPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {
@@ -78,6 +81,10 @@ TEMPLATES = [
                 'django.template.context_processors.media',
                 'briefcase.content.briefcase_content',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ]
         },
     },
 ]

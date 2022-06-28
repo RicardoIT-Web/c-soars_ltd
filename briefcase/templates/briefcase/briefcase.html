@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
+
 {% block page_header %}
     <div class="header-container">
         <div class="row">
@@ -91,7 +92,7 @@
                                 <a href="{% url 'services' %}" class="btn btn-primary rounded-0 btn-lg w-25">
                                     <span class="rtn-btn">Return to Services</span>
                                 </a>
-                                <a href="" class="btn btn-success rounded-0 btn-lg mt-2 w-25">
+                                <a href="{% url 'payment' %}" class="btn btn-success rounded-0 btn-lg mt-2 w-25">
                                     <span>Secure Payment <i class="fas fa-user-lock"></i></span>
                                 </a>
                             </td>

@@ -23,7 +23,7 @@ class OrderForm(forms.ModelForm):
             'post_code': 'Post Code',
             'city': 'City',
             'county': 'County',
-            'Country': 'Country',
+            'country': 'Country',
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True
