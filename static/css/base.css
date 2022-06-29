@@ -13,6 +13,7 @@
     src: url(static/fonts/nevis.ttf) format('ttf');
 }
 
+/* main styling */
 html {
     height: 100%;
 }
@@ -57,7 +58,6 @@ img {
     height: 40px;
 }
 
-/* from bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -86,6 +86,42 @@ footer {
 
 .footer-style {
     padding: 0 80px;
+}
+
+/* login page */
+.login_style {
+    margin-top: 150px;
+    color: #050f56;
+}
+
+.hr-login {
+    width: 65%;
+}
+
+.login-intro {
+    text-align: center;
+}
+
+.login {
+    text-align: center;
+}
+
+#div_id_login {
+    display: inline-flex;
+}
+
+#div_id_password {
+    display: inline-flex;
+}
+
+/* register page */
+.signup {
+    margin-top: 150px;
+    color: #050f56;
+}
+
+#signup_form {
+    text-align: center;
 }
 
 /* toasts */
