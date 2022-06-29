@@ -13,3 +13,16 @@
     width: 50%;
     margin: 10px 0;
 }
+
+.hr-payment {
+    height: 1px;
+    background-color: #050f56;
+}
+
+.description {
+    align-items: center;
+}
+
+.submit-button {
+    height: 40vh;
+}
