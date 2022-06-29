@@ -1,0 +1,15 @@
+/* payment page styling */
+.summary {
+    width: 80%;
+    margin-left: 10%;
+}
+
+.pay-img {
+    width: 40%;
+    height: auto;
+}
+
+.stripe-style-input {
+    width: 50%;
+    margin: 10px 0;
+}
