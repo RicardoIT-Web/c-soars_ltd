@@ -1,6 +1,7 @@
 asgiref==3.5.2
 Django==3.2
 django-allauth==0.41.0
+django-countries==7.2.1
 django-crispy-forms==1.14.0
 django-embed-video==1.4.4
 django-js-asset==2.0.0

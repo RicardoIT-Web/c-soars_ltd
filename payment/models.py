@@ -4,6 +4,8 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 
+from django_countries.fields import CountryField
+
 from services.models import Service
 
 
@@ -18,7 +20,7 @@ class Order(models.Model):
     post_code = models.CharField(max_length=20, null=True, blank=True)
     city = models.CharField(max_length=40, null=False, blank=False)
     county = models.CharField(max_length=80, null=True, blank=True)
-    country = models.CharField(max_length=40, null=False, blank=False)
+    country = CountryField(blank_label='Country *', null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
