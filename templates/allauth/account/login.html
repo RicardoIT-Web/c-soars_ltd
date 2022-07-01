@@ -3,14 +3,16 @@
 {% load i18n %}
 {% load account socialaccount %}
 
-{% block head_title %}{% trans "Sign In" %}{% endblock %}
+{% block head_title %}{% trans "Login" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
+
 <div class="overlay">
   <div class="text-center">
-    <h3 class="login_style text-center">{% trans "Sign In" %}</h3>
+    <h3 class="login_style text-center">{% trans "Login" %}</h3>
   </div>
   <hr class="hr-login">
+  
 {% get_providers as socialaccount_providers %}
 
 {% if socialaccount_providers %}
@@ -42,6 +44,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
   <button class="btn btn-success mb-3 primaryAction w-25" type="submit">{% trans "Sign In" %}</button>
+  <div>
+    <a class="home-btn btn btn-primary rounded-0 w-25 mb-4" href="{% url 'home' %}">Home</a>
+  </div>
   <div>
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </div>

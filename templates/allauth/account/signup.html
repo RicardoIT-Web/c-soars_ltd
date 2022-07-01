@@ -4,10 +4,12 @@
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 <div class="overlay">
-<h3 class="signup text-center">{% trans "Sign Up" %}</h3>
-<hr class="hr-login">
+  <div class="text-center">
+    <h3 class="login_style text-center">{% trans "Register" %}</h3>
+  </div>
+  <hr class="hr-login">
 <p class="text-center">{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form id="signup_form" method="post" action="{% url 'account_signup' %}">
@@ -16,7 +18,7 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
+  <button class="btn btn-success w-25 mt-3" type="submit">{% trans "Sign Up" %}</button>
 </form>
 
 </div>

@@ -4,8 +4,13 @@
 
 {% block head_title %}{% trans "Verify Your E-mail Address" %}{% endblock %}
 
-{% block content %}
+{% block inner_content %}
 <h1>{% trans "Verify Your E-mail Address" %}</h1>
+<div class="overlay">
+    <div class="text-center">
+      <h3 class="login_style text-center">{% trans "Verify Your E-mail Address" %}</h3>
+    </div>
+    <hr class="hr-login">
 
 {% url 'account_email' as email_url %}
 

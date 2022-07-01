@@ -31,4 +31,4 @@ def create_update_account(sender, instance, created, **kwargs):
     """
     if created:
         UserAccount.objects.create(user=instance)
-    instance.UserAccount.save()
+    instance.useraccount.save()

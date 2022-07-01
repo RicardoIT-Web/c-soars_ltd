@@ -109,7 +109,7 @@
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link" href="{% url 'useraccount' %}" id="user-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle"></i></div>
@@ -121,7 +121,7 @@
                                     {% if request.user.is_superuser %}
                                         <a href="{% url 'services' %}" class="dropdown-item">Services</a>
                                     {% endif %}
-                                        <a href="" class="dropdown-item">My Profile</a>
+                                        <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
                                         <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
