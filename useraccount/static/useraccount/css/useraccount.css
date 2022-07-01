@@ -1,0 +1,12 @@
+.account-form-input {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.account-form-input {
+    color: #050f56;
+}
+
+.account-form-input::placeholder {
+    color: #aab7c4;
+}
