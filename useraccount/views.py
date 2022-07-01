@@ -1,11 +1,11 @@
 from django.shortcuts import render
 
 
-def account(request):
+def useraccount(request):
     """
-    View to display User account
+    Display User account
     """
-    template = "accounts/account.html"
+    template = 'useraccount/useraccount.html'
     context = {}
 
     return render(request, template, context)

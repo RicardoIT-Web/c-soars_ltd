@@ -3,15 +3,16 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from django_countries.fields import CountryField
-from myAccount.models import myAccount
+from useraccount.models import UserAccount
 from services.models import Service
 
 
 class Order(models.Model):
 
     order_number = models.CharField(max_length=32, null=False, editable=False)
-    account = models.ForeignKey(myAccount, on_delete=models.SET_NULL,
-                                null=True, blank=True, related_name='purchases')
+    user_account = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
+                                     null=True, blank=True,
+                                     related_name='user_purchases')
     name = models.CharField(max_length=50, null=False, blank=True)
     email = models.EmailField(max_length=254, null=False, blank=True)
     contact_number = models.CharField(max_length=20, null=False, blank=False)

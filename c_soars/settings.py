@@ -47,8 +47,8 @@ INSTALLED_APPS = [
     'services',
     'briefcase',
     'payment',
+    'useraccount',
     'crispy_forms',
-    'myAccount',
 ]
 
 MIDDLEWARE = [
