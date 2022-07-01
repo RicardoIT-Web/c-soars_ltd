@@ -145,7 +145,16 @@ footer {
 }
 
 .toast-capper {
-    height: 6px;
+    height: 7px;
+}
+
+.toast-body {
+    background-color: #dee3e3;
+    color: #050f56;
+}
+
+.toast-header {
+    background-color: #dee3e3;
 }
 
 /* mobile phone styling */

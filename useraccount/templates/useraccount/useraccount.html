@@ -35,7 +35,41 @@
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Purchase History</p>
-                {{ payment }}
+                <div class="purchase-history table-respinsive">
+                    <table class="table table-sm table-borderless">
+                        <thead>
+                            <tr>
+                                <th>Order Number</th>
+                                <th>Date</th>
+                                <th>Services</th>
+                                <th>Invoice Total</th>
+                            </tr>
+                            <tbody>
+                                {% for order in user_purchases %}
+                                    <tr>
+                                        <td>
+                                            <a href="{% url 'purchase_history' order.order_number%}"
+                                            title="{{ order.order_number }}">
+                                            {{ order.oder_number|truncatechars:6 }}
+                                        </a>
+                                        </td>
+                                        <td>{{ order.date }}</td>
+                                        <td>
+                                            <ul class="list-unstyled">
+                                                {% for item in order.lineitems.all %}
+                                                    <li class="small">
+                                                        {{item.service.description}} x {{ item.quantity }}
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </td>
+                                        <td>{{ order.grand_total }}</td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
         {{ accounts }}
