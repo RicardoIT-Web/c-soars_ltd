@@ -21,7 +21,6 @@ html {
 body {
     background: url('/media/drone_pilot.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: black;
 }
 
 img {
@@ -164,12 +163,7 @@ footer {
 
 /* allauth templates styling */
 .allauth-form-inner-content p {
-    margin-top: 1.5rem;
     text-align: center;
-}
-
-.allauth-form-inner-content input {
-    border-color: #000;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -191,7 +185,7 @@ footer {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    border: 1px solid #000;
+    border: 1px solid #050f56;
     padding: .375rem .75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -202,7 +196,7 @@ footer {
 .allauth-form-inner-content button:hover,
 .allauth-form-inner-content input[type='submit']:hover {	
 	color: #fff;
-    border-color: #222;
+    border-color: #050f56;
 }
 
 .email-confirmation {
