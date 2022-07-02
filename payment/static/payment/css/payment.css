@@ -1,4 +1,3 @@
-/* payment page styling */
 .StripeElement,
 .stripe-style-input {
   box-sizing: border-box;
@@ -20,6 +19,20 @@
 
 .StripeElement--webkit-autofill {
   background-color: #fefde5 !important;
+}
+
+.stripe-style-input::placeholder {
+    color: #aab7c4;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}
+
+#card-element {
+    width: 50%;
+    margin-left: 25%;
 }
 
 .summary {

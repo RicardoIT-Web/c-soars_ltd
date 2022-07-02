@@ -3,7 +3,6 @@ from django.contrib import messages
 from .forms import OrderForm
 
 
-
 def payment(request):
     briefcase = request.session.get('briefcase', {})
     if not briefcase:
