@@ -27,7 +27,7 @@ def payment(request):
     form = OrderForm()
 
     if not stripe_public_key:
-        messages.warnng(request, 'Missing Stripe Public Key')
+        messages.warning(request, 'Missing Stripe Public Key')
 
     template = 'payment/payment.html'
     context = {
