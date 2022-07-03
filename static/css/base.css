@@ -395,6 +395,20 @@ strong {
     display: contents;
 }
 
+.add_to_briefcase {
+    width: 40%;
+}
+
+.back_to_service {
+    width: 30%;
+    margin-left: 35%;
+    margin-top: 15px;
+}
+
+.service_details_btns {
+    display: flex;
+}
+
 /* Briefcase page styling */
 .case-page {
     color: #050f56;
