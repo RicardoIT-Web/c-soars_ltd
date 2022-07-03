@@ -11,7 +11,7 @@ class OrderItemAdminInLine(admin.TabularInline):
     from inside the order model
     """
     model = OrderItem
-    readonly_fields = ('orderitem_total',)
+    readonly_fields = ('spotters', 'orderitem_total',)
 
 
 class OrderAdmin(admin.ModelAdmin):
@@ -20,17 +20,17 @@ class OrderAdmin(admin.ModelAdmin):
     """
     inlines = (OrderItemAdminInLine,)
 
-    readonly_fields = ('order_number', 'date',
-                       'order_total', 'grand_total',)
+    readonly_fields = ('order_number', 'date', 'name',
+                       'order_total', 'spotters', 'grand_total',)
 
     fields = ('order_number', 'name',
               'email', 'contact_number',
               'address1', 'address2',
-              'post_code', 'city', 'county',
-              'order_total', 'grand_total',)
+              'post_code', 'city', 'county', 'country',
+              'order_total', 'spotters', 'grand_total',)
 
     list_display = ('order_number', 'date', 'name',
-                    'order_total', 'grand_total',)
+                    'order_total', 'spotters', 'grand_total',)
 
     ordering = ('-date',)
 

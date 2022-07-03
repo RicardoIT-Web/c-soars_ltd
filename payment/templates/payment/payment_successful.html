@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'payment/css/payment.css' %}">
+{% endblock %}
+
+{% block page_header %}
+<div class="header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h3 class="case-page text-center mb-4">Thank you!</h3>
+            <hr>
+            <h4>Your purchase information is below. A confirmation email has been sent out to {{ order.email }}</h4>
+        </div>
+    </div>
+
+    <div class="summary">
+        <div class="col-12 col-lg-7"></div>
+    </div>
+</div>
+{% endblock %}
