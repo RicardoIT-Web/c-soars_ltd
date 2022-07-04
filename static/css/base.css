@@ -395,19 +395,27 @@ strong {
     display: contents;
 }
 
+.service_details_btns {
+    display: inline;
+}
+
 .add_to_briefcase {
-    width: 40%;
+    width: 35%;
+    margin-right: 5%;
+}
+
+.btn-add-more {
+    width: 35%;
+    height: 40px;
 }
 
 .back_to_service {
-    width: 30%;
-    margin-left: 35%;
-    margin-top: 15px;
+    width: 20%;
+    margin-left: 60%;
+    height: 40px;
 }
 
-.service_details_btns {
-    display: flex;
-}
+
 
 /* Briefcase page styling */
 .case-page {
