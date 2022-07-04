@@ -406,7 +406,7 @@ strong {
 
 .btn-add-more {
     width: 35%;
-    height: 40px;
+    margin-bottom: 0rem;
 }
 
 .back_to_service {
@@ -414,7 +414,6 @@ strong {
     margin-left: 60%;
     height: 40px;
 }
-
 
 
 /* Briefcase page styling */

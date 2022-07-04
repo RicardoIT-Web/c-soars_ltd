@@ -19,10 +19,11 @@ def add_to_briefcase(request, item_id):
 
     if item_id in list(briefcase.keys()):
         briefcase[item_id] += quantity
-        messages.success(request, f'Updated {service.description}  to quantity of {briefcase[item_id]}')
+        messages.success(request, f'Updated {service.description} to quantity of {briefcase[item_id]}')
     else:
         briefcase[item_id] = quantity
-        messages.success(request, f'{service.description} added to your briefcase')
+        messages.success(request,
+                         f'{service.description} added to your briefcase')
 
     request.session['briefcase'] = briefcase
     return redirect(redirect_url)

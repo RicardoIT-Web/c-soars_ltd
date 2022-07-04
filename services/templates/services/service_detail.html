@@ -20,7 +20,7 @@
                     <img class="card-img-top img-fluid h-auto" src="{{ service.images.url }}" alt="{{ service.name }}">
                 </a>
                 {% else %}
-                <a href="">
+                <a href="#">
                     <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ service.name }}">
                 </a>
                 {% endif %}
@@ -60,19 +60,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="service_details_btns">
+                        <input type="submit" class="add_to_briefcase btn btn-success rounded-1" value="Add to Briefcase">
+                        <a href="{% url 'view_briefcase' %}" class="btn-add-more btn btn-success rounded-1">
+                            <span>Go to Breifcase</span>
+                        </a>
+                    </div>
+                    <input type="hidden" name="redirect_url" value="{{ request.path }}">
                 </form>
-                <div class="service_details_btns">
-                    <input type="submit" class="add_to_briefcase btn btn-success rounded-1" value="Add to briefcase">
-                    <a href="{% url 'view_briefcase' %}" class="btn-add-more btn btn-primary rounded-1">
-                        <p>Go to Breifcase</p>
-                    </a>
-                </div>
+                
             </div>
         </div>
-        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+
         <div class="col-12 service_details_btns">
             <a href="{% url 'services' %}" class="back_to_service btn btn-success rounded-1">
-                <strong>Back to Services</strong>
+                <span>Back to Services</span>
             </a>
         </div>
     </div>
