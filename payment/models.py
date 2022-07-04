@@ -9,7 +9,7 @@ from services.models import Service
 
 class Order(models.Model):
 
-    order_number = models.CharField(max_length=10, null=False, editable=False)
+    order_number = models.CharField(max_length=32, null=False, editable=False)
     user_account = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
                                      null=True, blank=True,
                                      related_name='user_purchases')
@@ -26,6 +26,8 @@ class Order(models.Model):
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150, editable=False)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    original_briefcase = models.TextField(null=False, blank=False, default='')
+    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
 
     def _generate_order_number(self):
@@ -40,7 +42,7 @@ class Order(models.Model):
         Update grand total each time a service is added
         """
         self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
-        self.grand_total = self.order_total + self.spotters
+        self.grand_total = self.order_total
         self.save()
 
 
