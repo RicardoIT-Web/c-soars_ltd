@@ -82,7 +82,7 @@ class Service(models.Model):
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
     images = models.ImageField(default='noimage.png', blank=True)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2,
-                                       null=False, default=0)
+                                      null=False, default=0)
     comment = models.TextField(blank=True)
     STATUS = (
         ('Started', 'Started'),
