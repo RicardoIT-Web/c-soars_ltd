@@ -6,6 +6,8 @@ from django.conf import settings
 import stripe
 from services.models import Service
 from briefcase.content import briefcase_content
+from useraccount.models import UserAccount
+from useraccount.forms import UserAccountForm
 from .forms import OrderForm
 from .models import OrderItem, Order
 
@@ -16,7 +18,7 @@ def cache_payment_data(request):
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
         stripe.PaymentIntent.modify(pid, metadata={
-            'briefcase': json.dumps(request.session.get('briefcase',{})),
+            'briefcase': json.dumps(request.session.get('briefcase', {})),
             'save_info': request.POST.get('save_info'),
             'username': request.user,
         })
@@ -62,14 +64,15 @@ def payment(request):
                             quantity=item_data,
                         )
                         order_item.save()
+                    else:
+                        order_item.save()
                 except Service.DoesNotExist:
                     messages.error(request, (
-                        'Please contact us for assistance with your order')
-                    )
+                        'Please contact us for assistance with your order'))
                     order.delete()
                     return redirect(reverse('view_briefcase'))
-            
-            request.session['save_order'] = 'save_order' in request.POST
+
+            request.session['save_info'] = 'save_info' in request.POST
             return redirect(reverse('payment_successful', args=[order.order_number]))
         else:
             messages.error(request, 'Sorry, Something went wrong with your form.\
@@ -86,10 +89,27 @@ def payment(request):
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
-            currency=settings.STRIPE_CURRENCY
+            currency=settings.STRIPE_CURRENCY,
         )
 
-        form = OrderForm()
+        if request.user.is_authenticated:
+            try:
+                account = UserAccount.objects.get(user=request.user)
+                form = OrderForm(initial={
+                    'name': account.user.get_full_name(),
+                    'email': account.email,
+                    'contact_number': account.contact_number,
+                    'address1': account.address1,
+                    'address2': account.address2,
+                    'post_code': account.post_code,
+                    'city': account.city,
+                    'county': account.county,
+                    'country': account.country,
+                })
+            except UserAccount.DoesNotExist:
+                form = OrderForm()
+        else:
+            form = OrderForm()
 
     if not stripe_public_key:
         messages.warning(request, 'Missing Stripe Public Key')
@@ -108,8 +128,28 @@ def payment_successful(request, order_number):
     """
     A view to handle a successful order.
     """
-    save_order = request.session.get('save_order')
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
+
+    if request.user.is_authenticated:
+        account = UserAccount.objects.get(user=request.user)
+        order.user_account = account
+        order.save()
+
+        if save_info:
+            account_data = {
+                'email': order.email,
+                'contact_number': order.contact_number,
+                'address1': order.address1,
+                'address2': order.address2,
+                'city': order.city,
+                'post_code': order.postcode,
+                'country': order.country,
+            }
+            user_account_form = UserAccountForm(account_data, instance=account)
+            if user_account_form.is_valid():
+                user_account_form.save()
+
     messages.success(request, f'Purchase Order received. Thank you!\
         Your order number is {order_number}.\
         A confirmation email will be sent out to {order.email}.')

@@ -9,16 +9,16 @@ def useraccount(request):
     """
     Display User account
     """
-    accounts = get_object_or_404(UserAccount, user=request.user)
+    useraccount = get_object_or_404(UserAccount, user=request.user)
 
     if request.method == 'POST':
-        form = UserAccountForm(request.POST, instance=accounts)
+        form = UserAccountForm(request.POST, instance=useraccount)
         if form.is_valid():
             form.save()
             messages.success(request, 'Account updated')
 
-    form = UserAccountForm(instance=accounts)
-    orders = accounts.user_purchases.all()
+    form = UserAccountForm(instance=useraccount)
+    orders = useraccount.user_purchases.all()
 
     template = 'useraccount/useraccount.html'
     context = {
@@ -35,12 +35,12 @@ def purchase_history(request, order_number):
 
     messages.info(request, (
         f'Purchase History for order number {order_number}.'
-        'An email confirmation would have been sent on {self.order.date}'
+        f'A confirmation email would have been sent on {order.date}.'
     ))
 
     template = 'payment/payment_successful.html'
     context = {
-        'oder': order,
+        'order': order,
         'from_profile': True
     }
 

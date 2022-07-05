@@ -24,46 +24,50 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-6">
+            <div class="col-12 col-lg-4">
                 <p class="text-muted">Invoice Details</p>
-                <form class="mt-3" action="{% url 'payment' %}" method="POST" id="payment-update-form">
+                <form class="mt-3" action="{% url 'useraccount' %}" method="POST" id="useraccount-update-form">
                     {% csrf_token %}
-                    {{ form|crispy  }}
-                    <button class="btn btn-success w-25 float-left">Update Details</button>
-                    <button class="btn btn-success w-25 float-right" type="reset">Clear Form</button>
+                    {{ form|crispy }}
+                    <button class="update-btn btn btn-success float-left">Update Details</button>
+                    <button class="clear-btn btn btn-success float-right" type="reset">Clear Form</button>
                 </form>
             </div>
-            <div class="col-12 col-lg-6">
+
+            <div class="col-12 col-lg-8">
                 <p class="text-muted">Purchase History</p>
-                <div class="purchase-history table-respinsive">
+                <div class="purchase-history table-responsive">
                     <table class="table table-sm table-borderless">
                         <thead>
                             <tr>
                                 <th>Order Number</th>
                                 <th>Date</th>
-                                <th>Services</th>
-                                <th>Invoice Total</th>
+                                <th>Items</th>
+                                <th class="account-total">Invoice Total</th>
                             </tr>
                             <tbody>
-                                {% for order in user_purchases %}
+                                {% for order in orders %}
                                     <tr>
                                         <td>
-                                            <a href="{% url 'purchase_history' order.order_number%}"
+                                            <a href="{% url 'purchase_history' order.order_number %}"
                                             title="{{ order.order_number }}">
-                                            {{ order.oder_number|truncatechars:6 }}
+                                            {{ order.order_number|truncatechars:6 }}
                                         </a>
                                         </td>
                                         <td>{{ order.date }}</td>
                                         <td>
                                             <ul class="list-unstyled">
-                                                {% for item in order.lineitems.all %}
+                                                {% for item in order.orderitems.all %}
                                                     <li class="small">
-                                                        {{item.service.description}} x {{ item.quantity }}
+                                                       {{ item.service.name }} x {{ item.quantity }}
                                                     </li>
+                                                    <li class="small">
+                                                        {{ item.service.description }}
+                                                     </li>
                                                 {% endfor %}
                                             </ul>
                                         </td>
-                                        <td>{{ order.grand_total }}</td>
+                                        <td class="account-total">£{{ order.grand_total }}</td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
@@ -72,6 +76,13 @@
                 </div>
             </div>
         </div>
-        {{ accounts }}
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h3 class="case-page text-center mb-4">My Reviews</h3>
+            <hr>
+        </div>
     </div>
 {% endblock %}

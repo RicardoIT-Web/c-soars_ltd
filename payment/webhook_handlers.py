@@ -26,11 +26,26 @@ class StripeWH_Handler:
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
+        purchase_order_details = intent.purchase_order
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        for field, value in billing_details.address.items():
+        for field, value in purchase_order_details.address.items():
             if value == "":
-                billing_details.address[field] = None
+                purchase_order_details.address[field] = None
+
+        account = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            account = UserAccount.objects.get(user__username=username)
+            if save_info:
+                account.email = purchase_order_details.email
+                account.contact_number = purchase_order_details.contact_number
+                account.address1 = purchase_order_details.address1
+                account.address2 = purchase_order_details.address2
+                account.city = purchase_order_details.city
+                account.post_code = purchase_order_details.postcode
+                account.country = purchase_order_details.country
+                account.save()
 
         order_exists = False
         attempt = 1

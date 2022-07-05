@@ -15,3 +15,15 @@
 .account-form-input::placeholder {
     color: #aab7c4;
 }
+
+.account-total {
+    float: right;
+}
+
+.update-btn {
+    width: 40%;
+}
+
+.clear-btn {
+    width: 40%;
+}
