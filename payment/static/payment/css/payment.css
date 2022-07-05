@@ -77,8 +77,15 @@ select option[value=""] {
 h4 {
     color: #050f56;
 }
-.pay-success-g_total {
-    margin-bottom: 150px;
+
+/* back to account button */
+.btn-account {
+    width: 25%;
+    margin-left: 37.5%;
+}
+
+.up {
+    margin-top: 100px;
 }
 
 /* loading spinner */
