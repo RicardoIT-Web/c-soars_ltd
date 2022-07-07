@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'briefcase',
     'payment',
     'useraccount',
+    'administration',
     'crispy_forms',
 ]
 

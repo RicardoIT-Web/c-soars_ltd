@@ -16,9 +16,11 @@ def useraccount(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Account updated')
+        else:
+            messages.error(request, 'Update failed. Please ensure the form is valid.')
 
     form = UserAccountForm(instance=useraccount)
-    orders = useraccount.user_purchases.all()
+    orders = useraccount.orders.all()
 
     template = 'useraccount/useraccount.html'
     context = {

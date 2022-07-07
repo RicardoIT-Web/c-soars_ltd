@@ -25,7 +25,7 @@
         </div>
         <div class="row">
             <div class="col-12 col-lg-4">
-                <p class="text-muted">Invoice Details</p>
+                <p class="text-muted">Billing Details</p>
                 <form class="mt-3" action="{% url 'useraccount' %}" method="POST" id="useraccount-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}

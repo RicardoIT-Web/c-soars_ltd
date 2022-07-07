@@ -131,6 +131,24 @@ footer {
     text-align: center;
 }
 
+/* remove bullets from register page error messages */
+.errorlist {
+    list-style-type: none;
+    padding: 0;
+    color: red;
+}
+
+/* confirm email */
+.confirm-email-form {
+    width: 25%;
+    margin-left: 40%;
+    padding: 0;
+}
+.confirm-email-btn {
+    text-align: center;
+    border-radius: 5px !important;
+}
+
 /* toasts */
 .message-container {
     position: fixed;
