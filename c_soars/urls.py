@@ -27,5 +27,4 @@ urlpatterns = [
     path('briefcase/', include('briefcase.urls')),
     path('payment/', include('payment.urls')),
     path('useraccount/', include('useraccount.urls')),
-    path('administration/', include('administration.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
