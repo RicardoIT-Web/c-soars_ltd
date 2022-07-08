@@ -5,7 +5,7 @@
             <p class="my-0">Search</p>
         </div>
     </a>
-    <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
+    <div class="dropdown-menu border-0 w-100 p-3 rounded-0" aria-labelledby="mobile-search">
         <form class="form" method="GET" action="{% url 'services' %}">
             <div class="input-group w-100">
                 <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
@@ -31,7 +31,7 @@
 <li class="list-inline-item dropdown">
     <a class="nav-link d-lg-none" href="#" id="user-options" data-toggle="dropdown"
         aria-haspopup="true" aria-expanded="false">
-        <div class="text-white text-center">
+        <div class="services text-white text-center">
             <div>
                 <i class="fas fa-clipboard-list"></i>
                 <p class="my-0">Services</p>
@@ -46,18 +46,16 @@
 </li>
 <li class="list-inline-item dropdown">
     <a class="nav-link d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center">
+        <div class="my-account text-center">
             <div><i class="fas fa-user-circle"></i></div>
             <p class="my-0">My Account</p>
         </div>
     </a>
     <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-                <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-            {% endif %}
-                <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
-                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+            <a href="{% url 'services' %}" class="dropdown-item">Services</a>
+            <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
+            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -66,7 +64,7 @@
 </li>
 <li class="list-inline-item">
     <a class="{% if grand_total %} font-weight-bold {% endif %} text-white nav-link d-block d-lg-none" id="briefcase" href="{% url 'view_briefcase' %}">
-        <div class="text-center">
+        <div class="briefcase text-center">
             <div><i class="fas fa-briefcase"></i></i></div>
             <p class="my-0">
                 {% if grand_total %}

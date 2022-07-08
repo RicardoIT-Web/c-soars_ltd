@@ -1,14 +1,17 @@
 from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from services.models import Service
 
 
+@login_required
 def view_briefcase(request):
     """ View to render briefcase page to show services booked"""
 
     return render(request, 'briefcase/briefcase.html')
 
 
+@login_required
 def add_to_briefcase(request, item_id):
     """ add qty of specified service to briefcase """
 
@@ -29,6 +32,7 @@ def add_to_briefcase(request, item_id):
     return redirect(redirect_url)
 
 
+@login_required
 def adjust_briefcase(request, item_id):
     """ adjust qty of specified service to briefcase """
 
@@ -47,6 +51,7 @@ def adjust_briefcase(request, item_id):
     return redirect(reverse('view_briefcase'))
 
 
+@login_required
 def remove_from_briefcase(request, item_id):
     """ remove item of specified service from briefcase """
 

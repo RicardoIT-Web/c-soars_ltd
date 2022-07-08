@@ -121,11 +121,9 @@
                         </a>
                         <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                                    {% if request.user.is_superuser %}
-                                        <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-                                    {% endif %}
-                                        <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
-                                        <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                                <a href="{% url 'services' %}" class="dropdown-item">Services</a>
+                                <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
+                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
@@ -157,7 +155,8 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 {% include 'includes/phoneheader.html' %}
-                <div class="col-12 h-100">
+                {% include 'includes/mainnav.html' %}
+                <div class="slogan-banner col-12 d-none d-lg-block">
                     <p id="main-title">
                         The UAV/Drone Property Survey Company
                     </p>
@@ -196,7 +195,7 @@
     </script>
     {% endblock %}
 
-    <footer class="footer-style container-fluid fixed-bottom d-flex w-100">
+    <footer class="footer-style container-fluid fixed-bottom w-100">
         <div class="mt-2">
             <i class="far fa-copyright"></i> C-Soars Ltd
         </div>

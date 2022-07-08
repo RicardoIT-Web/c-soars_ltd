@@ -194,7 +194,7 @@ footer {
 
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
-	/* btn */
+/* btn */
 	display: inline-block;
     font-weight: 400;
     text-align: center;
@@ -269,59 +269,6 @@ input:checked ~ label:hover ~ label,
 label:hover ~ input:checked ~ label {
     color: #cb9d3f;
 }
-
-
-/* .wrapper {
-    padding: 100px;
-    margin-top: 500px;
-}
-
-.wrapper:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 50%;
-    background-color: none;
-    z-index: -1;
-}
-
-.review-text {
-    font-size: 16px;
-    line-height: 26px;
-    margin: 0;
-}
-
-.text {
-    background-color: #cb9d3fd6;
-    position: relative;
-    padding: 25px;
-    min-height: 182px;
-    max-height: 182px;
-    max-width: 343px;
-    box-shadow: 0 8px 15px rgba(0,0,0,0.24);
-}
-
-.image img {
-    width: 80px;
-    height: 80px;
-} */
-
-/* .image h4 {
-    margin: 10px 0;
-    color: #fff;
-} */
-
-/* .items {
-    margin: 0 25px;
-}
-
-.slick-next:before,
-.slick-prev:before {
-    color: #050f56;
-    font-size: 30px;
-} */
 
 /* services page styling */
 .overlay {
@@ -433,7 +380,6 @@ strong {
     height: 40px;
 }
 
-
 /* Briefcase page styling */
 .case-page {
     color: #050f56;
@@ -451,32 +397,67 @@ strong {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-    .container {
-      max-width: 80%;
-    }
-  }
-  
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 127px;
+@media (max-width: 332px) {
+    .services {
+        display: none;
     }
 }
+
+@media (max-width: 412px) {
+    .navbar-collapse {
+        margin-top: -10px;
+    }
+}
+
+@media (max-width: 450px) {
+    .footer-style {
+        padding: 0 25px;
+        height: 100px;
+        text-align: center;
+    }
+}
+
+@media (min-width: 450px) {
+    .footer-style {
+        display: flex;
+        padding: 0 25px;
+        height: 40px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 456px) {
+    .my-account {
+        display: none;
+    }
+}
+
+@media (max-width: 534px) {
+    .collapse {
+        height: 135px;
+        background-color: #cb9d3f;
+    }
+
+    .slogan-banner {
+        margin-top: -71px;
+    }
+
+    .briefcase {
+        display: none;
+    }
+}
+
+@media (max-width: 575px) {
+    .btn-primary {
+        width: 100%;
+    }
+} 
+
 
 /* Mobile navbar styling on 991px and less */
 @media (max-width: 991px) {
     body {
-        background: url('/media/drone_pilot4.jpg') no-repeat center center;
+        background: url('/media/homepage1.jpg') no-repeat center center;
         background-size: cover;
         height: 100vh;
     }
@@ -484,6 +465,17 @@ strong {
     .navbar {
         background-color: #050f56;
         height: 70px;
+        padding: 0;
+    }
+
+    .navbar-toggler {
+        margin-left: 10px;
+    }
+
+    .slogan-banner {
+        width: 100% !important;
+        background-color: #cb9d3f;
+        height: 45px;
     }
 
     #mobile-search {
@@ -504,8 +496,18 @@ strong {
     }
 
     #account-options {
-        margin-top: -2px;
+        margin-top: 0;
         width: auto;
+    }
+
+    #services-options {
+        margin-top: 87px;
+        width: 60%;
+    }
+
+    #account-options {
+        margin-top: 47px;
+        width: 60%;
     }
 
     #civil-engineering-link {
@@ -521,11 +523,27 @@ strong {
     }
 
     .collapse {
-        height: 150px;
+        height: 135px;
+        background-color: #cb9d3f;
+    }
+
+    #all-services-link {
+        color: black;
+        margin-left: 24px;
+    }
+
+    #useraccount-link {
+        color: black;
+        margin-left: 24px;
+    }
+
+    #briefcase-link {
+        color: black;
+        margin-left: 24px;
     }
 
     .dropdown-menu.show {
-        margin-top: 8px;
+        margin-top: 0px;
         width: 50%;
         padding: 0;
     }
@@ -535,7 +553,7 @@ strong {
     }
 
     .header-container {
-        padding-top: 116px;
+        padding-top: 70px;
         background-color: #cb9d3f;
     }
 
@@ -545,5 +563,33 @@ strong {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
+
+@media (min-width: 1251px) {
+    .header-container {
+        padding-top: 107px;
     }
 }

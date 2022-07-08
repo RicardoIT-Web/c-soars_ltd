@@ -1,0 +1,39 @@
+<div class="collapse navbar-collapse" id="main-nav">
+    <ul class="navbar-nav w-auto mx-auto d-lg-none">
+        <li class="nav-item dropdown">
+            <a class="nav-link text-black mr-5" href="#" id="all-services-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                All Services
+            </a>
+            <div id="services-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                <a href="{% url 'services' %}?category=Civil Engineering Structures" class="dropdown-item">Civil Engineering Structures</a>
+                <a href="{% url 'services' %}?category=External Fire Risk Inspections" class="dropdown-item">External Fire Risk Inspections</a>
+                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Chimney & Roof Inspections" class="dropdown-item">Domestic & Commercial Surveys - Chimney & Roof Inspections</a>
+                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Roof Inspections All Areas" class="dropdown-item">Domestic & Commercial Surveys - Roof Inspections All Areas</a>
+                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Gutter & Roof Inspections" class="dropdown-item">Domestic & Commercial Surveys - Gutter & Roof Inspections</a>
+                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Dangerous Structures Inspections" class="dropdown-item">Domestic & Commercial Surveys - Dangerous Structures Inspections</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link text-black mr-5" href="{% url 'useraccount' %}" id="useraccount-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                My Account
+            </a>
+            <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                {% if request.user.is_authenticated %}
+                    <a href="{% url 'services' %}" class="dropdown-item">Services</a>
+                    <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
+                    <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                {% else %}
+                    <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                    <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                {% endif %}
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a href="{% url 'view_briefcase' %}" class=" nav-link mr-5 {% if grand_total %} font-weight-bold {% endif %}" id="briefcase-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Briefcase
+            </a>
+        </li>
+    </ul>
+</div>

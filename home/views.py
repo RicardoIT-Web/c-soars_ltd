@@ -1,8 +1,7 @@
-from django.shortcuts import render, redirect
-from django.contrib import messages
+from django.shortcuts import render
 
 
 def index(request):
-    """ View to render index page"""
+    """ View to render home page"""
 
     return render(request, 'home/index.html')
