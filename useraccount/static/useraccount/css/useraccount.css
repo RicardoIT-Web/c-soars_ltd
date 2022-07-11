@@ -1,3 +1,5 @@
+/* My Account page styling */
+/* Purchase History section */
 .purchase-history {
     max-height: 416px;
     overflow-y: auto;
@@ -21,9 +23,64 @@
 }
 
 .update-btn {
-    width: 40%;
+    width: 45%;
 }
 
 .clear-btn {
     width: 40%;
+}
+
+/* My Reviews Styling */
+.reviews-form {
+    width: 50%;
+    margin-left: 25%;
+}
+
+/* review stars styling */
+.customer-review {
+    margin-top: 200px;
+}
+
+/* hide radio buttons */
+.rate > input {
+    display: none;
+}
+
+.rate {
+    display: inline-block;
+    border: 0;
+}
+
+.rate > label {
+    float: right;
+}
+
+/* showing stars */
+.rate > label:before {
+    display: inline-block;
+    font-size: 1.1rem;
+    font-family: FontAwesome;
+    content: "\f005";
+    margin: 0;
+    padding: 0.3rem .2rem;
+    cursor: pointer;
+}
+
+/* styling for half star rating */
+.rate .half:before {
+    content: "\f089";
+    position: absolute;
+    padding-right: 0;
+}
+
+/*click and hover affect */
+input:checked ~ label, label:hover ~ label {
+    color: #cb9d3f;
+}
+
+input:checked + label:hover,
+input:checked ~ label:hover,
+input:checked ~ label:hover ~ label,
+label:hover ~ input:checked ~ label {
+    color: #cb9d3f;
 }

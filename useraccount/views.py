@@ -1,9 +1,11 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from payment.models import Order, OrderItem
+from services.models import Service
 from .models import UserAccount
-from .forms import UserAccountForm
-from payment.models import Order
+from .forms import UserAccountForm, ReviewRatingForm
+
 
 
 @login_required
@@ -47,6 +49,29 @@ def purchase_history(request, order_number):
     context = {
         'order': order,
         'from_profile': True
+    }
+
+    return render(request, template, context)
+
+
+def submit_review(request, service_id):
+
+    if request.method == 'POST':
+        form = ReviewRatingForm(request.POST)
+        if form.is_valid():
+            review_form = form.save(commit=False)
+            review_form.service = service_id
+            form.save()
+            messages.success(request, 'Review submitted succeffully!')
+            return redirect(reverse('useraccount'))
+        else:
+            messages.error(request, 'Failed to submit review. Please ensure the form is valid.')
+    else:
+        form = ReviewRatingForm()
+
+    template = 'useraccount/submit_review.html'
+    context = {
+        'form': form,
     }
 
     return render(request, template, context)

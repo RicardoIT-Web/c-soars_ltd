@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+
+{% block page_header %}
+<div class="header-container">
+    <div class="row">
+        <div class="col"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="overlay"></div>
+<!-- User Contacts Form -->
+<div class="form-container">
+    <p>If you have any questions, please do not hesitate to contact us;</p>
+    <form class="contactform" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button class="contact-btn" type="submit">Submit</button>
+    <button class="contact-clear-btn" type="reset">Clear Form</button>
+    </form>
+  </div>
+{% endblock %}

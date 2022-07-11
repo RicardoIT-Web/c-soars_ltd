@@ -1,8 +1,11 @@
 from django.db import models
 from django.contrib.auth.models import User
-from django.db.models.signals import post_save
 from django.dispatch import receiver
 from django_countries.fields import CountryField
+from services.models import Service
+from django.db.models.signals import post_save
+
+
 
 
 class UserAccount(models.Model):
@@ -21,7 +24,7 @@ class UserAccount(models.Model):
     country = CountryField(blank_label='Country', null=True, blank=True)
 
     def __str__(self):
-        return self.user.username
+        return self.user
 
 
 @receiver(post_save, sender=User)
@@ -32,3 +35,17 @@ def create_update_account(sender, instance, created, **kwargs):
     if created:
         UserAccount.objects.create(user=instance)
     instance.useraccount.save()
+
+
+class ReviewRating(models.Model):
+    service = models.ForeignKey(Service, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    subject = models.CharField(max_length=100, null=True, blank=True)
+    review = models.TextField(max_length=500, null=True, blank=True)
+    rating = models.FloatField()
+    status = models.BooleanField(default=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.subject

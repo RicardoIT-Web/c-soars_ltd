@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'briefcase',
     'payment',
     'useraccount',
+    'contact',
     'crispy_forms',
 ]
 
@@ -63,7 +64,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'c_soars.urls'
 
-CRSIPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 TEMPLATES = [
     {

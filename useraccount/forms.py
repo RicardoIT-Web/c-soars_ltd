@@ -1,5 +1,5 @@
 from django import forms
-from .models import UserAccount
+from .models import UserAccount, ReviewRating
 
 
 class UserAccountForm(forms.ModelForm):
@@ -32,3 +32,9 @@ class UserAccountForm(forms.ModelForm):
                 self.fields[field].widget.attrs['placeholder'] = placeholder
             self.fields[field].widget.attrs['class'] = 'account-form-input'
             self.fields[field].label = False
+
+
+class ReviewRatingForm(forms.ModelForm):
+    class Meta:
+        model = ReviewRating
+        fields = ['subject', 'review', 'rating']

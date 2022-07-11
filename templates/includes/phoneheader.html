@@ -53,8 +53,9 @@
     </a>
     <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
+        <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
             <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-            <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
+            <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

@@ -15,7 +15,7 @@
 
 {% block content %}
     <div class="overlay"></div>
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col">
                 <hr>
@@ -24,17 +24,17 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-3">
                 <p class="text-muted">Billing Details</p>
                 <form class="mt-3" action="{% url 'useraccount' %}" method="POST" id="useraccount-update-form">
                     {% csrf_token %}
                     {{ form|crispy }}
-                    <button class="update-btn btn btn-success float-left">Update Details</button>
+                    <button class="update-btn btn btn-success float-left mb-5">Update Form</button>
                     <button class="clear-btn btn btn-success float-right" type="reset">Clear Form</button>
                 </form>
             </div>
 
-            <div class="col-12 col-lg-8">
+            <div class="col-12 col-lg-9">
                 <p class="text-muted">Purchase History</p>
                 <div class="purchase-history table-responsive">
                     <table class="table table-sm table-borderless">
@@ -44,6 +44,7 @@
                                 <th>Date</th>
                                 <th>Items</th>
                                 <th class="account-total">Invoice Total</th>
+                                <th>Submit Review</th>
                             </tr>
                             <tbody>
                                 {% for order in orders %}
@@ -68,6 +69,13 @@
                                             </ul>
                                         </td>
                                         <td class="account-total">£{{ order.grand_total }}</td>
+                                        <td>
+                                            {% for item in order.orderitems.all %}
+                                            <button class="btn btn-success">
+                                                <a href="{% url 'submit_review' %}">Submit</a>
+                                            </button>
+                                            {% endfor %}
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>
@@ -75,14 +83,6 @@
                     </table>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col">
-            <hr>
-            <h3 class="case-page text-center mb-4">My Reviews</h3>
-            <hr>
         </div>
     </div>
 {% endblock %}
