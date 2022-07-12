@@ -1,4 +1,6 @@
-from django.shortcuts import render, redirect, reverse, HttpResponse, get_object_or_404
+"""Briefcase Views"""
+from django.shortcuts import render, redirect, reverse, HttpResponse
+from django.shortcuts import get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from services.models import Service
@@ -22,7 +24,8 @@ def add_to_briefcase(request, item_id):
 
     if item_id in list(briefcase.keys()):
         briefcase[item_id] += quantity
-        messages.success(request, f'Updated {service.description} to quantity of {briefcase[item_id]}')
+        messages.success(request, f'Updated {service.description}\
+                         to quantity of {briefcase[item_id]}')
     else:
         briefcase[item_id] = quantity
         messages.success(request,
@@ -42,10 +45,12 @@ def adjust_briefcase(request, item_id):
 
     if quantity > 0:
         briefcase[item_id] = quantity
-        messages.success(request, f'Updated {service.description}  to quantity of {briefcase[item_id]}')
+        messages.success(request, f'Updated {service.description}\
+                         to quantity of {briefcase[item_id]}')
     else:
         briefcase.pop(item_id)
-        messages.success(request, f'{service.description} removed from your briefcase')
+        messages.success(request, f'{service.description}\
+                         removed from your briefcase')
 
     request.session['briefcase'] = briefcase
     return redirect(reverse('view_briefcase'))
@@ -59,7 +64,8 @@ def remove_from_briefcase(request, item_id):
         service = get_object_or_404(Service, pk=item_id)
         briefcase = request.session.get('briefcase', {})
         briefcase.pop(item_id)
-        messages.success(request, f'{service.description} removed from your briefcase')
+        messages.success(request, f'{service.description}\
+                         removed from your briefcase')
 
         request.session['briefcase'] = briefcase
         return HttpResponse(status=200)

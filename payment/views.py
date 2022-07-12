@@ -1,5 +1,7 @@
+""" Views for payment feature """
 import json
-from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
+from django.shortcuts import render, redirect, reverse
+from django.shortcuts import get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
@@ -14,6 +16,7 @@ from .models import OrderItem, Order
 
 @require_POST
 def cache_payment_data(request):
+    """ Chache Payment data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,6 +33,7 @@ def cache_payment_data(request):
 
 
 def payment(request):
+    """ view to manage payment process """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 
@@ -73,7 +77,8 @@ def payment(request):
                     return redirect(reverse('view_briefcase'))
 
             request.session['save_info'] = 'save_info' in request.POST
-            return redirect(reverse('payment_successful', args=[order.order_number]))
+            return redirect(reverse(
+                'payment_successful', args=[order.order_number]))
         else:
             messages.error(request, 'Sorry, Something went wrong with your form.\
                 Please check your form details.')

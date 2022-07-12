@@ -1,11 +1,10 @@
-from decimal import Decimal
-from django.conf import settings
+""" File to retain briefcase content """
 from django.shortcuts import get_object_or_404
 from services.models import Service
 
 
 def briefcase_content(request):
-
+    """ A function to retain briefcase content """
     briefcase_items = []
     total = 0
     service_count = 0

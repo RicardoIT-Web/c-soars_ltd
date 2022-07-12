@@ -1,5 +1,6 @@
 {% extends "account/base.html" %}
 
+
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -43,9 +44,9 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <button class="btn btn-success mb-3 primaryAction w-25" type="submit">{% trans "Sign In" %}</button>
+  <button id="signin-btn" class="btn btn-success mb-3 rounded-1 w-25" type="submit">{% trans "Sign In" %}</button>
   <div>
-    <a class="home-btn btn btn-primary rounded-0 w-25 mb-4" href="{% url 'home' %}">Home</a>
+    <a class="home-btn btn btn-primary rounded-1 w-25 mb-4" href="{% url 'home' %}">Home</a>
   </div>
   <div>
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>

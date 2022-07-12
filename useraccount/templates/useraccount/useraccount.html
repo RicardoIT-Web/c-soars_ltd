@@ -72,7 +72,7 @@
                                         <td>
                                             {% for item in order.orderitems.all %}
                                             <button class="btn btn-success">
-                                                <a href="{% url 'submit_review' %}">Submit</a>
+                                                <a href="{% url 'submit_review' item.service.id %}">Submit</a>
                                             </button>
                                             {% endfor %}
                                         </td>

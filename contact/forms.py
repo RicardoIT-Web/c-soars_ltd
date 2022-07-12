@@ -1,3 +1,4 @@
+""" Contact Us forms """
 from django import forms
 from .models import Contact
 
@@ -9,7 +10,7 @@ class ContactForm(forms.ModelForm):
     '''
     class Meta:
         '''
-        Calss meta to define which model to pull data from
+        Class meta to define which model to pull data from
         '''
         model = Contact
         fields = ('name', 'email', 'contact_number', 'subject', 'comment', )

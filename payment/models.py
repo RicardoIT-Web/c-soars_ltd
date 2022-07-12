@@ -1,3 +1,4 @@
+""" models for payment feature """
 import uuid
 from django.db import models
 from django.db.models import Sum
@@ -7,7 +8,7 @@ from services.models import Service
 
 
 class Order(models.Model):
-
+    """ The Order Model retaining User details """
     order_number = models.CharField(max_length=32, null=False, editable=False)
     user_account = models.ForeignKey(UserAccount, on_delete=models.SET_NULL,
                                      null=True, blank=True,
@@ -22,12 +23,15 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     country = CountryField(blank_label='Country *', null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150, editable=False)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
+    spotters = models.DecimalField(max_digits=6, decimal_places=2,
+                                   default=150, editable=False)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2,
+                                      null=False, default=0)
     original_briefcase = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
-
+    stripe_pid = models.CharField(max_length=254, null=False,
+                                  blank=False, default='')
 
     def _generate_order_number(self):
         """
@@ -35,15 +39,14 @@ class Order(models.Model):
         """
         return uuid.uuid4().hex.upper()
 
-
     def update_total(self):
         """
         Update grand total each time a service is added
         """
-        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
+        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))[
+            'orderitem_total__sum'] or 0
         self.grand_total = self.order_total
         self.save()
-
 
     def save(self, *args, **kwargs):
         """
@@ -58,9 +61,12 @@ class Order(models.Model):
 
 
 class OrderItem(models.Model):
-
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems')
-    service = models.ForeignKey(Service, null=False, blank=False, on_delete=models.CASCADE)
+    """ A model to retain each order item details """
+    order = models.ForeignKey(Order, null=False, blank=False,
+                              on_delete=models.CASCADE,
+                              related_name='orderitems')
+    service = models.ForeignKey(Service, null=False, blank=False,
+                                on_delete=models.CASCADE)
     FOR = (
         ('Drone Survey with Photos', 'Drone Survey with Photos'),
         ('Drone Survey with Video & Photos',
@@ -75,7 +81,9 @@ class OrderItem(models.Model):
     description = models.CharField(default=0, max_length=254, choices=FOR)
     quantity = models.IntegerField(null=False, blank=False, default=0)
     spotters = models.DecimalField(max_digits=6, decimal_places=2, default=150)
-    orderitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    orderitem_total = models.DecimalField(max_digits=6, decimal_places=2,
+                                          null=False, blank=False,
+                                          editable=False)
 
     def save(self, *args, **kwargs):
         """

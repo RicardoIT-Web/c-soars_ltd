@@ -1,13 +1,13 @@
+""" webhook handlers from stripe """
+import json
+import time
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
-from .models import Order, OrderItem
 from services.models import Service
 from useraccount.models import UserAccount
-
-import json
-import time
+from .models import Order, OrderItem
 
 
 class StripeWH_Handler:
@@ -95,8 +95,8 @@ class StripeWH_Handler:
             if order_exists:
                 self._send_confirmation_email(order)
                 return HttpResponse(
-                    content=f'Webhook received: {event["type"]} | SUCCESS: Verified order is in database',
-                    status=200)
+                    content=f'Webhook received: {event["type"]} | SUCCESS: \
+                        Verified order is in database', status=200)
             else:
                 order = None
                 try:
@@ -126,12 +126,12 @@ class StripeWH_Handler:
                     if order:
                         order.delete()
                     return HttpResponse(
-                        content=f'Webhook received: {event["type"]} | ERROR: {e}',
-                        status=500)
+                        content=f'Webhook received: {event["type"]} | ERROR: \
+                            {e}', status=500)
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
-                status=200)
+                content=f'Webhook received: {event["type"]} | SUCCESS: \
+                    Created order in webhook', status=200)
 
     def handle_payment_intent_payment_failed(self, event):
         """To handle payment intent failed from stripe"""

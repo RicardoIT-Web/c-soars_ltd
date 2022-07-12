@@ -1,9 +1,12 @@
+""" payment forms """
 from django import forms
 from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """ Payment form content """
     class Meta:
+        """ Payment form content """
         model = Order
         fields = ('name', 'email', 'contact_number',
                   'address1', 'address2', 'post_code',

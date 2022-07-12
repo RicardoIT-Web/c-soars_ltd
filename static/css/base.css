@@ -121,6 +121,10 @@ footer {
     color: #050f56;
 }
 
+#signin-btn {
+    border-radius: 4px;
+}
+
 /* register page */
 .signup {
     margin-top: 150px;
@@ -276,7 +280,7 @@ strong {
     background-color: #dde3e3;
     border-color: #050f56;
     padding: 5px;
-    width: 40%;
+    width: 41%;
 }
 
 .btn-success {
@@ -343,6 +347,11 @@ strong {
 .update-qty,
 .remove-qty {
     cursor: pointer;
+}
+
+.rtn-btn {
+    width: 25%;
+    margin-left: 37.5%;
 }
 
 

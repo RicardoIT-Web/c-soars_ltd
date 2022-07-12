@@ -48,7 +48,7 @@
                     <br>
                     Service:
                     {% for item in order.orderitems.all %}
-                        <p>{{ item.service_id }}</p>
+                        <p>{{ item.service.description }}</p>
                     {% endfor %}
 
                     <br>

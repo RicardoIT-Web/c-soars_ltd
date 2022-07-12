@@ -7,7 +7,6 @@ from .models import UserAccount
 from .forms import UserAccountForm, ReviewRatingForm
 
 
-
 @login_required
 def useraccount(request):
     """
@@ -56,6 +55,8 @@ def purchase_history(request, order_number):
 
 def submit_review(request, service_id):
 
+    service = get_object_or_404(Service, pk=service_id)
+
     if request.method == 'POST':
         form = ReviewRatingForm(request.POST)
         if form.is_valid():
@@ -72,6 +73,7 @@ def submit_review(request, service_id):
     template = 'useraccount/submit_review.html'
     context = {
         'form': form,
+        'service': service,
     }
 
     return render(request, template, context)
