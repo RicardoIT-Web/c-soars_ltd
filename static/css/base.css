@@ -354,6 +354,21 @@ strong {
     margin-left: 37.5%;
 }
 
+/* contact us page */
+.form-container {
+    width: 60%;
+    margin-left: 20%;
+    padding-bottom: 50px;
+}
+
+.contact-btn {
+    width: 40%;
+    margin-left: 10%;
+}
+
+.contact-clear {
+    width: 40%;
+}
 
 /* -------------------------------- Media Queries */
 

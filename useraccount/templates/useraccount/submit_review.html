@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load crispy_forms_tags %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'useraccount/css/useraccount.css' %}">
@@ -28,6 +29,7 @@
             
             <form class="reviews-form" method="POST" action="">
                 {% csrf_token %}
+                {{ form|crispy }}
                 <h5 class="text-center">Write Your Reviews</h5>
                 <div>
                     <!-- star ratings -->

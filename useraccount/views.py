@@ -1,3 +1,4 @@
+""" Views for User Account features """
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -20,7 +21,8 @@ def useraccount(request):
             form.save()
             messages.success(request, 'Account updated')
         else:
-            messages.error(request, 'Update failed. Please ensure the form is valid.')
+            messages.error(request, 'Update failed. Please ensure the form\
+                           is valid.')
 
     form = UserAccountForm(instance=useraccount)
     orders = useraccount.orders.all()
@@ -37,6 +39,7 @@ def useraccount(request):
 
 @login_required
 def purchase_history(request, order_number):
+    """ View to display purchase history """
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
@@ -54,7 +57,7 @@ def purchase_history(request, order_number):
 
 
 def submit_review(request, service_id):
-
+    """ View to display User review form """
     service = get_object_or_404(Service, pk=service_id)
 
     if request.method == 'POST':
@@ -66,7 +69,8 @@ def submit_review(request, service_id):
             messages.success(request, 'Review submitted succeffully!')
             return redirect(reverse('useraccount'))
         else:
-            messages.error(request, 'Failed to submit review. Please ensure the form is valid.')
+            messages.error(request, 'Failed to submit review. Please ensure\
+                           the form is valid.')
     else:
         form = ReviewRatingForm()
 

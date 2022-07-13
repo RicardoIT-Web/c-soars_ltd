@@ -4,8 +4,9 @@ from .models import UserAccount, ReviewRating
 
 
 class UserAccountForm(forms.ModelForm):
-    
+    """ User Account form """
     class Meta:
+        """ User Account form """
         model = UserAccount
         exclude = ('user',)
 
@@ -37,6 +38,8 @@ class UserAccountForm(forms.ModelForm):
 
 
 class ReviewRatingForm(forms.ModelForm):
+    """ User Service Review form """
     class Meta:
+        """ User Service Review form """
         model = ReviewRating
-        fields = ['subject', 'review', 'rating']
+        fields = ['subject', 'review', 'rating', 'status']
