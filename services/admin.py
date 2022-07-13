@@ -1,9 +1,11 @@
+""" admin views for services app """
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Service, Category
 
 
 class ServiceAdmin(admin.ModelAdmin):
+    """ Service Admin View """
     list_display = (
         'created_on',
         'user',
@@ -24,6 +26,7 @@ class ServiceAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
+    """ Service Admin View """
     list_display = (
         'name',
         'friendly_name',

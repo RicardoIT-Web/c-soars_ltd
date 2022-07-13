@@ -1,10 +1,12 @@
+""" Service app models for retaining services data """
 from django.db import models
 from django.contrib.auth.models import User
 
 
 class Category(models.Model):
-
+    """ Categorizing services models """
     class Meta:
+        """ pluralise model title """
         verbose_name_plural = 'Categories'
 
     TYPES = (
@@ -31,12 +33,14 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
+        """ display frinedly name """
         return self.friendly_name
 
 
 class Service(models.Model):
-
+    """ Services Model for retaining  services data """
     class Meta:
+        """ Pluralise service model """
         verbose_name_plural = 'Services'
 
     created_on = models.DateTimeField(auto_now_add=True)
@@ -95,4 +99,5 @@ class Service(models.Model):
 
     @property
     def total_price(self):
+        """ display total price(sum of price + spotters) """
         return self.price + self.spotters

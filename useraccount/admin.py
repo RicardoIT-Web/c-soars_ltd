@@ -1,3 +1,4 @@
+""" User Account Admin Review Rating views """
 from django.contrib import admin
 from .models import ReviewRating
 

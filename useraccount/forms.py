@@ -1,8 +1,10 @@
+""" Forms for Useraccount """
 from django import forms
 from .models import UserAccount, ReviewRating
 
 
 class UserAccountForm(forms.ModelForm):
+    
     class Meta:
         model = UserAccount
         exclude = ('user',)

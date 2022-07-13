@@ -1,3 +1,4 @@
+""" Service Views """
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
@@ -23,7 +24,8 @@ def all_services(request):
                 messages.error(request, "No search criteria entered!")
                 return redirect(reverse('services'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(name__icontains=query) | Q(
+                        description__icontains=query)
             services = services.filter(queries)
 
     context = {
