@@ -64,9 +64,10 @@ def submit_review(request, service_id):
         form = ReviewRatingForm(request.POST)
         if form.is_valid():
             review_form = form.save(commit=False)
-            review_form.service = service_id
+            review_form.service = service
+            review_form.user = request.user
             form.save()
-            messages.success(request, 'Review submitted succeffully!')
+            messages.success(request, 'Review submitted successfully!')
             return redirect(reverse('useraccount'))
         else:
             messages.error(request, 'Failed to submit review. Please ensure\
