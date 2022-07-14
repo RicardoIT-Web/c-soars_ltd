@@ -1,5 +1,6 @@
 """ Contact Us Views """
-from django.shortcuts import render, redirect
+from django.shortcuts import render
+from django.contrib import messages
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import ContactForm
@@ -22,13 +23,15 @@ def contact(request):
                 'message': form.cleaned_data['message'],
             }
             message = '\n'.join(body.values())
+            messages.success(request, "Thank you! Your Inquiry has been submitted.\
+                             We'll revert back with a response as soon as\
+                             possible")
 
             try:
                 send_mail(subject, message, 'admin@example.com',
                           ['admin@example.com'])
             except BadHeaderError:
                 return HttpResponse('Invalid Header.')
-            return redirect('home')
 
     form = ContactForm()
     return render(request, 'contact.html', {'form': form})

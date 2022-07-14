@@ -30,6 +30,30 @@
     width: 40%;
 }
 
+/* submit & view reviews buttons */
+
+.submit-review-btn a {
+    text-decoration: none;
+    color: #050f56;
+}
+
+.submit-review-btn a:hover {
+    color: white;
+}
+
+.review-btn {
+    width: 100%;
+}
+
+.review-btn a {
+    text-decoration: none;
+    color: #050f56;
+}
+
+.review-btn a:hover {
+    color: white;
+}
+
 /* My Reviews Styling */
 .reviews-form {
     width: 50%;

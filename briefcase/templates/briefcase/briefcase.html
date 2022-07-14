@@ -117,7 +117,7 @@
     // update qty when clicked
     $('.update-qty').click(function(e) {
         let form = $(this).prev('.update-form');
-        form.submit();
+        form[0].requestSubmit();
     })
 
     // reduce qty when clicked

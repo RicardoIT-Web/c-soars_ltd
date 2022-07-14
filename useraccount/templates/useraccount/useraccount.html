@@ -34,7 +34,7 @@
                 </form>
             </div>
 
-            <div class="col-12 col-lg-9">
+            <div class="col-12 col-lg-9 mx-auto">
                 <p class="text-muted">Purchase History</p>
                 <div class="purchase-history table-responsive">
                     <table class="table table-sm table-borderless">
@@ -45,6 +45,7 @@
                                 <th>Items</th>
                                 <th class="account-total">Invoice Total</th>
                                 <th>Submit Review</th>
+                                <th>Reviews</th>
                             </tr>
                             <tbody>
                                 {% for order in orders %}
@@ -71,10 +72,15 @@
                                         <td class="account-total">£{{ order.grand_total }}</td>
                                         <td>
                                             {% for item in order.orderitems.all %}
-                                            <button class="btn btn-success">
+                                            <button class="submit-review-btn btn btn-success btn-sm">
                                                 <a href="{% url 'submit_review' item.service.id %}">Submit</a>
                                             </button>
                                             {% endfor %}
+                                        </td>
+                                        <td>
+                                            <button class="review-btn btn btn-success btn-sm">
+                                                <a href="{% url 'reviews' %}">Review</a>
+                                            </button>
                                         </td>
                                     </tr>
                                 {% endfor %}

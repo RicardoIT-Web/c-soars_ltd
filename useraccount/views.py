@@ -1,10 +1,11 @@
 """ Views for User Account features """
-from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from payment.models import Order, OrderItem
+from payment.models import Order
 from services.models import Service
-from .models import UserAccount
+from .models import UserAccount, ReviewRating
 from .forms import UserAccountForm, ReviewRatingForm
 
 
@@ -68,7 +69,6 @@ def submit_review(request, service_id):
             review_form.user = request.user
             form.save()
             messages.success(request, 'Review submitted successfully!')
-            return redirect(reverse('useraccount'))
         else:
             messages.error(request, 'Failed to submit review. Please ensure\
                            the form is valid.')
@@ -82,3 +82,9 @@ def submit_review(request, service_id):
     }
 
     return render(request, template, context)
+
+
+class Reviews(ListView):
+    """ A view to render reviews """
+    model = ReviewRating
+    template_name = 'useraccount/reviews.html'

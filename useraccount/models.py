@@ -43,7 +43,7 @@ class ReviewRating(models.Model):
     subject = models.CharField(max_length=100, null=True, blank=True)
     review = models.TextField(max_length=500, null=True, blank=True)
     rating = models.FloatField()
-    status = models.BooleanField(default=True)
+    status = models.BooleanField(default=False)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 

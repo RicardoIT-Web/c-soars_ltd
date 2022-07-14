@@ -1,16 +1,16 @@
 @font-face {
-    font-family: 'good_time_rg';
-    src: url(static/fonts/good_time_rg.ttf) format('ttf');
+    font-family: "good_time_rg";
+    src: url(static/good_time_rg.ttf) format("ttf");
 }
 
 @font-face {
-    font-family: 'goodtime';
-    src: url(static/fonts/goodtime.ttf) format('ttf');
+    font-family: "goodtime";
+    src: url(static/goodtime.ttf) format("ttf");
 }
 
 @font-face {
-    font-family: 'nevis';
-    src: url(static/fonts/nevis.ttf) format('ttf');
+    font-family: "nevis";
+    src: url(static/nevis.ttf) format("ttf");
 }
 
 /* main styling */
@@ -78,6 +78,7 @@ input[name='q']::placeholder {
     margin: 0;
     text-align: center;
     font-weight: 600;
+    font-family: 'goodtime';
 }
 
 footer {
