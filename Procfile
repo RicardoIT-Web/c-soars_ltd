@@ -1,0 +1,1 @@
+web: gunicorn c_soars.wsgi:application
