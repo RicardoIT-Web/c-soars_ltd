@@ -75,12 +75,14 @@
                                             <button class="submit-review-btn btn btn-success btn-sm">
                                                 <a href="{% url 'submit_review' item.service.id %}">Submit</a>
                                             </button>
+                                            <hr>
                                             {% endfor %}
                                         </td>
                                         <td>
                                             <button class="review-btn btn btn-success btn-sm">
                                                 <a href="{% url 'reviews' %}">Review</a>
                                             </button>
+                                            <hr>
                                         </td>
                                     </tr>
                                 {% endfor %}

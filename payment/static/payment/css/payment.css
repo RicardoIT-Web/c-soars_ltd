@@ -76,6 +76,8 @@ select option[value=""] {
 /* payment successful page */
 h4 {
     color: #050f56;
+    text-align: center;
+    padding-bottom: 20px;
 }
 
 /* back to account button */

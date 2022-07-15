@@ -92,6 +92,16 @@ footer {
     padding: 0 80px;
 }
 
+/* index page */
+.shout-out {
+    margin-top: 12%;
+    margin-left: 1%;
+    background-color: #cb9d3fc4;
+    width: 367px;
+    border-radius: 14px;
+}
+
+
 /* login page */
 .login_style {
     margin-top: 150px;
@@ -351,8 +361,12 @@ strong {
 }
 
 .rtn-btn {
-    width: 25%;
-    margin-left: 37.5%;
+    width: 20%;
+    margin-left: 40%;
+}
+
+.rtn-to-services-btn{
+    margin-top: 0.8%;
 }
 
 /* contact us page */
