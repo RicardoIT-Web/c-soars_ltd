@@ -101,6 +101,16 @@ footer {
     border-radius: 14px;
 }
 
+.intro-btn {
+    background-color: #050f56a6;
+    color: white;
+    margin: 0;
+}
+
+.intro-btn:hover {
+    color: white;
+    background-color: green;
+}
 
 /* login page */
 .login_style {

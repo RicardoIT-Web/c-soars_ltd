@@ -3,12 +3,12 @@
 
 {% block content %}
 
-<div class="shout-out col-12 p-2 text-center">
-    <p><strong>INTRODUCING THE LATEST TECHNOLOGY</strong></p>
-    <p>Checkout our Services for more details</p>
-    <i class="fas fa-hand-point-down"></i>
-    <br>
-    <a class="intro-btn btn btn-success" href="{% url 'services' %}">Services</a>
+<div class="toggler" id="effect">
+    <div  class="shout-out col-12 p-2 text-center">
+        <p><strong>INTRODUCING THE LATEST TECHNOLOGY</strong></p>
+        <p>Checkout our services for more details</p>
+        <a class="intro-btn btn rounded-1" href="{% url 'services' %}">Services</a>
+    </div>
 </div>
 
 {% endblock %}

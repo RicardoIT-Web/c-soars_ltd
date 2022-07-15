@@ -3,6 +3,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.db.models import Q
 from .models import Service, Category
+from .forms import ServiceForm
 
 
 def all_services(request):
@@ -47,3 +48,14 @@ def service_detail(request, service_id):
     }
 
     return render(request, 'services/service_detail.html', context)
+
+
+def add_service(request):
+    """Adding a new service to the site"""
+    form = ServiceForm()
+    template = 'services/add_service.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
