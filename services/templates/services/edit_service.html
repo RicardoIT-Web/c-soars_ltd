@@ -16,19 +16,25 @@
         <div class="col">
             <hr>
             <h3 class="case-page text-center mb-4">Services Management</h3>
-            <h5 class="text-muted">Add a New Service</h5>
+            <h5 class="text-muted">Edit a Service</h5>
             <hr>
         </div>
     </div>
 
     <div class="row">
         <div class="col-12 col-md-6">
-            <form method="POST" action="{% url 'add_service' %}" class="form mb-5" enctype="multipart/form-data">
-            {% csrf_token %}
-            {{form|crispy}}
+            <form method="POST" action="{% url 'edit_service' service.id %}" class="form mb-5" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
             <div class="text-right">
                 <a class="btn btn-danger rounded-1" href="{% url 'services' %}">Cancel</a>
-                <button class="btn btn-success rounded-1 w-50" type="submit">Add New Service</button>
+                <button class="btn btn-success rounded-1 w-50" type="submit">Update Service</button>
             </div>
             </form>
         </div>

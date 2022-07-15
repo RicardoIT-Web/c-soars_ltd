@@ -28,6 +28,12 @@
         </div>
         <div class="col-12 col-md-6">
             <div class="service-detail-container mb-5 mt-md-5">
+                {% if request.user.is_superuser %}
+                    <small class="ml-3">
+                        <a href="{% url 'edit_service' service.id %}">Edit</a>
+                        <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+                    </small>
+                {% endif %}
                 <p class="service-detail-name mb-0">{{ service.name }}</p>
                 <p class="service-detail-desc mt-3">{{ service.description }}</p>
                 <p class="lead mb-3 mt-3 text-left ">£{{ service.total_price }}</p>

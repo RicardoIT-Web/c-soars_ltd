@@ -24,8 +24,8 @@ def useraccount(request):
         else:
             messages.error(request, 'Update failed. Please ensure the form\
                            is valid.')
-
-    form = UserAccountForm(instance=useraccount)
+    else:
+        form = UserAccountForm(instance=useraccount)
     orders = useraccount.orders.all()
 
     template = 'useraccount/useraccount.html'

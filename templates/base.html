@@ -116,6 +116,9 @@
                         </a>
                         <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
+                                {% if request.user.is_superuser %}
+                                <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
+                                {% endif %}
                                 <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
                                 <a href="{% url 'services' %}" class="dropdown-item">Services</a>
                                 <a href="{% url 'reviews' %}" class="dropdown-item">Reviews</a>
