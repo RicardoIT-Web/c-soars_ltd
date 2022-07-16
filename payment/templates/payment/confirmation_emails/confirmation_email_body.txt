@@ -7,7 +7,7 @@ Here is your Order Details:
 Order Number: {{ order.order_number }}
 Order Date: {{ order.date }}
 
-Order Total: {{ order.grand_total }}
+Order Total: £{{ order.grand_total }}
 
 Our Invoice will be issued to:
 {{ order.address1 }}
@@ -22,12 +22,10 @@ Your contact details:
 
 If you have any further questions, please reach out to us on 074444444444.
 
-Alternatively you can use the contact form HERE and we will get back to you as soon as possible.
+Alternatively you can use the contact form https://8000-ricardoitweb-csoarsltd-zl5rfmrtiaq.ws-eu54.gitpod.io/contactUs/contact/ and we will get back to you as soon as possible.
 
 Thank you for your service.
 
 Kind Regards
 
 C-Soars ltd.
-
-If you have some time, we'd really appreciate some feedback. You can rate our services HERE.

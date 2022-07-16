@@ -72,7 +72,7 @@
                     </div>
                     <div class="col-12 col-md-4 text-md-right">
                         <p class="small mb-0">
-                            {{ item.quantity }} @ £{{ item.orderitem_total }}
+                            {{ item.quantity }} @ £{{ item.service.total_price }}
                         </p>
                     </div>
                 </div>
@@ -176,7 +176,7 @@
                         <p class="text-black font-weight-bold">Grand Total</p>
                     </div>
                     <div class="pay-success-g_total col-12 col-md-8 text-md-right">
-                        <p class="mb-0">£{{ order.grand_total }}</p>
+                        <p class="mb-0">£{{ order.order_total }}</p>
                     </div>
                 </div>
             </div>

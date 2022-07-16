@@ -1,5 +1,5 @@
 """ Views for User Account features """
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, reverse, get_object_or_404, redirect
 from django.views.generic import ListView
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
@@ -69,6 +69,7 @@ def submit_review(request, service_id):
             review_form.user = request.user
             form.save()
             messages.success(request, 'Review submitted successfully!')
+            return redirect(reverse('reviews'))
         else:
             messages.error(request, 'Failed to submit review. Please ensure\
                            the form is valid.')

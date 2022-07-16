@@ -20,10 +20,10 @@ class StripeWH_Handler:
         """Send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_subject.txt',
+            'payment/confirmation_emails/confirmation_email_subject.txt',
             {'order': order})
         body = render_to_string(
-            'checkout/confirmation_emails/confirmation_email_body.txt',
+            'payment/confirmation_emails/confirmation_email_body.txt',
             {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
 
         send_mail(
@@ -43,46 +43,44 @@ class StripeWH_Handler:
         """To handle payment intent succeeded from stripe"""
         intent = event.data.object
         pid = intent.id
-        briefcase = intent.matadata.briefcase
+        briefcase = intent.metadata.briefcase
         save_info = intent.metadata.save_info
 
         billing_details = intent.charges.data[0].billing_details
-        purchase_order_details = intent.purchase_order
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
-        for field, value in purchase_order_details.address.items():
+        for field, value in billing_details.address.items():
             if value == "":
-                purchase_order_details.address[field] = None
+                billing_details.address[field] = None
 
-        account = None
+        useraccount = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
-            account = UserAccount.objects.get(user__username=username)
+            useraccount = UserAccount.objects.get(user__username=username)
             if save_info:
-                account.email = purchase_order_details.email
-                account.contact_number = purchase_order_details.contact_number
-                account.address1 = purchase_order_details.address1
-                account.address2 = purchase_order_details.address2
-                account.city = purchase_order_details.city
-                account.post_code = purchase_order_details.postcode
-                account.country = purchase_order_details.country
-                account.save()
+                useraccount.default_contact_number = billing_details.phone
+                useraccount.default_address1 = billing_details.address.line1
+                useraccount.default_address2 = billing_details.address.line2
+                useraccount.default_city = billing_details.address.city
+                useraccount.default_post_code = billing_details.address.postal_code
+                useraccount.default_county = billing_details.address.state
+                useraccount.default_country = billing_details.address.country
+                useraccount.save()
 
         order_exists = False
         attempt = 1
         while attempt <= 5:
             try:
                 order = Order.objects.get(
-                    full_name__iexact=purchase_order_details.name,
-                    user_account=account,
-                    email__iexact=purchase_order_details.email,
-                    phone_number__iexact=purchase_order_details.phone,
-                    address1__iexact=purchase_order_details.address.line1,
-                    address2__iexact=purchase_order_details.address.line2,
-                    postcode__iexact=purchase_order_details.address.post_code,
-                    city__iexact=purchase_order_details.address.city,
-                    county__iexact=purchase_order_details.address.state,
-                    country__iexact=purchase_order_details.address.country,
+                    name__iexact=billing_details.name,
+                    email__iexact=billing_details.email,
+                    contact_number__iexact=billing_details.phone,
+                    address1__iexact=billing_details.address.line1,
+                    address2__iexact=billing_details.address.line2,
+                    post_code__iexact=billing_details.address.postal_code,
+                    city__iexact=billing_details.address.city,
+                    county__iexact=billing_details.address.state,
+                    country__iexact=billing_details.address.country,
                     grand_total=grand_total,
                     original_briefcase=briefcase,
                     stripe_pid=pid,
@@ -101,15 +99,15 @@ class StripeWH_Handler:
                 order = None
                 try:
                     order = Order.objects.create(
-                        name=purchase_order_details.name,
-                        email=purchase_order_details.email,
-                        contact_number=purchase_order_details.contact_number,
-                        address1=purchase_order_details.address.line1,
-                        address2=purchase_order_details.address.line2,
-                        postcode=purchase_order_details.post_code,
-                        city=purchase_order_details.city,
-                        county=purchase_order_details.state,
-                        country=purchase_order_details.country,
+                        name=billing_details.name,
+                        email=billing_details.email,
+                        contact_number=billing_details.phone,
+                        address1=billing_details.address.line1,
+                        address2=billing_details.address.line2,
+                        post_code=billing_details.address.postal_code,
+                        city=billing_details.address.city,
+                        county=billing_details.address.state,
+                        country=billing_details.address.country,
                         original_briefcase=briefcase,
                         stripe_pid=pid,
                     )
