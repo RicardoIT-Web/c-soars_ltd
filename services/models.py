@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 class Category(models.Model):
     """ Categorizing services models """
     class Meta:
-        """ pluralise model title """
+        """ pluralize model title """
         verbose_name_plural = 'Categories'
 
     TYPES = (
@@ -33,14 +33,14 @@ class Category(models.Model):
         return self.name
 
     def get_friendly_name(self):
-        """ display frinedly name """
+        """ display friendly name """
         return self.friendly_name
 
 
 class Service(models.Model):
     """ Services Model for retaining  services data """
     class Meta:
-        """ Pluralise service model """
+        """ Pluralize service model """
         verbose_name_plural = 'Services'
 
     created_on = models.DateTimeField(auto_now_add=True)
@@ -76,8 +76,8 @@ class Service(models.Model):
             'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos & Photos'),
         ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging',
             'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging'),
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Editied Video Presentation & Recommendations of Works Required',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Editied Video Presentation & Recommendations of Works Required'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Edited Video Presentation & Recommendations of Works Required',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Edited Video Presentation & Recommendations of Works Required'),
         ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report',
             'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report'),
     )

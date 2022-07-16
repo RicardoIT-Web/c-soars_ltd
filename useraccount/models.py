@@ -29,7 +29,7 @@ class UserAccount(models.Model):
 @receiver(post_save, sender=User)
 def create_update_account(sender, instance, created, **kwargs):
     """
-    create/updte user account
+    create/update user account
     """
     if created:
         UserAccount.objects.create(user=instance)

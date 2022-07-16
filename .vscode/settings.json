@@ -26,5 +26,33 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "[python]": {
       "editor.defaultFormatter": "ms-python.python"
-   }
+   },
+   "cSpell.words": [
+      "allauth",
+      "autoescape",
+      "autohide",
+      "Balsamiq",
+      "blocktrans",
+      "btns",
+      "corecss",
+      "corejs",
+      "emailaddress",
+      "endautoescape",
+      "endblocktrans",
+      "errorlist",
+      "forloop",
+      "goodtime",
+      "gunicorn",
+      "mainnav",
+      "orderitems",
+      "phoneheader",
+      "postloadjs",
+      "signin",
+      "signup",
+      "socialaccount",
+      "topnav",
+      "useraccount",
+      "Wireframes",
+      "wsgi"
+   ]
 }

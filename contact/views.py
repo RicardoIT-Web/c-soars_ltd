@@ -7,10 +7,12 @@ from .forms import ContactForm
 
 
 def index(request):
+    """ home page view """
     return render(request, "home/index.html")
 
 
 def contact(request):
+    """ a view to render contact form """
     if request.method == 'POST':
         form = ContactForm(request.POST)
         if form.is_valid():

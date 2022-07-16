@@ -59,7 +59,7 @@ The restaurant prides itself in providing their customers with a more inclusive 
 
 ## Project Scoping and Agile Methodology
 
-Using the Design Thinking approach to this project, some prework was carried out to bring the ideas and functionality of the project to "paper". Powerpoint slides are used to illustrate this process beggining with a problem statement, the slides also include Entity Relationship diagrams and map os how all epics link to their respective User Stories. Each User Story will include steps that aim to fulfill the CRUD (create-read-update-delete) functionalities expected with any database application.
+Using the Design Thinking approach to this project, some prework was carried out to bring the ideas and functionality of the project to "paper". Powerpoint slides are used to illustrate this process beginning with a problem statement, the slides also include Entity Relationship diagrams and map os how all epics link to their respective User Stories. Each User Story will include steps that aim to fulfill the CRUD (create-read-update-delete) functionalities expected with any database application.
 
 The raw data can be downloaded from [here](https://github.com/RicardoIT-Web/diners-3star-restaurant/blob/main/media/agile_methodology/Diners-3Star-Restaurant_project_Scoping.pptx).
 
@@ -81,7 +81,7 @@ Where some sites demonstrate some django functionality on the landing page ie. t
 
 
 #### The Register page
-The registration page is designed to be light on the eyes to the User. There are 3 cards above the registration form which aim to remind the customers of the speacial services available to them should they wish to take advantage.
+The registration page is designed to be light on the eyes to the User. There are 3 cards above the registration form which aim to remind the customers of the special services available to them should they wish to take advantage.
 
 ![Register page](/media/wireframes/register_page_wf.jpg)
 
@@ -100,7 +100,7 @@ After carrying out some research into this Menu section, it was found that a lot
 
 ## User Stories
 
-In order to demonstrate an Agile approach to this project, GitHub issues were used as a Kanban board to record the user stories. The user stories were categorised into different User functions between the Admin and the User and each issue would be moved from the "to-do" board to the "done" board as the project progressed.
+In order to demonstrate an Agile approach to this project, GitHub issues were used as a Kanban board to record the user stories. The user stories were categorized into different User functions between the Admin and the User and each issue would be moved from the "to-do" board to the "done" board as the project progressed.
 
 The Project Kanban board.
 
@@ -137,7 +137,7 @@ The following user stories were satisfied by downloading the Django Allauth appl
 
 # Backend Features
 
-This project is built using Django, adopting the MVT (Models-Views-Templates) architecture. The restaurant app which contains the MVT architechture to make this site interactive has three main models:
+This project is built using Django, adopting the MVT (Models-Views-Templates) architecture. The restaurant app which contains the MVT architecture to make this site interactive has three main models:
 
 ### The Table Model
 
@@ -284,7 +284,7 @@ User Story [#3](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/
 
 Can the admin view the Users contact details?
 
-The contact form allows the User to fill in thier name and prefered contact. This detail is saved and send to the admin view where they are able to view the required details to respond to User.
+The contact form allows the User to fill in their name and preferred contact. This detail is saved and send to the admin view where they are able to view the required details to respond to User.
 
 User Story [#4](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/4)
 
@@ -361,7 +361,7 @@ To fix this with the support of the tutors at CI I went through the following st
 
 ### Heroku
 
-* Create an account with Heroku if you dont already have one. [Heroku](https://www.heroku.com/) www.heroku.com
+* Create an account with Heroku if you don't already have one. [Heroku](https://www.heroku.com/) www.heroku.com
 
 ## Installing Project Requirements
 

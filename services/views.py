@@ -79,7 +79,7 @@ def edit_service(request, service_id):
         form = ServiceForm(request.POST, request.FILES, instance=service)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Update Successfful!')
+            messages.success(request, 'Update Successful!')
             return redirect(reverse('service_detail', args=[service.id]))
         else:
             messages.error(request, 'Update Failed.\

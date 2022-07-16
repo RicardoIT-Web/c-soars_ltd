@@ -14,7 +14,7 @@ class OrderForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         """
-        Override init method to allow us to customise fields
+        Override init method to allow us to customize fields
         """
         super().__init__(*args, **kwargs)
         placeholders = {

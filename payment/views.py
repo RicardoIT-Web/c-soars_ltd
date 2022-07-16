@@ -16,7 +16,7 @@ from .models import OrderItem, Order
 
 @require_POST
 def cache_payment_data(request):
-    """ Chache Payment data """
+    """ Cache Payment data """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
