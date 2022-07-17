@@ -81,6 +81,8 @@ input[name='q']::placeholder {
     font-family: 'goodtime';
 }
 
+/* footer styling */
+
 footer {
     background-color: #050f56;
     color: white;
@@ -90,6 +92,15 @@ footer {
 
 .footer-style {
     padding: 0 80px;
+}
+
+.caa-logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.caa-logo {
+    display: flex;
 }
 
 /* index page */
