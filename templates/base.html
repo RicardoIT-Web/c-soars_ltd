@@ -67,7 +67,7 @@
         <div id="topnav" class="row bg-dark-blue pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
                 <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                    <img src="/media/logo.png" alt="c-soars Drone UAV Property Survey Company">
+                    <img src="{{ MEDIA_URL }}logo.png" alt="c-soars Drone UAV Property Survey Company">
                 </a>
             </div>
             <div class="navigation col-12 col-lg-4 my-auto py-1 py-lg-0">
@@ -214,7 +214,7 @@
         </div>
         <div class="ml-auto mt-2">
             <a class="caa-logo text-white" href="https://www.caa.co.uk/" target="_blank">
-                <img src="/media/caa_logo.png" alt="Civil Aviation Authority for Drones and UAVs "> CAA Drone Authority
+                <img src="{{ MEDIA_URL }}caa_logo.png" alt="Civil Aviation Authority for Drones and UAVs "> CAA Drone Authority
             </a>
         </div>
     </footer>
