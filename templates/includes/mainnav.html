@@ -5,12 +5,7 @@
                 All Services
             </a>
             <div id="services-options" class="dropdown-menu border-0" aria-labelledby="user-options">
-                <a href="{% url 'services' %}?category=Civil Engineering Structures" class="dropdown-item">Civil Engineering Structures</a>
-                <a href="{% url 'services' %}?category=External Fire Risk Inspections" class="dropdown-item">External Fire Risk Inspections</a>
-                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Chimney & Roof Inspections" class="dropdown-item">Domestic & Commercial Surveys - Chimney & Roof Inspections</a>
-                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Roof Inspections All Areas" class="dropdown-item">Domestic & Commercial Surveys - Roof Inspections All Areas</a>
-                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Gutter & Roof Inspections" class="dropdown-item">Domestic & Commercial Surveys - Gutter & Roof Inspections</a>
-                <a href="{% url 'services' %}?category=Domestic & Commercial Surveys - Dangerous Structures Inspections" class="dropdown-item">Domestic & Commercial Surveys - Dangerous Structures Inspections</a>
+                <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
             </div>
         </li>
 
@@ -33,7 +28,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a href="{% url 'view_briefcase' %}" class=" nav-link mr-5 {% if grand_total %} font-weight-bold {% endif %}" id="briefcase-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="{% url 'view_briefcase' %}" class=" nav-link" id="briefcase-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Briefcase
             </a>
         </li>

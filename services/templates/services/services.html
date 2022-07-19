@@ -19,11 +19,11 @@
         </div>
     </div>
     <div class="row mb-5">
-        <div class="service-container col-10 offset-1 mb-5">
+        <div class="service-container col-10 offset-1">
             <div class="row mt-1 mb-2"></div>
-            <div class="row service-card mb-5">
+            <div class="row service-card service-card-phone">
                 {% for service in services %}
-                <div class="col-sm-6 col-lg-4 col-xl-3 pb-5">
+                <div class="service-card-phone col-sm-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
                         {% if service.images %}
                         <a href="{% url 'service_detail' service.id %}">
@@ -104,6 +104,7 @@
                 {% endif %}
                 {% endfor %}
             </div>
+            <div class="row mobile-footspace"><div class="col"><hr></div></div>
         </div>
     </div>
 </div>

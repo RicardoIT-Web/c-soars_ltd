@@ -407,6 +407,69 @@ strong {
 }
 
 /* -------------------------------- Media Queries */
+/* home page */
+@media (max-width: 320px) {
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    .nav-link i {
+        font-size: 1rem;
+    }
+
+    .shout-out {
+        margin-top: 109%;
+    }
+
+    .shout-out h5 {
+        font-size: 15px;
+    }
+
+    .footer-style {
+        height: 143px;
+    }
+
+    .caa-logo {
+        margin-left: 40px;
+    }
+}
+
+/* service page mobile phone */
+@media (max-width: 320px) {
+    .service-card-phone > :last-child {
+        padding-bottom: 32px;
+    }
+}
+
+@media (max-width: 375px) {
+    .shout-out {
+        margin-top: 63%;
+    }
+
+    .shout-out h5 {
+        font-size: 15px;
+    }
+
+    .footer-style {
+        height: 143px;
+    }
+
+    .caa-logo {
+        margin-left: 65px;
+    }
+}
+
+/* payment mobile styling */
+@media (max-width: 320px) {
+    .mobile-info {
+        margin-left: 5%;
+    }
+
+    .mobile-footspace {
+        padding-bottom: 125px;
+    }
+}
 
 @media (max-width: 332px) {
     .services {
@@ -423,7 +486,6 @@ strong {
 @media (max-width: 450px) {
     .footer-style {
         padding: 0 25px;
-        height: 100px;
         text-align: center;
     }
 }

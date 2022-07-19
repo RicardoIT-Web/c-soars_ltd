@@ -133,8 +133,8 @@
                             {% endif %}
                         </div>
                     </li>
-                    <li class="list-inline-item">
-                        <a class="text-white nav-link {% if grand_total %} font-weight-bold {% endif %}"
+                    <li class="list-inline-item dropdown">
+                        <a class="text-white nav-link{% if grand_total %} font-weight-bold {% endif %}"
                             href="{% url 'view_briefcase' %}">
                             <div class="text-center">
                                 <div><i class="fas fa-briefcase"></i></div>
@@ -147,6 +147,9 @@
                                 </p>
                             </div>
                         </a>
+                        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <a href="{% url 'view_briefcase' %}" class="dropdown-item">Briefcase</a>
+                        </div>
                     </li>
                 </ul>
             </div>

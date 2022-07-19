@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load briefcase_tools %}
 
 
 {% block page_header %}
@@ -23,7 +24,37 @@
 
         <div class="row d-inline">
             {% if briefcase_items %}
-                <div class="table-responsive rounded">
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <div class="col">
+                        {% include "briefcase/briefcase-total.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "briefcase/payment-buttons.html" %}
+                    </div>
+                    <p class="mobile-info">Details of your Drone Survey purchase below:</p>
+                </div>
+                {% for item in briefcase_items %}
+                    <div class="row">
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "briefcase/briefcase-image.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 mb-2">
+                            {% include "briefcase/briefcase-info.html" %}
+                        </div>
+                        <div class="col-12 col-sm-6 order-sm-last">
+                            <p> <strong>Total:</strong>£{{ item.service.total_price }}</p>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            {% include "briefcase/quantity-form.html" %}
+                        </div>
+                    </div>
+                    <div class="row mobile-footspace"><div class="col"><hr></div></div>
+                {% endfor %}
+            </div>
+                <div class="table-responsive rounded d-none  d-md-block">
                     <table class="table table-sm table-borderless">
                         <thead class="case-page">
                             <tr>
@@ -38,49 +69,16 @@
                         {% for item in briefcase_items %}
                             <tr>
                                 <td class="p-3 w-25 h-50 text-left">
-                                    {% if item.service.image %}
-                                    <img class="w-75 h-50 rounded-0" src="{{ item.service.images.url }}" alt="{{ item.service.name }}">
-                                    {% else %}
-                                    <img class="w-75 h-50 rounded-0" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
-                                    {% endif %}
+                                    {% include "briefcase/briefcase-image.html" %}
                                 </td>
                                 <td class="py-3">
-                                    <p class="my-0">{{ item.service.name }}</p>
-                                </td>
-                                <td class="py-3">
-                                    <p class="my-0">{{ item.service.description }}</p>
+                                    {% include "briefcase/briefcase-info.html" %}
                                 </td>
                                 <td class="py-3">
                                     <p class="my-0">£{{ item.service.total_price }}</p>
                                 </td>
                                 <td class="py-3">
-                                    <form class="update-form"  method="POST" action="{% url 'adjust_briefcase' item.item_id %}">
-                                        {% csrf_token %}
-                                        <div class="form-group">
-                                            <div class="input-group">
-                                                <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-sm btn-black rounded-0"
-                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
-                                                        <span>
-                                                            <i class="fas fa-minus fa-sm"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-                                                <input class="form-control form-control-sm qty_input" type="number"
-                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
-                                                    data-item_id="{{ item.item_id }}"
-                                                    id="id_qty_{{ item.item_id }}">
-                                                    <div class="input-group-append">
-                                                        <button class="increment-qty btn btn-sm btn-black rounded-0"
-                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
-                                                            <span>
-                                                                <i class="fas fa-plus fa-sm"></i>
-                                                            </span>
-                                                        </button>
-                                                    </div>
-                                            </div>
-                                        </div>
-                                    </form>
+                                    {% include "briefcase/quantity-form.html" %}
                                     <a class="update-qty text-info"><small>Update</small></a>
                                     <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                 </td>
@@ -88,17 +86,10 @@
                         {% endfor %}
                         <tr>
                             <td colspan="5" class="text-right">
-                                <h4><strong>Grand Total: £{{ total|floatformat:2 }}</strong></h4>
+                                {% include "briefcase/briefcase-total.html" %}
                             </td>
-                        </tr>
-                        <tr>
-                            <td colspan="5" class="text-center">
-                                <a href="{% url 'services' %}" class="rtn-to-services-btn btn btn-success rounded-1 w-25">
-                                    <span class="rtn-to-services-btn">Return to Services</span>
-                                </a>
-                                <a href="{% url 'payment' %}" class="btn btn-success rounded-1 mt-2 w-25">
-                                    <span>Secure Payment <i class="fas fa-user-lock"></i></span>
-                                </a>
+                            <td colspan="5" class="text-right">
+                                {% include "briefcase/payment-buttons.html" %}
                             </td>
                         </tr>
                     </table>

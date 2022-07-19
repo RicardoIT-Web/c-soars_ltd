@@ -39,9 +39,7 @@
         </div>
     </a>
     <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
-        <a href="{% url 'services' %}?category=Civil Engineering Structures" class="dropdown-item">Civil Engineering Structures</a>
-        <a href="{% url 'services' %}?category=External Fire Risk Inspections" class="dropdown-item">External Fire Risk Inspections</a>
-        <a href="{% url 'services' %}?catogory=Domestic & Commercial Surveys" class="dropdown-item">Domestic & Commercial Surveys - Chimney & Roof Inspections</a>
+        <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
     </div>
 </li>
 <li class="list-inline-item dropdown">
@@ -54,7 +52,7 @@
     <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
         {% if request.user.is_superuser %}
-            <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
+            <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
         {% endif %}
             <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
             <a href="{% url 'services' %}" class="dropdown-item">Services</a>
@@ -68,7 +66,7 @@
     </div>
 </li>
 <li class="list-inline-item">
-    <a class="{% if grand_total %} font-weight-bold {% endif %} text-white nav-link d-block d-lg-none" id="briefcase" href="{% url 'view_briefcase' %}">
+    <a href="{% url 'view_briefcase' %}" class="text-white nav-link d-block d-lg-none" id="briefcase">
         <div class="briefcase text-center">
             <div><i class="fas fa-briefcase"></i></i></div>
             <p class="my-0">
