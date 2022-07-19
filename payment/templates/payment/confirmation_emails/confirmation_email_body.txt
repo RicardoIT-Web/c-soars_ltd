@@ -22,7 +22,7 @@ Your contact details:
 
 If you have any further questions, please reach out to us on 074444444444.
 
-Alternatively you can use the contact form https://8000-ricardoitweb-csoarsltd-zl5rfmrtiaq.ws-eu54.gitpod.io/contactUs/contact/ and we will get back to you as soon as possible.
+Alternatively you can use the contact form https://c-soars.herokuapp.com/contactUs/contact/ and we will get back to you as soon as possible.
 
 Thank you for your service.
 

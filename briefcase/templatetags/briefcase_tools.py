@@ -1,3 +1,4 @@
+""" Briefcase tools """
 from django import template
 
 
