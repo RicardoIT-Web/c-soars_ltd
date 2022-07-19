@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://c-soars.herokuapp.com/sitemap.xml

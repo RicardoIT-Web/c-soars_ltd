@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://c-soars.herokuapp.com/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/login/?next=/useraccount/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/login/?next=/briefcase/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/contactUs/contact/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/4/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/5/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/6/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/7/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/8/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/9/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/10/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/11/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/12/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/services/27/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/signup/?next=%2Fuseraccount%2F</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/signup/?next=%2Fbriefcase%2F</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/login/?next=%2Fuseraccount%2F</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://c-soars.herokuapp.com/accounts/login/?next=%2Fbriefcase%2F</loc>
+  <lastmod>2022-07-19T10:44:09+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+
+
+</urlset>
