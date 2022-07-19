@@ -28,12 +28,12 @@
                         {% if service.images %}
                         <a href="{% url 'service_detail' service.id %}">
                             <img class="card-img-top img-fluid" src="{{ service.images.url }}"
-                                alt="{{ service.images }}">
+                                alt="{{ service.images }} images of drone surveys">
                         </a>
                         {% else %}
                         <a href="{% url 'service_detail' service.id %}">
                             <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ service.images }}">
+                                alt="{{ service.images }} images of drone surveys">
                         </a>
                         {% endif %}
                         <div class="card-body pb-0">
