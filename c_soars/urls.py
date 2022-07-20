@@ -30,5 +30,6 @@ urlpatterns = [
     path('payment/', include('payment.urls')),
     path('useraccount/', include('useraccount.urls')),
     path('contactUs/', include('contact.urls')),
+    path('newsletter/', include('newsletter.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 handler404 = 'c_soars.views.handler404'

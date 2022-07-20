@@ -122,6 +122,7 @@
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
                                 <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
+                                <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
                                 {% endif %}
                                 <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
                                 <a href="{% url 'services' %}" class="dropdown-item">Services</a>
@@ -213,6 +214,11 @@
         <div class="ml-auto mt-2">
             <a class="text-white" href="https://www.facebook.com/CSoarsltd/?ref=pages_you_manage" target="_blank">
                 <i class="fas fa-users"></i> Join Us on Social Media
+            </a>
+        </div>
+        <div class="ml-auto mt-2">
+            <a class="text-white" href="{% url 'subscribe' %}">
+                Signup to Newsletter
             </a>
         </div>
         <div class="ml-auto mt-2">

@@ -210,6 +210,41 @@ footer {
     background-color: #dee3e3;
 }
 
+/*newsletter page*/
+.newsletter {
+    padding-top: 130px;
+}
+
+/* subscriber form */
+#div_id_email {
+    width: 50%;
+    margin-left: 25%;
+}
+
+.subscribe-btn {
+    width: 25%;
+    margin-left: 37.5%;
+    border-radius: 4px;
+    color: white;
+    background-color: #050f56;
+}
+
+.subscribe-btn:hover {
+    background-color: green;
+}
+
+.newsletter-btn {
+    width: 25%;
+    margin-left: 37.5%;
+    border-radius: 4px;
+    color: white;
+    background-color: #050f56;
+}
+
+.newsletter-btn:hover {
+    background-color: green;
+}
+
 /* mobile phone styling */
 .phoneheader {
     background-color: #cb9d3f;
