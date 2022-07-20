@@ -1,10 +1,10 @@
 # C-Soars Ltd.
 
-Click [here]() to view deployed site.  
+Click [here](https://c-soars.herokuapp.com/) to view deployed site.  
 
 # Contents
 
-[Diners 3Star Restaurant](#diners-3star-restaurant)
+[C-Soars Ltd, The UAV/Drone Property Survey Company](#)
 
 [UX](#ux)
 + [Purpose of the site](#purpose)
@@ -52,16 +52,15 @@ Click [here]() to view deployed site.
 
 ## Purpose
 ----
-This project was developed to satisfy my fourth Milestone Project for the full stack development program with [Code Institute](https://www.codeinstitute.net). For this project I have decided to create an imaginary beautiful 3star Michelin restaurant serving customers staying at the nearby beach Hotel. The restaurant allows customers to book tables with the added feature of allowing customers to select between three locations within the restaurant, these being outside, window seat or in the main hall areas. This current release will be restricted to a maximum of 2 tables outside sitting 2 people on each table. 2 window tables each sitting a maximum of 4 people on each table and 2 hall tables each sitting a maximum of 6 people on each table.
-
-The restaurant prides itself in providing their customers with a more inclusive experience by allowing customers to visit the kitchen area, speak to the chef and their team and be able to have a little taste of any Menu meal before ordering.
+This project was developed to satisfy my fifth and final Milestone Project for the full stack development program with [Code Institute](https://www.codeinstitute.net). 
+For this project I have decided to create a fullstack e-commerce application for a Drone Property Surveying company. This application provides customers arriving at the home page with an immediate message stating exactly what the site is all about. 
+The Customer can view and access links to social media to find out more about the company and they are also able to view the types of services that the company offers.
 
 
 ## Project Scoping and Agile Methodology
 
-Using the Design Thinking approach to this project, some prework was carried out to bring the ideas and functionality of the project to "paper". Powerpoint slides are used to illustrate this process beginning with a problem statement, the slides also include Entity Relationship diagrams and map os how all epics link to their respective User Stories. Each User Story will include steps that aim to fulfill the CRUD (create-read-update-delete) functionalities expected with any database application.
+Using the Design Thinking approach to this project, some pre work was carried out to bring the ideas and functionality of the project to "paper". The application features together with the User Stories are included in the excel file included in the documents folder. This file can be access [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/C-Soars%20-%20USER%20STORIES.xlsx).
 
-The raw data can be downloaded from [here](https://github.com/RicardoIT-Web/diners-3star-restaurant/blob/main/media/agile_methodology/Diners-3Star-Restaurant_project_Scoping.pptx).
 
 
 ## Wireframes 
@@ -73,29 +72,41 @@ The project was developed from initial wireframes and some modifications were ma
 
 
 #### The Home page
-Where some sites demonstrate some django functionality on the landing page ie. the home page, for this project, the landing page shows the basic features one would expect to see for a restaurant site. The User is greeted with a main hero image, together with a Navbar, offcanvas navbar and footer to guide the user to other features of the site, which covers some of the User Stories listed below.
+Where some sites demonstrate some django functionality on the landing page ie. the home page, for this project, the User is greeted with a main hero image, together with a Navbar and footer to guide the user to other features of the site, which covers some of the User Stories listed below.
 
-![Home page](/media/wireframes/homepage_wf.jpg)
-
-![Offcanvas Navbar](/media/wireframes/offcanvas_navbar_wf.jpg)
+![Home page](/documents/homepage_wf.jpg)
 
 
 #### The Register page
-The registration page is designed to be light on the eyes to the User. There are 3 cards above the registration form which aim to remind the customers of the special services available to them should they wish to take advantage.
+The registration page is designed to be light on the eyes with no other objects distracting the User. 
 
-![Register page](/media/wireframes/register_page_wf.jpg)
+![Register page](/documents/registrationpage_wf.jpg)
 
 
 #### The Login page
-The login page initially looked bare and was missing a little something with just the Login form for the User to fill in. At this point it was decided the a hero image in the background would improve this UX.
+The Login page is designed to be light on the eyes with no other objects distracting the User. 
 
-![Login page](/media/wireframes/login_page_wf.jpg)
+![Login page](/documents/loginpage_wf.jpg)
 
 
-#### The Menu page
-After carrying out some research into this Menu section, it was found that a lot of restaurants actually have fixed, unchanged menus. As a result it was decided that this restaurant would have a fixed unchanged menu for this first release. In future releases of this project the administrator will have control of this functionality and will be able to make changes to the Menu of the restaurant.
+#### The Services page
+The services page was designed by using cards to illustrate the different types of services offered. This layout provides a very clear and useful way for the user to select a service. The cards contain a service name and description with images to assist in providing the User with an idea of what the service is for. Visitors to the site can only view name and description of services. In oder to view prices and to book a service Users must register an account and the pricing will automatically appear with in the card content together with a button to book the service.
 
-![Menu page](/media/wireframes/menu_wf.jpg)
+![Services page](/documents/servicespage_wf.jpg)
+
+
+#### The Services Details page
+Once a User clicks on the button to book a service, they are taken to the services details page, which provides the user with confirmation of the service name, description, and price. Here the User can also adjust the quantity of the service required. As an example if a property manager has 2 properties to survey, they can increase the quantity to two. From this view, they can select to add service to briefcase and be taken to the briefcase page or they can return to the services page to add more types of services. 
+An administrator will have the added feature of being able to edit or delete an existing service here.
+
+![Service Details page](/documents/servicesdetailpage_wf.jpg)
+
+
+#### The Briefcase page
+Once a User clicks on the button to book a service, they can choose to return add more services or go to briefcase which provides the user with confirmation of the services selected, gives them the opportunity to increase, decrease or remove each service and also provides them with a grand total of the services requested.
+Here the Users are also provided with a button to return to services if they wish to add more, or they can proceed to the payment form.
+
+![Service Details page](/documents/briefcasepage_wf.jpg)
 
 
 ## User Stories
