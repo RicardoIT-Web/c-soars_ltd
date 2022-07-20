@@ -1,5 +1,5 @@
-{% if item.service.image %}
-<img class="img-fluid rounded" src="{{ item.service.image.url }}" alt="{{ item.service.name }}">
+{% if item.service.images %}
+<img class="img-fluid rounded" src="{{ item.service.images.url }}" alt="{{ item.service.name }}">
 {% else %}
 <img class="img-fluid rounded" src="{{ MEDIA_URL }}noimage.png" alt="{{ item.service.name }}">
 {% endif %}

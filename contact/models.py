@@ -9,7 +9,7 @@ class Contact(models.Model):
     This Contact model is to allow Users to reach out to the Restaurant to
     raise any questions or provide any suggests of improvement
     '''
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE)
     name = models.CharField(max_length=150)
     email = models.EmailField(null=False)
     phone_regex = RegexValidator(

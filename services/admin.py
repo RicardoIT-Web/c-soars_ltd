@@ -1,6 +1,5 @@
 """ admin views for services app """
 from django.contrib import admin
-from django_summernote.admin import SummernoteModelAdmin
 from .models import Service, Category
 
 

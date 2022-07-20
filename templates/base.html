@@ -33,7 +33,7 @@
     {% endblock %}
 
     {% block corejs %}
-        <script src="/static/js/base.js"></script>
+        <!-- <script src="/static/js/base.js"></script> -->
         <script src="https://kit.fontawesome.com/f21e70846e.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
             integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
@@ -51,15 +51,6 @@
         </script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-        <!-- mailchimp popup form -->
-        <script id="mcjs">
-            ! function (c, h, i, m, p) {
-                m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode
-                    .insertBefore(m, p)
-            }(document, "script",
-                "https://chimpstatic.com/mcjs-connected/js/users/c84fb104ab28264e7d184f94f/7641b6fd1d79d90e9bc42b9c9.js"
-                );
         </script>
         <!-- Stripe -->
         <script src="https://js.stripe.com/v3/"></script>
@@ -130,6 +121,7 @@
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
+                                <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
                                 {% endif %}
                                 <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
                                 <a href="{% url 'services' %}" class="dropdown-item">Services</a>
@@ -209,10 +201,6 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-    <div class="col-12 col-md-6">
-        <h6>Newsletters</h6>
-        <!-- Mailchimp signup form here -->
-    </div>
     <footer class="footer-style container-fluid fixed-bottom w-100">
         <div class="mt-2">
             <i class="far fa-copyright"></i> C-Soars Ltd
