@@ -52,6 +52,15 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
             integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
         </script>
+        <!-- mailchimp popup form -->
+        <script id="mcjs">
+            ! function (c, h, i, m, p) {
+                m = c.createElement(h), p = c.getElementsByTagName(h)[0], m.async = 1, m.src = i, p.parentNode
+                    .insertBefore(m, p)
+            }(document, "script",
+                "https://chimpstatic.com/mcjs-connected/js/users/c84fb104ab28264e7d184f94f/7641b6fd1d79d90e9bc42b9c9.js"
+                );
+        </script>
         <!-- Stripe -->
         <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
@@ -200,7 +209,7 @@
         $('.toast').toast('show');
     </script>
     {% endblock %}
-    <div class="col-12 col-md-6 text-white">
+    <div class="col-12 col-md-6">
         <h6>Newsletters</h6>
         <!-- Mailchimp signup form here -->
     </div>
