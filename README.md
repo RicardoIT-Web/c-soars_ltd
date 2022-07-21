@@ -21,10 +21,9 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 + [The Payment app](#the-payment-app)
 
 [Frontend Features](#Frontend-Features)
-+ [The Menu page](#the-home-page)
-+ [The Contacts Page](#the-contacts-page)
-+ [The Booking page](#the-booking-page)
-+ [The Social Media accounts](#the-social-media-accounts)
++ [The Home page](#the-home-page)
++ [The Services Page](#the-services-page)
++ [The My Account page](#the-myaccount-page)
 
 [Technologies Used](#technologies-used)
 + [Languages Used](#languages-used)
@@ -32,7 +31,6 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 
 [Testing](#testing)
 + [Lighthouse Testing](#lighthouse-testing)
-+ [Manual Testing](#manual-testing)
 
 [Bugs During Development](#bugs-during-development)
 
@@ -226,82 +224,13 @@ For administrators of the business, these will have added links to other service
 ### Frameworks, Libraries and Programs Used
 
 * Balsamique was used to create the wireframes as part of the project scoping phase of this project
-* MS PowerPoint was used in the project scoping and Agile Methodology preperation phase
+* MS PowerPoint was used in the project scoping and Agile Methodology preparation phase
 * Django v3.2 is used for the architecture of the project
 * Postgresql is used for Object Relational database management of this project
 * Bootstrap v5 is used for some of the styling on this project
 * Fontawesome is used to provide some styling features on this project
 * Google fonts is used on this project to provide font types
 
-
-
-## Manual Testing
-
-User Story [#1](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/1)
-
-Can the administrator Log in?
-
-A superuser was created with the built in tools from Django. This allows the administrator to login using their selected credentials. Test passed.
-
-![Admin Login Test](/media/images/admin_login_test.jpg)
-
-User Story [#2](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/2)
-
-Can the administrator approve and / or reject a User booking?
-
-Once the administrator is logged in, they can view the list of existing bookings.
-
-User Story [#3](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/3)
-
-Can the admin view the Users contact details?
-
-The contact form allows the User to fill in their name and preferred contact. This detail is saved and send to the admin view where they are able to view the required details to respond to User.
-
-User Story [#4](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/4)
-
-Can the admin and the User view the menu?
-
-For this first release, both the admin and the User can view the menu which is a fixed menu, by clicking on the menu link on the website.
-
-User Story [#5](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/5)
-
-Similar to User Story 4 both admin and User can now access the menu without being logged in.
-
-User Story [#6](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/6)
-
-Can the User view Restaurant Contacts?
-
-The contacts page allows the user to fill in a form to reach out for any queries or suggestions. This page also contains the restaurant contact details and a map to localise the restaurants position.
-
-User Story [#7](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/7)
-
-Is there a registration feature?
-
-The navbar include a link which will direct the user to the registration page.
-
-User Story [#8](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/8)
-
-Can the User Register?
-
-The Registration page allows the user to introduce their deitails and other essential credentials allowing the user to register on the website.
-
-User Story [#9](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/9)
-
-Is there a login page?
-
-The navbar include a link which will direct the user to the login page. The user can insert their credetials and click login. The user is then directed to the home page.
-
-User Story [#10](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/10)
-
-Can the User and admin make a reservation?
-
-The booking model was created for this feature. If the User and the admin is logged in, they will be able to make a reservation. the admin can either use the frontend option or log in to the admin environment and make the reservation from that location also.
-
-User Story [#10](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/10)
-
-Can the admin make changes to the table arrangements?
-
-The table model was created for this functionality. The admin can access the admin environment and make changes to the table layout as required.
 
 # Bugs During Development
 
@@ -395,7 +324,7 @@ To fix this with the support of the tutors at CI I went through the following st
 
 ### Django > In settings.py
 
-* Paste in the url to ALLOWED_HOSTS value - ALLOWED_HOSTS = ['diners-3star-restaurant.herokuapp.com'] - Make sure to delete the Https structure at the start of the url & the final ‘/’
+* Paste in the url to ALLOWED_HOSTS value - ALLOWED_HOSTS = ['appname.herokuapp.com'] - Make sure to delete the Https structure at the start of the url & the final ‘/’
 
 ### In the Terminal
 
