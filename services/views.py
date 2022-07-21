@@ -8,7 +8,6 @@ from .forms import ServiceForm
 
 def all_services(request):
     """ View to show all services, including search queries"""
-
     services = Service.objects.all()
     query = None
     categories = None

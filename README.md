@@ -13,9 +13,12 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 + [User Stories](#user-stories)
 
 [Backend Features](#Backend-Features)
-+ [The Table Model](#the-table-model)
-+ [The Booking Model](#the-booking-model)
-+ [The Contact Model](#the-contact-model)
++ [The Service App](#the-service-app)
++ [The Useraccount App](#the-useraccount-app)
++ [The Briefcase app](#the-briefcase-app)
++ [The Contact app](#the-contact-app)
++ [The Newsletter app](#the-newsletter-app)
++ [The Payment app](#the-payment-app)
 
 [Frontend Features](#Frontend-Features)
 + [The Menu page](#the-home-page)
@@ -26,11 +29,6 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 [Technologies Used](#technologies-used)
 + [Languages Used](#languages-used)
 + [Frameworks](#Frameworks-Libraries-and-Programs-Used)
-
-[Code Validation](#code-validation)
-+ [HTML Validation](#html-validation)
-+ [CSS Validation](#css-validation)
-+ [Python Validation](#python-validation)
 
 [Testing](#testing)
 + [Lighthouse Testing](#lighthouse-testing)
@@ -135,85 +133,86 @@ The User requirements were discussed at length with the site owner and User Stor
 
 # Backend Features
 
-This project is built using Django, adopting the MVT (Models-Views-Templates) architecture. The restaurant app which contains the MVT architecture to make this site interactive has three main models:
+This project is built using Django, adopting the MVT (Models-Views-Templates) architecture.
 
-### The Table Model
+## Services app
 
-The Table model is created to provide the restaurant with a more flexible approach of managing tables pending customer demand. This feature is only available to the restaurant administrator. As an example, in the winter months the outside tables might be moved indoors as the demand for outdoor space might be reduced or eliminated. This model provides an administrator with the functionality to be able to do just that.
+### The Services Model
+
+The build of this project started with the services model. This model contains the data required for providing the several types of services the business would like to offer it's customers. This model will include data such as date service was created. The Category allocated to the service. A description of that service. It will also contain the pricing and images for each service.
+
+### The Category Model
+
+The Category model serves to categorize services. The Service model will use data from the category model to include in the Service descriptions
 
 #### The Admin View
 
-Employing all CRUD features - The administrator can Create, Read, Update and Delete any of these tables.
-![The Table Model](/media/images/table_management_admin_img.jpg)
+Employing all CRUD features - The administrator can Create, Read, Update and Delete any of these services.
 
+## Useraccount app
 
-### The Booking Model
+### The UserAccount Model
+This model will contain the personal detailed information of the individual or business registering for a service. Data from this model is used in several areas such as billing details and purchase history.
 
-The booking model allows both the site administrator and the User to make a booking. The booking form requires that a table is selected, the number of guests attending, the date of the reservation, a start time and an end time. The form also contains a comments section to allow both the admin and the User to provide any comments such as any dietry restriction or perhaps raise any questions.
-
-#### Admin view
-
-Employing all CRUD features - The administrator can Create, Read, Update and Delete any of the bookings.
-![The Booking Model](/media/images/admin_booking_form.jpg)
-
-### The Contact Model
-
-The contact model allows the User to fill in a form and raise any queries. The Admin might receive a call and can use this form to keep a record of any queries riased. The data is "posted" to the PostgreSQL table. This in turn allows that data to be accessed by the administrator to act and respond to the User regarding any queries or suggestions. The admin view comes with an added feature of "Actioned" status to allow the restaurant to track opened and closed enquiries.
+### The ReviewRating Model
+This model hold data that allows Users to submit reviews of their purchased services. 
 
 #### Admin view
 
-Employing all CRUD features - The administrator can Create, Read, Update and Delete any of the Contacts form.
-![The Contact Model](/media/images/admin_contact_form.jpg)
+Employing all CRUD features - The administrator can Create, Read, Update and Delete any of the ratings and UserAccounts.
+
+## Briefcase app
+
+### No Model Required
+This app does not require a model. The data from this app to provide the User with a view of their shopping content stems from the services model. This app does contain a content.py file which includes the clever coding to that works out price times quantity of services and provides a grand total.
+
+## Contact app
+
+### Contact Model
+This model contains the details of those wishing to raise an inquiry. The model contains the personal data required to allow the business to follow up on with answers.
+
+## Newsletter app
+
+### Subscriber Model
+This model holds the the email data for the subscribers wishing to sign up to receive newsletters.
+
+### newsletter Model
+This model allows the administrator to fill in a newsletter subject and content and issue out to all subscribers in the mailing list.
+
+## Newsletter app
+
+### Order Model
+The order model retains the data for invoicing the customers.
+
+### OrderItem Model
+This model assists in providing the data required post payment. This allows us to provide the User with a summary of the orders previously purchased.
 
 
 # Frontend Features
 
-There are of course other features on this site that would be expected. The site contains an offcanvas navigation panel provided with the assistance of Bootstrap5, which holds repeated links as seen on the top navbar of the main page view, but also contains links to the following items:
+### The home Page
 
-* The Menu page
-* The Contacts Page
-* The Booking page
-* The Social Media accounts
-* Confirmation of Booking received
-* Alert message of unavailable table.
+The home page provides the visiting Users with a few links to explore.
+The top navigation panel contains the main feature links including a search feature allowing visitors to run a search for a service type. They also have a home page link for ease of navigation back to the home page. Clicking on the logo also takes the Users back to the home page. The next link is the Services item which will direct the Users to the All Services page. Then they will see the Account item which they must be registered to access. if Users click on this link they are given the choice to either register or login. And finally we see the Briefcase item which contains the "Shopping Basket" for a user booking a service.
 
-The main navbar and the offcanvas navigation is available to the User at all times.
+On the footer the users will see a copyright notification, a link to a contact form, link to the company social media accounts and finally a link to the CAA website specifically focused on the Drones Section.
 
-![Offcanvas Navbar](/media/images/offcanvas_navbar_img.jpg)
+![The Home Page](/documents/homepage.jpg)
 
-### The Menu Page
+### The Services Page
 
-The Menu page will satisfy User Story #5, as referenced in the User stories section above. The User is able to click on the link and is directed to the Menu page which is an image of a fixed Menu which for this first release will not be changeable.
+The services page includes all the services that the business will be offering at that time.
 
-![The Menu Page](/media/images/menu_pg.jpg)
+![The Services Page](/documents/servicespage.jpg)
 
-### The Contacts Page
+### The My Accounts Page
+This navigation item works in three ways. Its closed to visitors of the site. For registered users will have access to some features:
 
-The contacts page satisfies User Story #6 and contains a simple form for the User to be able to reach out to the restaurant for answers to any queries or even to make and suggestions. The User can contact the restaurant via the provided form, or the page contains address details and contact phone number as alternative options. The map feature on the page is just a simple map illustrating the location of the restaurant. Should the User opt to call the restaurant, the administrator also has access to a contact form in the admin environment allowing the restaurant to keep a record of any external enquiries as detailed above.
+![The registered User Options](/documents/normaluserlogedin.jpg)
 
-#### The User View
+For administrators of the business, these will have added links to other services such as access to current inquiries, Services Management features, where they hold full CRUD functionality of the services offered and the ability to send out newsletters to subscribers.
 
-![The Contacts Page](/media/images/user_contact_form_user_view.jpg)
-
-#### The Admin View
-
-![The Contacts Page](/media/images/user_contact_form_admin_view.jpg)
-
-### The Booking Page
-
-The booking page completes User Story #10 and allows a User to make a reservation at the restaurant. If the User is not authenticated, when they click on the bookings link they will be met with a message stating that they must be logged in if they wish to make a reservation. This feature does provide the User with an alternative which they can opt to select, this alternative takes them to the contacts form where they can raise a request and the restaurant will make the reservation on their behalf.
-
-#### The Booking Message
-
-![Not Authenticated Booking Message](/media/images/not_authenticated_user_booking_page.jpg)
-
-#### The Alternative message
-
-![Not Authenticated Alternative Message](/media/images/not_authenticated_user_booking_page_alt_message.jpg)
-
-### The Social Media Accounts
-
-The social media account links allow the Users to find out more about what other updates and activities the restaurant are involved in. By selecting one of these, the respective accounts will open up on a new tab.
+![The administrator Options](/documents/logedin_superuser.jpg)
 
 # Technologies Used
 
@@ -231,39 +230,10 @@ The social media account links allow the Users to find out more about what other
 * Django v3.2 is used for the architecture of the project
 * Postgresql is used for Object Relational database management of this project
 * Bootstrap v5 is used for some of the styling on this project
-* Cloudinary is used as a media file storage location
 * Fontawesome is used to provide some styling features on this project
 * Google fonts is used on this project to provide font types
-* Google maps is used to provide a visual image of the location of the restaurant.
 
 
-# Code Validation
-
-### HTML Validation
-
-I have gone through all of the HTML files and copied them directly into HTML validator.
-
-The only errors identified are was relating to the {% load static %} appearing before the <!DOCTYPE html> on each html file.
-
-### CSS Validation
-
-I have copied and pasted the entire CSS sheet into the CSS validator with a result of no errors reported.
-
-### Python Validation
-
-I have copied and pasted all the .py files into the python validator with a result of no errors reported.
-
-### JavaScript Validation
-
-I have copied and pasted the javascript file into the jhint validator with a result of no errors reported.
-
-# Testing
-
-### Lighthouse Validation
-
-The lighthouse test returned a performance rating of 98%.
-
-![Lighthouse test](/documents/lighthouse_test.jpg)
 
 ## Manual Testing
 
@@ -341,19 +311,19 @@ To fix this with the support of the tutors at CI I went through the following st
 
 * Access Heroku using the terminal
 
-![Access Heroku - terminal](/media/images/dugs_heroku_staticfiles.jpg)
+![Access Heroku - terminal](/documents/dugs_heroku_staticfiles.jpg)
 
 * Enter your email
     * For the password, go into your Heroku profile and copy the API key
     * paste API key in terminal as your password.
 
-![Access Heroku - terminal](/media/images/dugs_heroku_staticfiles3.jpg)
+![Access Heroku - terminal](/documents/dugs_heroku_staticfiles3.jpg)
 
 * Once login confirmed
     * in the terminal type heroku run python manage.py collectstatic -a diners-3star-restaurant
     * you will be prompted to confirm Y or N
 
-![Access Heroku - terminal](/media/images/dugs_heroku_staticfiles5.jpg)
+![Access Heroku - terminal](/documents/dugs_heroku_staticfiles5.jpg)
 
 * Once I selected Y the problem was fixed and the static files were now being loaded to Heroku.
 
@@ -452,7 +422,7 @@ To fix this with the support of the tutors at CI I went through the following st
 
 * Get the Secret Key value using an environment variable
     * SECRET_KEY = os.environ.get('SECRET_KEY', '---secretkeyvalue---’)
-* Replace the Heroku host value in ALLOWED_HOSTS - ALLOWED_HOSTS = [os.environ.get('diners-3star-restaurant.herokuapp.com')]
+* Replace the Heroku host value in ALLOWED_HOSTS - ALLOWED_HOSTS = [os.environ.get('appname.herokuapp.com')]
 * Replace the Database URL value in DATABASES - 
     * DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -473,13 +443,12 @@ To fix this with the support of the tutors at CI I went through the following st
 
 ### Online Resources
 
-* CI Blog Walkthrough Project
+* CI Boutique Ado Walkthrough Project
 * Bootstrap
 * Heroku
 * Stackoverflow
 * Pexels.com
 * Fontawesome
-* Cloudinary
 * Summernote
 * GitHub / Gitpod
 
@@ -487,6 +456,5 @@ To fix this with the support of the tutors at CI I went through the following st
 ### People
 
 * Matt Bodden
-* DarshanDev
 * Rohit Sharma
 * CI Tutoring Team

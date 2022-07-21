@@ -1,10 +1,12 @@
+""" Services Forms """
 from django import forms
 from .models import Service, Category
 
 
 class ServiceForm(forms.ModelForm):
-
+    """Service Form View"""
     class Meta:
+        """Service Form View"""
         model = Service
         exclude = ('status', 'grand_total',)
 
