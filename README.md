@@ -106,8 +106,20 @@ An administrator will have the added feature of being able to edit or delete an 
 Once a User clicks on the button to book a service, they can choose to return add more services or go to briefcase which provides the user with confirmation of the services selected, gives them the opportunity to increase, decrease or remove each service and also provides them with a grand total of the services requested.
 Here the Users are also provided with a button to return to services if they wish to add more, or they can proceed to the payment form.
 
-![Service Details page](/documents/briefcasepage_wf.jpg)
+![Briefcase page](/documents/briefcasepage_wf.jpg)
 
+
+#### The Payment page
+Once a User clicks on the button to proceed to payment, the view will provide the User with a Purchase Order Summary including the total qty and price for the selected service.
+Scrolling down they will see the payment form to fill in and be able to introduce a card payment via the card number feature provided by Stripe. The view will provide the user with a reminder of the amount they will be charged, and if User is happy, they can click complete payment. Stripe comes with an excellent service where by developers can simulate payments for testing purposes.
+
+![Stripe Card Payment](/documents/stripe_card_number.jpg)
+
+
+#### The Payment Successful page
+Once a User has completed payment, they will be notified of payment successful with a summary of the purchase and invoicing details and a link taking them back to their account
+
+![Stripe Card Payment](/documents/payment_successful.jpg)
 
 ## User Stories
 

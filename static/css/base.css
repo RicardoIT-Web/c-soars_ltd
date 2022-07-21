@@ -216,11 +216,6 @@ footer {
 }
 
 /* subscriber form */
-/* #div_id_email {
-    width: 50%;
-    margin-left: 25%;
-} */
-
 .subscribe-btn {
     width: 25%;
     margin-left: 37.5%;
@@ -423,52 +418,6 @@ strong {
 
 .rtn-to-services-btn{
     margin-top: 0.8%;
-}
-
-/* payment page */
-#div_id_name {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_email {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_contact_number {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_address1 {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_address2 {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_post_code {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_city {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_county {
-    margin-left: 25%;
-    width: 100%;
-}
-
-#div_id_country {
-    margin-left: 25%;
-    width: 100%;
 }
 
 /* contact us page */
