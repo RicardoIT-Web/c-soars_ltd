@@ -127,36 +127,11 @@ In order to demonstrate an Agile approach to this project, GitHub issues were us
 
 The Project Kanban board.
 
-![Kanban Board](/media/images/agile_kanban_img.jpg)
+![Kanban Board](/documents/kanban_board.jpg)
 
-### User stories - Admin features
-The following user stories were satisfied by the creation of the Restaurant app, which include these features:
+### User stories
 
-
-[User Story #1](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/1) As a administrator I can click on the navbar and select "login" so that I can make a booking on behalf of a customer.
-
-[User Story #2](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/2) As a administrator I can view pending customer bookings so that I can approve or reject reservation requests.
-
-[User Story #3](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/3) As a administrator I can view User Contact details so that I can reach out to them regarding their booking requests.
-
-[User Story #4](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/4) As a administrator I can access the menu section so that I can remove existing menu and replace with new menu.
-
-[User Story #11](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/11) As a administrator I can manage the table layouts so that I can have flexibility with moving tables around to meet demand.
-
-### User stories - User features
-The following user stories were satisfied by downloading the Django Allauth application which provides the project with built in tools to manage authentication, registration and account management:
-
-[User Story #5](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/5) As a User I can click on Menu in the navbar so that I can view the days specials.
-
-[User Story #6](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/6) As a User I can Click on navbar and select "contacts" so that I can view the restaurants contact details.
-
-[User Story #7](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/7) As a User I can click on navbar and select "register" so that I can create a personal account.
-
-[User Story #8](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/8) As a User I can login by inserting my email and password so that I can create a booking.
-
-[User Story #9](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/9) As a User I can go to the navbar and select login so that I can book a table.
-
-[User Story #10](https://github.com/RicardoIT-Web/diners-3star-restaurant/issues/10) As an authenticated User I can click on the navbar and select "Bookings" so that I can book a table.
+The User requirements were discussed at length with the site owner and User Stories were recorded and saved in the following file: [User Stores](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/C-Soars%20-%20USER%20STORIES.xlsx)
 
 # Backend Features
 
@@ -246,6 +221,7 @@ The social media account links allow the Users to find out more about what other
 
 * HTML5
 * CSS3
+* JavaScript
 * Python3.8
 
 ### Frameworks, Libraries and Programs Used
@@ -267,7 +243,7 @@ The social media account links allow the Users to find out more about what other
 
 I have gone through all of the HTML files and copied them directly into HTML validator.
 
-There are no errors identified in any html files.
+The only errors identified are was relating to the {% load static %} appearing before the <!DOCTYPE html> on each html file.
 
 ### CSS Validation
 
@@ -277,7 +253,7 @@ I have copied and pasted the entire CSS sheet into the CSS validator with a resu
 
 I have copied and pasted all the .py files into the python validator with a result of no errors reported.
 
-### JavaScrit Validation
+### JavaScript Validation
 
 I have copied and pasted the javascript file into the jhint validator with a result of no errors reported.
 
@@ -285,7 +261,9 @@ I have copied and pasted the javascript file into the jhint validator with a res
 
 ### Lighthouse Validation
 
-The lighthouse assessment returned back an accesibility result of 91%. Unfortunately the performance level is very low.
+The lighthouse test returned a performance rating of 98%.
+
+![Lighthouse test](/documents/lighthouse_test.jpg)
 
 ## Manual Testing
 
@@ -357,7 +335,7 @@ The table model was created for this functionality. The admin can access the adm
 
 # Bugs During Development
 
-During the development phase of this project, Heroku made serveral updates to every app in my account. At some point, my static files stopped connecting to the heroku app meaning I was able to view my project in deployed view but it was missing a lot of CSS styiling.
+During the development phase of this project, Heroku made several updates to every app in my account. At some point, my static files stopped connecting to the heroku app meaning I was able to view my project in deployed view but it was missing a lot of CSS styling.
 
 To fix this with the support of the tutors at CI I went through the following steps;
 
