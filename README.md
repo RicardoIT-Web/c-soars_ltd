@@ -1,6 +1,9 @@
 # C-Soars Ltd.
 
-Click [here](https://c-soars.herokuapp.com/) to view deployed site.  
+Click [here](https://c-soars.herokuapp.com/) to view deployed site.
+
+
+Click [here](https://www.facebook.com/CSoarsltd/?ref=pages_you_manage/) to view facebook page.
 
 # Contents
 
@@ -24,6 +27,9 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 + [The Home page](#the-home-page)
 + [The Services Page](#the-services-page)
 + [The My Account page](#the-myaccount-page)
++ [The Briefcase page](#the-briefcase-page)
++ [The Payment page](#the-payment-page)
++ [The Contact Us page](#the-contactus-page)
 
 [Technologies Used](#technologies-used)
 + [Languages Used](#languages-used)
@@ -37,6 +43,8 @@ Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 [Deployment](#deployment)
 + [Heroku](#Heroku)
 + [Installing Project Requirements](#installing-project-requirements)
+
+[Social Media](#Social-Media-Application)
 
 [Acknowledgements](#acknowledgements)
 + [Online Resources](#online-resources)
@@ -117,6 +125,13 @@ Once a User has completed payment, they will be notified of payment successful w
 
 ![Stripe Card Payment](/documents/payment_successful.jpg)
 
+
+#### The Contact Us page
+Any User wether they be visitors or registered users can user the contact form to raise inquiries relating to any services offered by the company.
+
+![Contact form](/documents/contact_us.jpg)
+
+
 ## User Stories
 
 In order to demonstrate an Agile approach to this project, GitHub issues were used as a Kanban board to record the user stories. The user stories were categorized into different User functions between the Admin and the User and each issue would be moved from the "to-do" board to the "done" board as the project progressed.
@@ -177,7 +192,7 @@ This model holds the the email data for the subscribers wishing to sign up to re
 ### newsletter Model
 This model allows the administrator to fill in a newsletter subject and content and issue out to all subscribers in the mailing list.
 
-## Newsletter app
+##  Payment app
 
 ### Order Model
 The order model retains the data for invoicing the customers.
@@ -228,7 +243,7 @@ For administrators of the business, these will have added links to other service
 * Django v3.2 is used for the architecture of the project
 * Postgresql is used for Object Relational database management of this project
 * Bootstrap v5 is used for some of the styling on this project
-* Fontawesome is used to provide some styling features on this project
+* Fontawesome is used to provide some icon features on this project
 * Google fonts is used on this project to provide font types
 
 
@@ -240,19 +255,19 @@ To fix this with the support of the tutors at CI I went through the following st
 
 * Access Heroku using the terminal
 
-![Access Heroku - terminal](/documents/dugs_heroku_staticfiles.jpg)
+![Access Heroku - terminal](/documents/bugs_heroku_staticfiles.jpg)
 
 * Enter your email
     * For the password, go into your Heroku profile and copy the API key
     * paste API key in terminal as your password.
 
-![Access Heroku - terminal](/documents/dugs_heroku_staticfiles3.jpg)
+![Access Heroku - terminal](/documents/bugs_heroku_staticfiles3.jpg)
 
 * Once login confirmed
     * in the terminal type heroku run python manage.py collectstatic -a diners-3star-restaurant
     * you will be prompted to confirm Y or N
 
-![Access Heroku - terminal](/documents/dugs_heroku_staticfiles5.jpg)
+![Access Heroku - terminal](/documents/bugs_heroku_staticfiles5.jpg)
 
 * Once I selected Y the problem was fixed and the static files were now being loaded to Heroku.
 
@@ -366,6 +381,30 @@ To fix this with the support of the tutors at CI I went through the following st
 * Wait for the Repo to deploy to Heroku
 * Refresh the herokuapp in the browser
 * The app should now be working
+
+
+# Social Media Account
+For this project as part of the SEO and Digital Marketing requirements a Social Media page was created for the business with the aim of having a higher reach to potential customers.
+
+### Home Page
+
+![Social Media Home Page](/documents/c-soars-fb-page.jpg)
+
+
+### Content Page
+
+![Social Media Home Page](/documents/c-soars-fb-page-content.jpg)
+
+
+### First Post
+
+![Social Media Home Page](/documents/c-soars-1st-post.jpg)
+
+
+### Video Sample Post
+
+![Social Media Home Page](/documents/c-soars_fb_sample_video_post.jpg)
+
 
 
 # Acknowledgements
