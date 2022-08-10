@@ -5,54 +5,54 @@
 <head>
 
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta name="description" content="The UAV/Drone Survey Company">
-        <meta name="keywords"
-            content="drone survey, uav survey, uas service, registered drones, drone technology, high resolution image, high resolution videos, professional editing, RICS registered surveyors, fully licensed pilots, CAA registered drone company">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="The UAV/Drone Survey Company">
+    <meta name="keywords"
+        content="drone survey, uav survey, uas service, registered drones, drone technology, high resolution image, high resolution videos, professional editing, RICS registered surveyors, fully licensed pilots, CAA registered drone company">
     {% endblock %}
 
     {% block extra_meta %}
     {% endblock %}
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-            integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
-            integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
-            integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+        integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+        integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
     {% block extra_css %}
     {% endblock %}
 
     {% block corejs %}
-        <!-- <script src="/static/js/base.js"></script> -->
-        <script src="https://kit.fontawesome.com/f21e70846e.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-            integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
-            crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
-            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
-            integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
-        </script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-            integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-        </script>
-        <!-- Stripe -->
-        <script src="https://js.stripe.com/v3/"></script>
+    <!-- <script src="/static/js/base.js"></script> -->
+    <script src="https://kit.fontawesome.com/f21e70846e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+        integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+        integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
     {% block extra_js %}
@@ -72,8 +72,7 @@
             <div class="navigation col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'services' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border rounded-1" type="text" name="q"
-                            placeholder="Search">
+                        <input class="form-control border rounded-1" type="text" name="q" placeholder="Search">
                         <div class="input-group-append">
                             <button class="form-control btn border rounded-1" type="submit">
                                 <span class="icon">
@@ -95,8 +94,8 @@
                         </a>
                     </li>
                     <li class="list-inline-item dropdown">
-                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="false">
                             <div class="text-white text-center">
                                 <div>
                                     <i class="fas fa-clipboard-list"></i>
@@ -109,8 +108,8 @@
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="{% url 'useraccount' %}" id="users-options" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
+                        <a class="text-white nav-link" href="{% url 'useraccount' %}" id="users-options"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle"></i></div>
                                 <p class="my-0">My Account</p>
@@ -118,19 +117,19 @@
                         </a>
                         <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                                {% if request.user.is_superuser %}
-                                <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
-                                <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
-                                <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
-                                {% endif %}
-                                <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
-                                <a href="{% url 'services' %}" class="dropdown-item">Services</a>
-                                <a href="{% url 'reviews' %}" class="dropdown-item">Reviews</a>
-                                <a href="{% url 'contactUs' %}" class="dropdown-item">Contact Us</a>
-                                <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            {% if request.user.is_superuser %}
+                            <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
+                            <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
+                            <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
+                            {% endif %}
+                            <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
+                            <a href="{% url 'services' %}" class="dropdown-item">Services</a>
+                            <a href="{% url 'reviews' %}" class="dropdown-item">Reviews</a>
+                            <a href="{% url 'contactUs' %}" class="dropdown-item">Contact Us</a>
+                            <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             {% else %}
-                                <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
-                                <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
+                            <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
+                            <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
@@ -141,9 +140,9 @@
                                 <div><i class="fas fa-briefcase"></i></div>
                                 <p class="my-0">
                                     {% if grand_total %}
-                                        £{{ grand_total|floatformat:2 }}
+                                    £{{ grand_total|floatformat:2 }}
                                     {% else %}
-                                        £0.00
+                                    £0.00
                                     {% endif %}
                                 </p>
                             </div>
@@ -173,21 +172,21 @@
     </header>
 
     {% if messages %}
-        <div class="message-container">
-            {% for message in messages %}
-                {% with message.level as level %}
-                    {% if level == 40 %}
-                        {% include 'includes/toasts/error_toast.html' %}
-                    {% elif level == 30 %}
-                        {% include 'includes/toasts/warning_toast.html' %}
-                    {% elif level == 25 %}
-                        {% include 'includes/toasts/success_toast.html' %}
-                    {% else %}
-                        {% include 'includes/toasts/info_toast.html' %}
-                    {% endif %}
-                {% endwith %}
-            {% endfor %}
-        </div>
+    <div class="message-container">
+        {% for message in messages %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/error_toast.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/warning_toast.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/success_toast.html' %}
+        {% else %}
+        {% include 'includes/toasts/info_toast.html' %}
+        {% endif %}
+        {% endwith %}
+        {% endfor %}
+    </div>
     {% endif %}
 
     {% block page_header %}
@@ -221,8 +220,10 @@
             </a>
         </div>
         <div class="ml-auto mt-2">
-            <a class="caa-logo text-white" href="https://www.caa.co.uk/consumers/remotely-piloted-aircraft/" target="_blank" rel="noopener">
-                <img src="{{ MEDIA_URL }}caa_logo.png" alt="Civil Aviation Authority for Drones and UAVs "> CAA Drone Authority
+            <a class="caa-logo text-white" href="https://www.caa.co.uk/consumers/remotely-piloted-aircraft/"
+                target="_blank" rel="noopener">
+                <img src="{{ MEDIA_URL }}caa_logo.png" alt="Civil Aviation Authority for Drones and UAVs "> CAA Drone
+                Authority
             </a>
         </div>
     </footer>
