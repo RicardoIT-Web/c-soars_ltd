@@ -104,19 +104,19 @@
                                 </div>
                             </div>
                         </a>
-                        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                             <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
-                        <a class="text-white nav-link" href="{% url 'useraccount' %}" id="user-options" data-toggle="dropdown"
+                        <a class="text-white nav-link" href="{% url 'useraccount' %}" id="users-options" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fas fa-user-circle"></i></div>
                                 <p class="my-0">My Account</p>
                             </div>
                         </a>
-                        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+                        <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
                                 {% if request.user.is_superuser %}
                                 <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
@@ -197,7 +197,7 @@
     {% endblock %}
 
     {% block postloadjs %}
-    <script type="text/javascript">
+    <script>
         $('.toast').toast('show');
     </script>
     {% endblock %}

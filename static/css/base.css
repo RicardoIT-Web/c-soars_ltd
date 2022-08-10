@@ -48,7 +48,7 @@ input[name='q']::placeholder {
     background: #050f56
 }
 
-#account-options {
+.account-options {
     margin-top: 6px;
 }
 
@@ -589,6 +589,10 @@ strong {
         color: white;
     }
 
+    #users-options {
+        color: white;
+    }
+
     #briefcase {
         color: white;
     }
@@ -609,7 +613,7 @@ strong {
     }
 
     #account-options {
-        margin-top: 47px;
+        margin-top: 4px;
         width: 60%;
     }
 
