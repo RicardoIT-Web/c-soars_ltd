@@ -13,7 +13,7 @@
             <a class="nav-link text-black mr-5" href="{% url 'useraccount' %}" id="useraccount-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 My Account
             </a>
-            <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+            <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                 {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                     <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>

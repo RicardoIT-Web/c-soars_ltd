@@ -30,7 +30,7 @@
         </a>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="nav-link d-lg-none" href="#" id="user-options" data-toggle="dropdown"
+        <a class="nav-link d-lg-none" href="#" id="user-options2" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <div class="services text-white text-center">
                 <div>
@@ -39,18 +39,18 @@
                 </div>
             </div>
         </a>
-        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
             <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
         </div>
     </li>
     <li class="list-inline-item dropdown">
-        <a class="nav-link d-block d-lg-none" href="#" id="users-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link d-block d-lg-none users-options" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="my-account text-center">
                 <div><i class="fas fa-user-circle"></i></div>
                 <p class="my-0">My Account</p>
             </div>
         </a>
-        <div id="account-options" class="dropdown-menu border-0" aria-labelledby="user-options">
+        <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
             {% if request.user.is_authenticated %}
             {% if request.user.is_superuser %}
                 <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>

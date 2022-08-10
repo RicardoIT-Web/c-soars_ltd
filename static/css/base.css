@@ -585,11 +585,11 @@ strong {
         color: white;
     }
 
-    #user-options {
+    #user-options2 {
         color: white;
     }
 
-    #users-options {
+    .users-options {
         color: white;
     }
 
@@ -602,7 +602,7 @@ strong {
         text-align: inherit;
     }
 
-    #account-options {
+    .account-options {
         margin-top: 0;
         width: auto;
     }
@@ -612,7 +612,7 @@ strong {
         width: 60%;
     }
 
-    #account-options {
+    .account-options {
         margin-top: 4px;
         width: 60%;
     }
