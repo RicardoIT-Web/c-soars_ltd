@@ -72,16 +72,16 @@
                                         <td class="account-total">£{{ order.grand_total }}</td>
                                         <td>
                                             {% for item in order.orderitems.all %}
-                                            <button class="submit-review-btn btn btn-success btn-sm">
-                                                <a href="{% url 'submit_review' item.service.id %}">Submit</a>
-                                            </button>
+                                            <a class="submit-review-btn btn btn-success btn-sm" href="{% url 'submit_review' item.service.id %}">
+                                                <button>Submit</button>
+                                            </a>
                                             <hr>
                                             {% endfor %}
                                         </td>
                                         <td>
-                                            <button class="review-btn btn btn-success btn-sm">
-                                                <a href="{% url 'reviews' %}">Review</a>
-                                            </button>
+                                            <a class="review-btn btn btn-success btn-sm" href="{% url 'reviews' %}">
+                                                <button>Review</button>
+                                            </a>
                                             <hr>
                                         </td>
                                     </tr>
