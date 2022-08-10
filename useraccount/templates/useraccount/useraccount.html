@@ -47,47 +47,47 @@
                                 <th>Submit Review</th>
                                 <th>Reviews</th>
                             </tr>
-                            <tbody>
-                                {% for order in orders %}
-                                    <tr>
-                                        <td>
-                                            <a href="{% url 'purchase_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                            {{ order.order_number|truncatechars:6 }}
-                                        </a>
-                                        </td>
-                                        <td>{{ order.date }}</td>
-                                        <td>
-                                            <ul class="list-unstyled">
-                                                {% for item in order.orderitems.all %}
-                                                    <li class="small">
-                                                       {{ item.service.name }} x {{ item.quantity }}
-                                                    </li>
-                                                    <li class="small">
-                                                        {{ item.service.description }}
-                                                     </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </td>
-                                        <td class="account-total">£{{ order.grand_total }}</td>
-                                        <td>
-                                            {% for item in order.orderitems.all %}
-                                            <a class="submit-review-btn btn btn-success btn-sm" href="{% url 'submit_review' item.service.id %}">
-                                                Submit
-                                            </a>
-                                            <hr>
-                                            {% endfor %}
-                                        </td>
-                                        <td>
-                                            <a class="review-btn btn btn-success btn-sm" href="{% url 'reviews' %}">
-                                                Review
-                                            </a>
-                                            <hr>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
-                            </tbody>
                         </thead>
+                        <tbody>
+                            {% for order in orders %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'purchase_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                        {{ order.order_number|truncatechars:6 }}
+                                    </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>
+                                        <ul class="list-unstyled">
+                                            {% for item in order.orderitems.all %}
+                                                <li class="small">
+                                                    {{ item.service.name }} x {{ item.quantity }}
+                                                </li>
+                                                <li class="small">
+                                                    {{ item.service.description }}
+                                                    </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </td>
+                                    <td class="account-total">£{{ order.grand_total }}</td>
+                                    <td>
+                                        {% for item in order.orderitems.all %}
+                                        <a class="submit-review-btn btn btn-success btn-sm" href="{% url 'submit_review' item.service.id %}">
+                                            Submit
+                                        </a>
+                                        <hr>
+                                        {% endfor %}
+                                    </td>
+                                    <td>
+                                        <a class="review-btn btn btn-success btn-sm" href="{% url 'reviews' %}">
+                                            Review
+                                        </a>
+                                        <hr>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
                     </table>
                 </div>
             </div>
