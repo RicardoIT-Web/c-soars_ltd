@@ -8,17 +8,17 @@
 
 <div class="overlay">
   <div class="text-center">
-    <h3 class="login_style text-center">{% trans "Logout" %}</h3>
+    <h3 class="login_style">{% trans "Logout" %}</h3>
   </div>
   <hr class="hr-login">
 
-<div class="logout_style text-center">
-  <p class="text-danger">{% trans 'Are you sure you want to logout?' %}</p>
-
+  <div class="logout_style text-center">
+    <p class="text-danger">{% trans 'Are you sure you want to logout?' %}</p>
+  </div>
   <form method="post" action="{% url 'account_logout' %}">
     {% csrf_token %}
     {% if redirect_field_value %}
-    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
+    <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
     {% endif %}
     <button id="signin-btn" class="btn btn-danger w-25" type="submit">{% trans 'Logout' %}</button>
   </form>
