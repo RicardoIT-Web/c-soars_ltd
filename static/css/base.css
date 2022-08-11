@@ -162,6 +162,11 @@ footer {
     margin-left: 37.5%;
 }
 
+/* password reset page */
+.password-reset {
+    text-align: center;
+}
+
 /* register page */
 .signup {
     margin-top: 150px;
