@@ -45,6 +45,7 @@
       "contactus",
       "corecss",
       "corejs",
+      "csrfmiddlewaretoken",
       "emailaddress",
       "endautoescape",
       "endblocktrans",

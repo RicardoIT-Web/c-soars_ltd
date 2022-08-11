@@ -1,10 +1,10 @@
 <script>
     function handleEnableDisable(itemId) {
-        let currentValue = parseInt($(`#id_qty_${itemId}`).val());
+        let currentValue = parseInt($(`.id_qty_${itemId}`).val());
         let minusDisabled = currentValue < 2;
         let plusDisabled = currentValue > 98;
-        $(`#decrement-qty_${itemId}`).prop('disabled', minusDisabled);
-        $(`#increment-qty_${itemId}`).prop('disabled', plusDisabled);
+        $(`.decrement-qty_${itemId}`).prop('disabled', minusDisabled);
+        $(`.increment-qty_${itemId}`).prop('disabled', plusDisabled);
     }
 
     //disabling of buttons on page load
