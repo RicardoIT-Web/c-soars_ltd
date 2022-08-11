@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col">
                 <hr>
-                    <h3 class="case-page text-center mb-4">Briefcase</h3>
+                    <h3 class="case-page text-center mb-4">Briefcase Summary</h3>
                 <hr>
             </div>
         </div>
@@ -58,13 +58,12 @@
                     <table class="table table-sm table-borderless">
                         <thead class="case-page">
                             <tr>
-                                <th scope="col">Service Summary</th>
+                                <th scope="col"></th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Price</th>
                                 <th scope="col">Qty</th>
                             </tr>
                         </thead>
-
                         {% for item in briefcase_items %}
                             <tr>
                                 <td class="p-3 w-25 h-50 text-left">
@@ -73,26 +72,24 @@
                                 <td class="py-3">
                                     {% include "briefcase/briefcase-info.html" %}
                                 </td>
-                                <td class="py-3">
-                                    <p class="my-0">£{{ item.service.total_price }}</p>
+                                <td class="py-3 text-center">
+                                    <p class="my-0">£{{ item.service.total_price | calc_subtotal2:item.quantity }}</p>
                                 </td>
-                                <td class="py-3">
+                                <td class="py-3 qty-btns">
                                     {% include "briefcase/quantity-form.html" %}
                                     <a class="update-qty text-info"><small>Update</small></a>
                                     <a class="remove-qty text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                 </td>
                             </tr>
                         {% endfor %}
-                        <tr>
-                            <td colspan="5" class="text-right">
-                                {% include "briefcase/briefcase-total.html" %}
-                            </td>
-                            <td colspan="5" class="text-right">
-                                {% include "briefcase/payment-buttons.html" %}
-                            </td>
-                        </tr>
                     </table>
                 </div>
+
+                <div class="float-right">
+                    <div>{% include "briefcase/briefcase-total.html" %}</div>
+                    <div>{% include "briefcase/payment-buttons.html" %}</div>
+                </div>
+
             {% else %}
                 <p class="lead mb-5 text-center">Your briefcase is empty</p>
                 <a href="{% url 'services' %}" class="rtn-btn btn btn-primary btn-lg">
