@@ -404,6 +404,10 @@ strong {
     text-align: center;
 }
 
+.briefcase-container {
+    padding-bottom: 20rem;
+}
+
 .lead {
     color: red;
 }
