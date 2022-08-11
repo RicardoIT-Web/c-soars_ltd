@@ -155,6 +155,10 @@ footer {
 
 #signin-btn {
     border-radius: 4px;
+}
+
+#signout-btn {
+    border-radius: 4px;
     margin-left: 37.5%;
 }
 
