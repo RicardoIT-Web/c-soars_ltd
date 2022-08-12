@@ -21,15 +21,15 @@ from .views import handler404
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),
-    path('', include('home.urls')),
-    path('summernote/', include('django_summernote.urls')),
-    path('services/', include('services.urls')),
-    path('briefcase/', include('briefcase.urls')),
-    path('payment/', include('payment.urls')),
-    path('useraccount/', include('useraccount.urls')),
-    path('contactUs/', include('contact.urls')),
-    path('newsletter/', include('newsletter.urls')),
+    path("admin/", admin.site.urls),
+    path("accounts/", include("allauth.urls")),
+    path("", include("home.urls")),
+    path("summernote/", include("django_summernote.urls")),
+    path("services/", include("services.urls")),
+    path("briefcase/", include("briefcase.urls")),
+    path("payment/", include("payment.urls")),
+    path("useraccount/", include("useraccount.urls")),
+    path("contactUs/", include("contact.urls")),
+    path("newsletter/", include("newsletter.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-handler404 = 'c_soars.views.handler404'
+handler404 = "c_soars.views.handler404"
