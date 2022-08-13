@@ -10,44 +10,124 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('useraccount', '0001_initial'),
-        ('services', '0001_initial'),
+        ("useraccount", "0001_initial"),
+        ("services", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Order',
+            name="Order",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('order_number', models.CharField(editable=False, max_length=32)),
-                ('name', models.CharField(blank=True, max_length=50)),
-                ('email', models.EmailField(blank=True, max_length=254)),
-                ('contact_number', models.CharField(max_length=20)),
-                ('address1', models.CharField(max_length=80)),
-                ('address2', models.CharField(blank=True, max_length=80, null=True)),
-                ('post_code', models.CharField(blank=True, max_length=20, null=True)),
-                ('city', models.CharField(max_length=40)),
-                ('county', models.CharField(blank=True, max_length=80, null=True)),
-                ('country', django_countries.fields.CountryField(max_length=2)),
-                ('date', models.DateTimeField(auto_now_add=True)),
-                ('order_total', models.DecimalField(decimal_places=2, default=0, max_digits=10)),
-                ('spotters', models.DecimalField(decimal_places=2, default=150, editable=False, max_digits=6)),
-                ('grand_total', models.DecimalField(decimal_places=2, default=0, max_digits=10)),
-                ('original_briefcase', models.TextField(default='')),
-                ('stripe_pid', models.CharField(default='', max_length=254)),
-                ('user_account', models.ForeignKey(blank=True, null=True, on_delete=django.db.models.deletion.SET_NULL, related_name='orders', to='useraccount.useraccount')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("order_number", models.CharField(editable=False, max_length=32)),
+                ("name", models.CharField(blank=True, max_length=50)),
+                ("email", models.EmailField(blank=True, max_length=254)),
+                ("contact_number", models.CharField(max_length=20)),
+                ("address1", models.CharField(max_length=80)),
+                ("address2", models.CharField(blank=True, max_length=80, null=True)),
+                ("post_code", models.CharField(blank=True, max_length=20, null=True)),
+                ("city", models.CharField(max_length=40)),
+                ("county", models.CharField(blank=True, max_length=80, null=True)),
+                ("country", django_countries.fields.CountryField(max_length=2)),
+                ("date", models.DateTimeField(auto_now_add=True)),
+                (
+                    "order_total",
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
+                ),
+                (
+                    "spotters",
+                    models.DecimalField(
+                        decimal_places=2, default=150, editable=False, max_digits=6
+                    ),
+                ),
+                (
+                    "grand_total",
+                    models.DecimalField(decimal_places=2, default=0, max_digits=10),
+                ),
+                ("original_briefcase", models.TextField(default="")),
+                ("stripe_pid", models.CharField(default="", max_length=254)),
+                (
+                    "user_account",
+                    models.ForeignKey(
+                        blank=True,
+                        null=True,
+                        on_delete=django.db.models.deletion.SET_NULL,
+                        related_name="orders",
+                        to="useraccount.useraccount",
+                    ),
+                ),
             ],
         ),
         migrations.CreateModel(
-            name='OrderItem',
+            name="OrderItem",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('description', models.CharField(choices=[('Drone Survey with Photos', 'Drone Survey with Photos'), ('Drone Survey with Video & Photos', 'Drone Survey with Video & Photos'), ('Drone Survey with Videos & Photos with Thermal Images', 'Drone Survey with Videos & Photos with Thermal Images'), ('Drone Survey Edited Video & Recommendations of Works Required', 'Drone Survey Edited Video & Recommendations of Works Required'), ('Drone Survey with Surveyor Report', 'Drone Survey with Surveyor Report')], default=0, max_length=254)),
-                ('quantity', models.IntegerField(default=0)),
-                ('spotters', models.DecimalField(decimal_places=2, default=150, max_digits=6)),
-                ('orderitem_total', models.DecimalField(decimal_places=2, editable=False, max_digits=6)),
-                ('order', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='orderitems', to='payment.order')),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='services.service')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "description",
+                    models.CharField(
+                        choices=[
+                            ("Drone Survey with Photos", "Drone Survey with Photos"),
+                            (
+                                "Drone Survey with Video & Photos",
+                                "Drone Survey with Video & Photos",
+                            ),
+                            (
+                                "Drone Survey with Videos & Photos with Thermal Images",
+                                "Drone Survey with Videos & Photos with Thermal Images",
+                            ),
+                            (
+                                "Drone Survey Edited Video & Recommendations of Works Required",
+                                "Drone Survey Edited Video & Recommendations of Works Required",
+                            ),
+                            (
+                                "Drone Survey with Surveyor Report",
+                                "Drone Survey with Surveyor Report",
+                            ),
+                        ],
+                        default=0,
+                        max_length=254,
+                    ),
+                ),
+                ("quantity", models.IntegerField(default=0)),
+                (
+                    "spotters",
+                    models.DecimalField(decimal_places=2, default=150, max_digits=6),
+                ),
+                (
+                    "orderitem_total",
+                    models.DecimalField(decimal_places=2, editable=False, max_digits=6),
+                ),
+                (
+                    "order",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="orderitems",
+                        to="payment.order",
+                    ),
+                ),
+                (
+                    "service",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="services.service",
+                    ),
+                ),
             ],
         ),
     ]

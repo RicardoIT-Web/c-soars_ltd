@@ -20,24 +20,21 @@ class StripeWH_Handler:
         """Send the user a confirmation email"""
         cust_email = order.email
         subject = render_to_string(
-            'payment/confirmation_emails/confirmation_email_subject.txt',
-            {'order': order})
-        body = render_to_string(
-            'payment/confirmation_emails/confirmation_email_body.txt',
-            {'order': order, 'contact_email': settings.DEFAULT_FROM_EMAIL})
-
-        send_mail(
-            subject,
-            body,
-            settings.DEFAULT_FROM_EMAIL,
-            [cust_email]
+            "payment/confirmation_emails/confirmation_email_subject.txt",
+            {"order": order},
         )
+        body = render_to_string(
+            "payment/confirmation_emails/confirmation_email_body.txt",
+            {"order": order, "contact_email": settings.DEFAULT_FROM_EMAIL},
+        )
+
+        send_mail(subject, body, settings.DEFAULT_FROM_EMAIL, [cust_email])
 
     def handle_event(self, event):
         """To handle an unexpected webhook event"""
         return HttpResponse(
-            content=f'Unhandled webhook received: {event["type"]}',
-            status=200)
+            content=f'Unhandled webhook received: {event["type"]}', status=200
+        )
 
     def handle_payment_intent_succeeded(self, event):
         """To handle payment intent succeeded from stripe"""
@@ -55,7 +52,7 @@ class StripeWH_Handler:
 
         useraccount = None
         username = intent.metadata.username
-        if username != 'AnonymousUser':
+        if username != "AnonymousUser":
             useraccount = UserAccount.objects.get(user__username=username)
             if save_info:
                 useraccount.default_contact_number = billing_details.phone
@@ -94,7 +91,9 @@ class StripeWH_Handler:
                 self._send_confirmation_email(order)
                 return HttpResponse(
                     content=f'Webhook received: {event["type"]} | SUCCESS: \
-                        Verified order is in database', status=200)
+                        Verified order is in database',
+                    status=200,
+                )
             else:
                 order = None
                 try:
@@ -125,14 +124,17 @@ class StripeWH_Handler:
                         order.delete()
                     return HttpResponse(
                         content=f'Webhook received: {event["type"]} | ERROR: \
-                            {e}', status=500)
+                            {e}',
+                        status=500,
+                    )
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: \
-                    Created order in webhook', status=200)
+                    Created order in webhook',
+                status=200,
+            )
 
     def handle_payment_intent_payment_failed(self, event):
         """To handle payment intent failed from stripe"""
-        return HttpResponse(
-            content=f'Webhook received: {event["type"]}',
-            status=200)
+        return HttpResponse(content=f'Webhook received: {event["type"]}',
+                            status=200)
