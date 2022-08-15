@@ -11,14 +11,14 @@
     let allQtyInputs = $('.qty_input');
     for(let i = 0; i < allQtyInputs.length; i++){
         let itemId = $(allQtyInputs[i]).data('item_id');
-        handleEnableDisable(itemId)
+        handleEnableDisable(itemId);
     }
 
     // check every time input changes
     $('.qty_input').change(function() {
         let itemId = $(this).data('item_id');
         handleEnableDisable(itemId);
-    })
+    });
 
     // Increase qty
     $('.increment-qty').click(function(e) {

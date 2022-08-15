@@ -10,6 +10,7 @@ urlpatterns = [
         views.purchase_history,
         name="purchase_history",
     ),
-    path("submit_review/<service_id>", views.submit_review, name="submit_review"),
+    path("submit_review/<service_id>", views.submit_review,
+         name="submit_review"),
     path("reviews/", Reviews.as_view(), name="reviews"),
 ]
