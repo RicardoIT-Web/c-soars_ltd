@@ -7,23 +7,43 @@ import django.db.models.deletion
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('services', '0001_initial'),
-        ('useraccount', '0001_initial'),
+        ("services", "0001_initial"),
+        ("useraccount", "0001_initial"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='ReviewRating',
+            name="ReviewRating",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('subject', models.CharField(blank=True, max_length=100, null=True)),
-                ('review', models.TextField(blank=True, max_length=500, null=True)),
-                ('rating', models.FloatField()),
-                ('status', models.BooleanField(default=True)),
-                ('created', models.DateTimeField(auto_now_add=True)),
-                ('updated', models.DateTimeField(auto_now=True)),
-                ('service', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='services.service')),
-                ('user', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='useraccount.useraccount')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("subject", models.CharField(blank=True, max_length=100, null=True)),
+                ("review", models.TextField(blank=True, max_length=500, null=True)),
+                ("rating", models.FloatField()),
+                ("status", models.BooleanField(default=True)),
+                ("created", models.DateTimeField(auto_now_add=True)),
+                ("updated", models.DateTimeField(auto_now=True)),
+                (
+                    "service",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="services.service",
+                    ),
+                ),
+                (
+                    "user",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        to="useraccount.useraccount",
+                    ),
+                ),
             ],
         ),
     ]

@@ -4,9 +4,8 @@ from django.http import HttpResponse
 from django.views.decorators.http import require_POST
 from django.views.decorators.csrf import csrf_exempt
 
-from payment.webhook_handlers import StripeWH_Handler
-
 import stripe
+from payment.webhook_handlers import StripeWH_Handler
 
 
 @require_POST

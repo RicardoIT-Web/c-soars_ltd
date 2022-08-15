@@ -9,18 +9,20 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('useraccount', '0002_reviewrating'),
+        ("useraccount", "0002_reviewrating"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='reviewrating',
-            name='status',
+            model_name="reviewrating",
+            name="status",
             field=models.BooleanField(default=False),
         ),
         migrations.AlterField(
-            model_name='reviewrating',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL),
+            model_name="reviewrating",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL
+            ),
         ),
     ]

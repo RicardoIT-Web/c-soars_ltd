@@ -12,10 +12,14 @@ class Category(models.Model):
     TYPES = (
         ('Civil Engineering Structures', 'Civil Engineering Structures'),
         ('External Fire Risk Inspections', 'External Fire Risk Inspections'),
-        ('Domestic & Commercial Surveys - Chimney & Roof Inspections', 'Domestic & Commercial Surveys - Chimney & Roof Inspections'),
-        ('Domestic & Commercial Surveys - Roof Inspections All Areas', 'Domestic & Commercial Surveys - Roof Inspections All Areas'),
-        ('Domestic & Commercial Surveys - Gutter & Roof Inspections', 'Domestic & Commercial Surveys - Gutter & Roof Inspections'),
-        ('Domestic & Commercial Surveys - Dangerous Structures Inspections', 'Domestic & Commercial Surveys - Dangerous Structures Inspections'),
+        ('Domestic & Commercial Surveys - Chimney & Roof Inspections',
+         'Domestic & Commercial Surveys - Chimney & Roof Inspections'),
+        ('Domestic & Commercial Surveys - Roof Inspections All Areas',
+         'Domestic & Commercial Surveys - Roof Inspections All Areas'),
+        ('Domestic & Commercial Surveys - Gutter & Roof Inspections',
+         'Domestic & Commercial Surveys - Gutter & Roof Inspections'),
+        ('Domestic & Commercial Surveys - Dangerous Structures Inspections',
+         'Domestic & Commercial Surveys - Dangerous Structures Inspections'),
     )
     name = models.CharField(max_length=254, choices=TYPES)
 
@@ -50,10 +54,14 @@ class Service(models.Model):
     TYPES = (
         ('Civil Engineering Structures', 'CES'),
         ('External Fire Risk Inspections', 'EFRI'),
-        ('Domestic & Commercial Surveys - Chimney & Roof Inspections', 'D&CS I'),
-        ('Domestic & Commercial Surveys - Roof Inspections All Areas', 'D&CS II'),
-        ('Domestic & Commercial Surveys - Gutter & Roof Inspections', 'D&CS III'),
-        ('Domestic & Commercial Surveys - Dangerous Structures Inspections', 'D&CS IV'),
+        ('Domestic & Commercial Surveys - Chimney & Roof Inspections',
+         'D&CS I'),
+        ('Domestic & Commercial Surveys - Roof Inspections All Areas',
+         'D&CS II'),
+        ('Domestic & Commercial Surveys - Gutter & Roof Inspections',
+         'D&CS III'),
+        ('Domestic & Commercial Surveys - Dangerous Structures Inspections',
+         'D&CS IV'),
     )
     name = models.CharField(max_length=254, choices=TYPES)
 
@@ -70,16 +78,23 @@ class Service(models.Model):
     )
     description = models.CharField(max_length=254, choices=FOR)
     OPTIONS = (
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Photos',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Photos'),
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos & Photos',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos & Photos'),
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Videos, Photos & Thermal Imaging'),
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Edited Video Presentation & Recommendations of Works Required',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area, Edited Video Presentation & Recommendations of Works Required'),
-        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report',
-            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area & Surveyor Report'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area\
+            & Photos', 'Pre-site Survey & Risk Assessment, \
+            Drone Survey of Intended Area & Photos'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area,\
+            Videos & Photos', 'Pre-site Survey & Risk Assessment,\
+            Drone Survey of Intended Area, Videos & Photos'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area,\
+            Videos, Photos & Thermal Imaging', 'Pre-site Survey & Risk\
+                Assessment, Drone Survey of Intended Area,\
+                Videos, Photos & Thermal Imaging'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area,\
+            Edited Video Presentation & Recommendations of Works Required',
+            'Pre-site Survey & Risk Assessment, Drone Survey of Intended Area,\
+            Edited Video Presentation & Recommendations of Works Required'),
+        ('Pre-site Survey & Risk Assessment, Drone Survey of Intended Area\
+             & Surveyor Report', 'Pre-site Survey & Risk Assessment,\
+                Drone Survey of Intended Area & Surveyor Report'),
     )
     includes = models.CharField(max_length=254, choices=OPTIONS)
     price = models.DecimalField(max_digits=6, decimal_places=2)

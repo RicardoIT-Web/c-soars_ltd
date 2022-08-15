@@ -12,6 +12,7 @@ class UserAccount(models.Model):
     User account model for retaining historical purchases and
     invoice details
     """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     email = models.EmailField(max_length=254, null=True, blank=True)
     contact_number = models.CharField(max_length=20, null=True, blank=True)
@@ -20,7 +21,7 @@ class UserAccount(models.Model):
     post_code = models.CharField(max_length=20, null=True, blank=True)
     city = models.CharField(max_length=40, null=True, blank=True)
     county = models.CharField(max_length=80, null=True, blank=True)
-    country = CountryField(blank_label='Country', null=True, blank=True)
+    country = CountryField(blank_label="Country", null=True, blank=True)
 
     def __str__(self):
         return self.user
@@ -37,7 +38,8 @@ def create_update_account(sender, instance, created, **kwargs):
 
 
 class ReviewRating(models.Model):
-    """ Model for User reviews """
+    """Model for User reviews"""
+
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     subject = models.CharField(max_length=100, null=True, blank=True)

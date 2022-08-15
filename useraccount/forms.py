@@ -4,11 +4,13 @@ from .models import UserAccount, ReviewRating
 
 
 class UserAccountForm(forms.ModelForm):
-    """ User Account form """
+    """User Account form"""
+
     class Meta:
-        """ User Account form """
+        """User Account form"""
+
         model = UserAccount
-        exclude = ('user',)
+        exclude = ("user",)
 
     def __init__(self, *args, **kwargs):
         """
@@ -16,30 +18,34 @@ class UserAccountForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         placeholders = {
-            'email': 'email',
-            'contact_number': 'Contact Number',
-            'address1': 'Address Line 1',
-            'address2': 'Address Line 2',
-            'post_code': 'Post Code',
-            'city': 'City',
-            'county': 'County',
+            "email": "email",
+            "contact_number": "Contact Number",
+            "address1": "Address Line 1",
+            "address2": "Address Line 2",
+            "post_code": "Post Code",
+            "city": "City",
+            "county": "County",
         }
 
-        self.fields['contact_number'].widget.attrs['autofocus'] = True
+        self.fields["contact_number"].widget.attrs["autofocus"] = True
         for field in self.fields:
-            if field != 'country':
+            if field != "country":
                 if self.fields[field].required:
-                    placeholder = f'{placeholders[field]} *'
+                    placeholder = f"{placeholders[field]} *"
                 else:
                     placeholder = placeholders[field]
-                self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].widget.attrs['class'] = 'border-black rounded-0 profile-form-input'
+                self.fields[field].widget.attrs["placeholder"] = placeholder
+            self.fields[field].widget.attrs[
+                "class"
+            ] = "border-black rounded-0 profile-form-input"
             self.fields[field].label = False
 
 
 class ReviewRatingForm(forms.ModelForm):
-    """ User Service Review form """
+    """User Service Review form"""
+
     class Meta:
-        """ User Service Review form """
+        """User Service Review form"""
+
         model = ReviewRating
-        fields = ['subject', 'review', 'rating', 'status']
+        fields = ["subject", "review", "rating", "status"]
