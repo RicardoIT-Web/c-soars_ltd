@@ -18,6 +18,7 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
+            form.instance.user = request.user
             form.save()
             subject = {"subject": form.cleaned_data["subject"]}
             body = {
