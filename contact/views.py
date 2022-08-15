@@ -33,8 +33,8 @@ def contact(request):
             messages.success(
                 request,
                 "Thank you! Your Inquiry has been submitted.\
-                             We'll revert back with a response as soon as\
-                             possible",
+                            We'll revert back with a response as soon as\
+                            possible",
             )
             try:
                 send_mail(subject, message, "admin@admin.com",
