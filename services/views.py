@@ -1,6 +1,7 @@
 """ Service Views """
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import Service, Category
 from .forms import ServiceForm
@@ -21,7 +22,8 @@ def all_services(request):
         if 'q' in request.GET:
             query = request.GET['q']
             if not query:
-                messages.error(request, "No search criteria entered!")
+                messages.info(request, "No search criteria entered!\
+                              We have listed all of our services.")
                 return redirect(reverse('services'))
 
             queries = Q(name__icontains=query) | Q(
@@ -37,6 +39,7 @@ def all_services(request):
     return render(request, 'services/services.html', context)
 
 
+@login_required
 def service_detail(request, service_id):
     """ View to show individual services"""
 
@@ -49,6 +52,7 @@ def service_detail(request, service_id):
     return render(request, 'services/service_detail.html', context)
 
 
+@login_required
 def add_service(request):
     """Adding a new service to the site"""
     if request.method == 'POST':
@@ -71,6 +75,7 @@ def add_service(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_service(request, service_id):
     """ Edit a product in the store """
     service = get_object_or_404(Service, pk=service_id)
@@ -96,6 +101,7 @@ def edit_service(request, service_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_service(request, service_id):
     """ Delete a service """
     service = get_object_or_404(Service, pk=service_id)
