@@ -41,8 +41,9 @@ def contact(request):
                           ["admin@admin.com"])
             except BadHeaderError:
                 return HttpResponse("Invalid Header.")
-
-    form = ContactForm()
+        
+    if request.method == 'GET':
+        form = ContactForm()
     return render(request, "contact.html", {"form": form})
 
 

@@ -25,3 +25,6 @@ class Contact(models.Model):
     subject = models.CharField(blank=True, max_length=100)
     comment = models.CharField(blank=True, max_length=500)
     actioned = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.name
