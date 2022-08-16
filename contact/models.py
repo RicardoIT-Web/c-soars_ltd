@@ -20,7 +20,7 @@ class Contact(models.Model):
                  Up to 15 digits allowed.",
     )
     contact_number = models.CharField(
-        validators=[phone_regex], max_length=17, blank=True
+        validators=[phone_regex], max_length=17, null=True, blank=True
     )
     subject = models.CharField(blank=True, max_length=100)
     comment = models.CharField(blank=True, max_length=500)
