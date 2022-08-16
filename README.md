@@ -1,5 +1,14 @@
 # C-Soars Ltd.
 
+## e-Commerce Business Model
+
+C-Soars are a small business based in central London, UK. Their objectives are to increase their sales utilising an e-commerce solution. They are primarily targeting Business to Business, although their services can be provided to Business to Consumers also. Their target market are Housing Associations and Councils requiring full detailed inspections of their portfolio of properties with the aim of improving health and safety and improved energy efficiencies for their residents. Other target markets are large supermarket chains and constructions companies with live projects requiring detailed views of their project progress and safety inspections providing a much faster and safer result, eliminating the use of scaffolding and personnel working at hights.
+
+This application will allow potential clients to view services provided and once registered, clients will be able to view pricing and booking of services and make payments of such services required.
+
+![E-Commerce Business Model Diagram](/documents/business_model_diagram.jpg)
+
+
 Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 
 
