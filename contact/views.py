@@ -2,7 +2,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import ContactForm

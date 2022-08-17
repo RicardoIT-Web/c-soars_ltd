@@ -48,4 +48,4 @@ class ReviewRatingForm(forms.ModelForm):
         """User Service Review form"""
 
         model = ReviewRating
-        fields = ["subject", "review", "rating", "status"]
+        fields = ["subject", "review", "rating"]
