@@ -105,6 +105,7 @@
                         </a>
                         <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                             <a href="{% url 'services' %}" class="dropdown-item">All Services</a>
+                            <a href="{% url 'reviews' %}" class="dropdown-item">Reviews</a>
                         </div>
                     </li>
                     <li class="list-inline-item dropdown">
@@ -117,11 +118,11 @@
                         </a>
                         <div class="dropdown-menu border-0 account-options" aria-labelledby="user-options">
                             {% if request.user.is_authenticated %}
-                            {% if request.user.is_superuser %}
-                            <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
-                            <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
-                            <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
-                            {% endif %}
+                                {% if request.user.is_superuser %}
+                                <a href="{% url 'add_service' %}" class="dropdown-item">Service Management</a>
+                                <a href="{% url 'inquiries' %}" class="dropdown-item">Inquiries</a>
+                                <a href="{% url 'newsletter' %}" class="dropdown-item">Newsletter</a>
+                                {% endif %}
                             <a href="{% url 'useraccount' %}" class="dropdown-item">My Account</a>
                             <a href="{% url 'services' %}" class="dropdown-item">Services</a>
                             <a href="{% url 'reviews' %}" class="dropdown-item">Reviews</a>
