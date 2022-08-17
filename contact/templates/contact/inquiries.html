@@ -27,6 +27,12 @@
         <div class="row mt-1 mb-2"></div>
         <div class="row service-card mb-5">
     {% for inquiries in object_list %}
+    {% if request.user.is_superuser %}
+        <small class="ml-3">
+            <a href="{% url 'edit_service' service.id %}">Edit</a>
+            <a class="text-danger" href="{% url 'delete_service' service.id %}">Delete</a>
+        </small>
+    {% endif %}
     <div class="col-sm-6 col-lg-4 col-xl-3 pb-5">
         <div class="card h-100 border-0">
             <div class="card-body pb-0">

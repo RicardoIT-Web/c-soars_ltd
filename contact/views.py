@@ -2,6 +2,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import ContactForm
@@ -41,7 +42,7 @@ def contact(request):
                           ["admin@admin.com"])
             except BadHeaderError:
                 return HttpResponse("Invalid Header.")
-        
+
     if request.method == 'GET':
         form = ContactForm()
     return render(request, "contact.html", {"form": form})

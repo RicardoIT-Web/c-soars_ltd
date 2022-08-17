@@ -22,6 +22,13 @@ def subscribe(request):
 
 def newsletter(request):
     """Form for sending newsletters"""
+    send_mail(
+        'testing message',
+        'Here is my message',
+        'ricardo.piedade1@gmail.com',
+        ['ricardo.piedade1@gmail.com'],
+        fail_silently=False,
+    )
     if request.method == 'POST':
         form = NewsletterForm(request.POST)
         if form.is_valid():
