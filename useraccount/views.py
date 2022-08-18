@@ -56,6 +56,7 @@ def purchase_history(request, order_number):
     return render(request, template, context)
 
 
+@login_required
 def submit_review(request, service_id):
     """View to display User review form"""
     service = get_object_or_404(Service, pk=service_id)
@@ -92,3 +93,41 @@ class Reviews(ListView):
 
     model = ReviewRating
     template_name = "useraccount/reviews.html"
+
+
+@login_required
+def edit_reviews(request, reviews_id):
+    """ Edit a review """
+    reviews = get_object_or_404(ReviewRating, pk=reviews_id)
+    service = get_object_or_404(Service, pk=reviews.service.id)
+    if request.method == 'POST':
+        form = ReviewRatingForm(request.POST, instance=reviews)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Review updated successfully!')
+            return redirect(reverse('reviews'))
+        else:
+            messages.error(request, 'Update Failed.\
+                Please ensure the form is valid.')
+    else:
+        form = ReviewRatingForm(instance=reviews)
+        messages.info(request, 'You are about to edit your review')
+
+    template = 'useraccount/edit_reviews.html'
+    context = {
+        'form': form,
+        'reviews': reviews,
+        'service': service,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def delete_reviews(request, reviews_id):
+    """ Delete a review """
+    reviews = get_object_or_404(ReviewRating, pk=reviews_id)
+    # service = get_object_or_404(Service, pk=reviews.service.id)
+    reviews.delete()
+    messages.success(request, 'Review has been deleted')
+    return redirect(reverse('reviews'))

@@ -77,7 +77,7 @@ def add_service(request):
 
 @login_required
 def edit_service(request, service_id):
-    """ Edit a product in the store """
+    """ Edit a service """
     service = get_object_or_404(Service, pk=service_id)
     if request.method == 'POST':
         form = ServiceForm(request.POST, request.FILES, instance=service)
