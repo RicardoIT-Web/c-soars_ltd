@@ -56,10 +56,12 @@
                         <p class="mb-5">{{ review.updated }}</p>
                     </div>
                     {% if request.user == review.user %}
-                    <a class="btn btn-success mb-2 w-50" href=" {% url 'edit_reviews' review.id %}">
-                        Edit Review
-                    </a>
-                    <a class="btn btn-danger" href="{% url 'delete_reviews' review.id %}">Delete</a>
+                    <div class="mb-3">
+                        <a class="ml-5" href=" {% url 'edit_reviews' review.id %}">
+                            Edit
+                        </a>
+                        <a class="text-danger float-right mr-5" href="{% url 'delete_reviews' review.id %}">Delete</a>
+                    </div>
                     {% endif %}
                 </div>
             </div>
