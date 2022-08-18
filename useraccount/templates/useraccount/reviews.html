@@ -24,63 +24,62 @@
     </div>
 </div>
 
-{% if user.is_authenticated %}
-    <div class="row mb-5">
-        <div class="service-container col-10 offset-1 mb-5">
-            <div class="row mt-1 mb-2"></div>
-            <div class="row service-card mb-5">
-                {% for review in object_list %}
-                <div class="col-sm-6 col-lg-4 col-xl-3 pb-5">
-                    <div class="card h-100 border-0">
-                        <div class="card-body pb-0">
-                            <strong>Name: </strong>
-                            <p class="mb-0 d-inline-block">{{ review.user }}</p>
-                        </div>
-                        <div class="card-body pb-0">
-                            <strong>Subject: </strong>
-                            <p class="mb-0 d-inline-block">{{ review.subject }}</p>
-                        </div>
-                        <div class="card-body pb-0">
-                            <strong>Review: </strong>
-                            <p class="mb-0">{{ review.review }}</p>
-                        </div>
-                        <div class="card-body pb-0">
-                            <strong>Rating: </strong>
-                            <p class="mb-0 d-inline-block">{{ review.rating }}</p>
-                        </div>
-                        <div class="card-body pb-0">
-                            <strong>Created: </strong>
-                            <p class="mb-0">{{ review.created }}</p>
-                        </div>
-                        <div class="card-body pb-0">
-                            <strong>Updated: </strong>
-                            <p class="mb-5">{{ review.updated }}</p>
-                        </div>
+<div class="row mb-5">
+    <div class="service-container col-10 offset-1 mb-5">
+        <div class="row mt-1 mb-2"></div>
+        <div class="row service-card mb-5">
+            {% for review in object_list %}
+            <div class="col-sm-6 col-lg-4 col-xl-3 pb-5">
+                <div class="card h-100 border-0">
+                    <div class="card-body pb-0">
+                        <strong>Name: </strong>
+                        <p class="mb-0 d-inline-block">{{ review.user }}</p>
+                    </div>
+                    <div class="card-body pb-0">
+                        <strong>Subject: </strong>
+                        <p class="mb-0 d-inline-block">{{ review.subject }}</p>
+                    </div>
+                    <div class="card-body pb-0">
+                        <strong>Review: </strong>
+                        <p class="mb-0">{{ review.review }}</p>
+                    </div>
+                    <div class="card-body pb-0">
+                        <strong>Rating: </strong>
+                        <p class="mb-0 d-inline-block">{{ review.rating }}</p>
+                    </div>
+                    <div class="card-body pb-0">
+                        <strong>Created: </strong>
+                        <p class="mb-0">{{ review.created }}</p>
+                    </div>
+                    <div class="card-body pb-0">
+                        <strong>Updated: </strong>
+                        <p class="mb-5">{{ review.updated }}</p>
                     </div>
                 </div>
-                {% if forloop.counter|divisibleby:1 %}
-                <div class="col-12 d-none d-sm-none mb-2">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:2 %}
-                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-2">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:3 %}
-                <div class="col-12 d-none d-lg-block d-xl-none mb-2">
-                    <hr>
-                </div>
-                {% endif %}
-                {% if forloop.counter|divisibleby:4 %}
-                <div class="col-12 d-none d-xl-block mb-2">
-                    <hr>
-                </div>
-                {% endif %}
-                {% endfor %}
             </div>
+            {% if forloop.counter|divisibleby:1 %}
+            <div class="col-12 d-none d-sm-none mb-2">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:2 %}
+            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-2">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:3 %}
+            <div class="col-12 d-none d-lg-block d-xl-none mb-2">
+                <hr>
+            </div>
+            {% endif %}
+            {% if forloop.counter|divisibleby:4 %}
+            <div class="col-12 d-none d-xl-block mb-2">
+                <hr>
+            </div>
+            {% endif %}
+            {% endfor %}
         </div>
     </div>
-{% endif %}
+</div>
+
 {% endblock %}
