@@ -74,7 +74,7 @@ def submit_review(request, service_id):
             messages.error(
                 request,
                 "Failed to submit review. Please ensure\
-                           the form is valid.",
+                           the form is valid."
             )
     else:
         form = ReviewRatingForm()
