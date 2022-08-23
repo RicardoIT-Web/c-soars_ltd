@@ -4,6 +4,7 @@ from . import views
 from .views import Inquiries
 
 urlpatterns = [
-    path("contact/", views.contact, name="contactUs"),
-    path("inquiries/", Inquiries.as_view(), name="inquiries"),
+     path("contact/", views.contact, name="contactUs"),
+     path("inquiries/", Inquiries.as_view(), name="inquiries"),
+     path("delete_inquiries/<int:inquiries_id>/", views.delete_inquiries, name='delete_inquiries')
 ]

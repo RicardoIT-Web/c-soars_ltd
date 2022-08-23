@@ -127,7 +127,6 @@ def edit_reviews(request, reviews_id):
 def delete_reviews(request, reviews_id):
     """ Delete a review """
     reviews = get_object_or_404(ReviewRating, pk=reviews_id)
-    # service = get_object_or_404(Service, pk=reviews.service.id)
     reviews.delete()
     messages.success(request, 'Review has been deleted')
     return redirect(reverse('reviews'))

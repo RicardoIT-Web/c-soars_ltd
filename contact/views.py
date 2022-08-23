@@ -1,7 +1,8 @@
 """ Contact Us Views """
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views.generic import ListView
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.http import HttpResponse
 from .forms import ContactForm
@@ -48,7 +49,16 @@ def contact(request):
 
 
 class Inquiries(ListView):
-    """View to render all inquiries"""
+    """A view to render inquiries"""
 
     model = Contact
     template_name = "contact/inquiries.html"
+
+
+@login_required
+def delete_inquiries(request, inquiries_id):
+    """delete an inquiry"""
+    inquiries = get_object_or_404(Contact, pk=inquiries_id)
+    inquiries.delete()
+    messages.success(request, 'Inquiry has been deleted')
+    return redirect(reverse('inquiries'))

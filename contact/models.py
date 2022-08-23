@@ -24,7 +24,11 @@ class Contact(models.Model):
     )
     subject = models.CharField(blank=True, max_length=100)
     comment = models.CharField(blank=True, max_length=500)
-    actioned = models.BooleanField(default=False)
+    inquiry_status = (
+        ('Open', 'Open'),
+        ('Closed', 'Closed'),
+    )
+    actioned = models.CharField(max_length=50, default="Open", choices=inquiry_status)
 
     def __str__(self):
         return self.name

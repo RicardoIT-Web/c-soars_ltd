@@ -18,7 +18,7 @@
 <div class="row">
     <div class="col-12">
         <hr class="w-75">
-        <h3 class="case-page text-center mb-4">Current Inquiries</h3>
+        <h3 class="case-page text-center mb-4">All Inquiries</h3>
         <hr class="w-75">
     </div>
 </div>
@@ -50,6 +50,15 @@
                         <strong>Query: </strong>
                         <p class="mb-0 d-inline-block">{{ inquiries.comment }}</p>
                     </div>
+                    {% if request.user.is_superuser %}
+                    <div class="card-body pb-0">
+                        <strong>Status: </strong>
+                        <p class="mb-0 d-inline-block">{{ inquiries.actioned }}</p>
+                    </div>
+                    <div class="mb-3">
+                        <a class="text-danger float-right mr-5" href="{% url 'delete_inquiries' inquiries.id %}">Delete</a>
+                    </div>
+                    {% endif %}
                 </div>
             </div>
             {% if forloop.counter|divisibleby:1 %}
