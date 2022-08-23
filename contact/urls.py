@@ -6,5 +6,6 @@ from .views import Inquiries
 urlpatterns = [
      path("contact/", views.contact, name="contactUs"),
      path("inquiries/", Inquiries.as_view(), name="inquiries"),
-     path("delete_inquiries/<int:inquiries_id>/", views.delete_inquiries, name='delete_inquiries')
+     path("edit_inquiries/<int:inquiries_id>/", views.edit_inquiries, name='edit_inquiries'),
+     path("delete_inquiries/<int:inquiries_id>/", views.delete_inquiries, name='delete_inquiries'),
 ]

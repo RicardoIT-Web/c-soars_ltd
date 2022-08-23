@@ -56,6 +56,32 @@ class Inquiries(ListView):
 
 
 @login_required
+def edit_inquiries(request, inquiries_id):
+    """for administrator to amend status of an inquiry once actioned"""
+    inquiries = get_object_or_404(Contact, pk=inquiries_id)
+    if request.method == 'POST':
+        form = ContactForm(request.POST, instance=inquiries)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Inquiry updated successfully!')
+            return redirect(reverse('inquiries'))
+        else:
+            messages.error(request, 'Update Failed.\
+                Please ensure the form is valid.')
+    else:
+        form = ContactForm(instance=inquiries)
+        messages.info(request, 'You are about to edit an inquiry form')
+
+    template = 'contact/edit_inquiries.html'
+    context = {
+        'form': form,
+        'inquiries': inquiries,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
 def delete_inquiries(request, inquiries_id):
     """delete an inquiry"""
     inquiries = get_object_or_404(Contact, pk=inquiries_id)

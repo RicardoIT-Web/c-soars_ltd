@@ -17,14 +17,14 @@
     <div class="row">
         <div class="col">
             <hr>
-            <h3 class="case-page text-center mb-4">Contact Us</h3>
+            <h3 class="case-page text-center mb-4">Update Inquiry</h3>
             <hr>
         </div>
     </div>
 </div>
 <!-- User Contacts Form -->
 <div class="form-container mt-5">
-    <p class="text-center text-info">If you have any questions, please do not hesitate to contact us.</p>
+
     <form class="contactform mb-5" method="POST">
         {% csrf_token %}
         {{ form.name | as_crispy_field }}
