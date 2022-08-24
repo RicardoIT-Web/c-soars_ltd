@@ -9,7 +9,7 @@
 
     //disabling of buttons on page load
     let allQtyInputs = $('.qty_input');
-    for(let i = 0; i < allQtyInputs.length; i++){
+    for (let i = 0; i < allQtyInputs.length; i++){
         let itemId = $(allQtyInputs[i]).data('item_id');
         handleEnableDisable(itemId);
     }

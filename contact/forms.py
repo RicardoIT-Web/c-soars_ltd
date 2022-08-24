@@ -18,4 +18,5 @@ class ContactForm(forms.ModelForm):
         """contact form content"""
 
         model = Contact
-        fields = ('name', 'email', 'contact_number', 'subject', 'comment', 'actioned')
+        fields = ('name', 'email', 'contact_number', 'subject', 'comment',
+                  'actioned')
