@@ -28,7 +28,8 @@ class Contact(models.Model):
         ('Open', 'Open'),
         ('Closed', 'Closed'),
     )
-    actioned = models.CharField(max_length=50, default="Open", choices=inquiry_status)
+    actioned = models.CharField(max_length=50, default="Open",
+                                choices=inquiry_status)
 
     def __str__(self):
         return self.name

@@ -34,7 +34,8 @@ def contact(request):
                               We'll revert back with a response as soon as\
                               possible.",)
             try:
-                send_mail(subject, message, "admin@admin.com", ["admin@admin.com"])
+                send_mail(subject, message, "admin@admin.com",
+                          ["admin@admin.com"])
             except BadHeaderError:
                 return HttpResponse("Invalid Header.")
             return redirect(reverse('home'))
