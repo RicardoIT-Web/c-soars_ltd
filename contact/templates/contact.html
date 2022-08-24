@@ -23,21 +23,13 @@
     </div>
 </div>
 <!-- User Contacts Form -->
+
 <div class="form-container mt-5">
     <p class="text-center text-info">If you have any questions, please do not hesitate to contact us.</p>
-    <form class="contactform mb-5" method="POST">
-        {% csrf_token %}
-        {{ form.name | as_crispy_field }}
-        {{ form.email | as_crispy_field }}
-        {{ form.contact_number | as_crispy_field }}
-        {{ form.subject | as_crispy_field }}
-        {{ form.comment | as_crispy_field }}
-        {% if request.user.is_superuser %}
-            {{ form.actioned | as_crispy_field }}
-        {% endif %}
-
-        <button class="contact-btn btn btn-success rounded-1" type="submit">Submit</button>
-        <button class="contact-clear-btn btn btn-primary rounded-1" type="reset">Clear Form</button>
-    </form>
-  </div>
+    {% if request.user.is_superuser %}
+        {% include 'includes/is_superuser_form.html' %}
+    {% else %}
+        {% include 'includes/not_superuser_form.html' %}
+    {% endif %}
+</div>
 {% endblock %}

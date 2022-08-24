@@ -19,8 +19,6 @@ def contact(request):
     if request.method == "POST":
         form = ContactForm(request.POST)
         if form.is_valid():
-            if request.user.is_authenticated:
-                form.instance.user = request.user
             form.save()
             subject = {"subject": form.cleaned_data["subject"]}
             body = {
@@ -31,17 +29,15 @@ def contact(request):
                 "comment": form.cleaned_data["comment"],
             }
             message = "\n".join(body.values())
-            messages.success(
-                request,
-                "Thank you! Your Inquiry has been submitted.\
-                            We'll revert back with a response as soon as\
-                            possible",
-            )
+            messages.success(request,
+                             "Thank you! Your Inquiry has been submitted.\
+                              We'll revert back with a response as soon as\
+                              possible.",)
             try:
-                send_mail(subject, message, "admin@admin.com",
-                          ["admin@admin.com"])
+                send_mail(subject, message, "admin@admin.com", ["admin@admin.com"])
             except BadHeaderError:
                 return HttpResponse("Invalid Header.")
+            return redirect(reverse('home'))
 
     if request.method == 'GET':
         form = ContactForm()

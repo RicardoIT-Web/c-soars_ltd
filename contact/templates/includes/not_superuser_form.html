@@ -1,0 +1,14 @@
+<form class="contactform mb-5" method="POST">
+    {% csrf_token %}
+    {{ form.name | as_crispy_field }}
+    {{ form.email | as_crispy_field }}
+    {{ form.contact_number | as_crispy_field }}
+    {{ form.subject | as_crispy_field }}
+    {{ form.comment | as_crispy_field }}
+    <div hidden>
+        <!-- Hidden as normal User should have no access to this field - for Admin use only -->
+    {{ form.actioned | as_crispy_field }}
+    </div>
+        <button class="contact-btn btn btn-success rounded-1" type="submit">Submit</button>
+        <button class="contact-clear-btn btn btn-primary rounded-1" type="reset">Clear Form</button>
+    </form>
