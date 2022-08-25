@@ -1,18 +1,29 @@
 # C-Soars Ltd.
 
-## e-Commerce Business Model
+
+![E-Commerce Business Model Diagram](/documents/responsive_image.jpg)
+
+## Business Intents and Marketing Strategies
 
 C-Soars are a small business based in central London, UK. Their objectives are to increase their sales utilising an e-commerce solution. They are primarily targeting Business to Business, although their services can be provided to Business to Consumers also. Their target market are Housing Associations and Councils requiring full detailed inspections of their portfolio of properties with the aim of improving health and safety and improved energy efficiencies for their residents. Other target markets are large supermarket chains and constructions companies with live projects requiring detailed views of their project progress and safety inspections providing a much faster and safer result, eliminating the use of scaffolding and personnel working at hights.
 
 This application will allow potential clients to view services provided and once registered, clients will be able to view pricing and booking of services and make payments of such services required.
 
+## e-Commerce Business Model
+
 ![E-Commerce Business Model Diagram](/documents/business_model_diagram.jpg)
 
 
-Click [here](https://c-soars.herokuapp.com/) to view deployed site.
-
+### Social Media Marketing
 
 Click [here](https://www.facebook.com/CSoarsltd/?ref=pages_you_manage/) to view facebook page.
+
+As a requirement for this assessment, a facebook page was created for this project to enhance the company's reach further. Today, Social Media is one of the most used tools for marketing strategies of any business and this project would be no different. This facebook page provides customers with detailed description of the services provided, some detailed examples of previously completed projects and include contact details should customers wish to get in touch. 
+
+![Social Media Home Page](/documents/c-soars-fb-page.jpg)
+
+
+Click [here](https://c-soars.herokuapp.com/) to view deployed site.
 
 # Contents
 
@@ -72,7 +83,7 @@ The Customer can view and access links to social media to find out more about th
 
 ## Project Scoping and Agile Methodology
 
-Using the Design Thinking approach to this project, some pre work was carried out to bring the ideas and functionality of the project to "paper". The application features together with the User Stories are included in the excel file included in the documents folder. This file can be access [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/C-Soars%20-%20USER%20STORIES.xlsx).
+Using the Design Thinking approach to this project, some pre work was carried out to bring the ideas and functionality of the project to "paper". The application features together with the User Stories are included in the excel file in the documents folder. This file can be access [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/C-Soars%20-%20USER%20STORIES.xlsx).
 
 
 
