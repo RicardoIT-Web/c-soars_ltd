@@ -16,13 +16,13 @@
         <div class="col">
             <hr>
             <h3 class="case-page text-center mb-4">Drone Services Management</h3>
-            <h5 class="text-muted">Add a New Service</h5>
+            <h5 class="text-muted text-center">Add a New Service</h5>
             <hr>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6" style="width: 75%; margin-left: 25%;">
             <form method="POST" action="{% url 'add_service' %}" class="form mb-5" enctype="multipart/form-data">
             {% csrf_token %}
             {{form|crispy}}
