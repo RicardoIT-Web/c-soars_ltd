@@ -95,21 +95,6 @@
             </div>
         </div>
     </div>
-    {% else %}
-    <div class="overlay">
-        <div class="text-center">
-            <h3 class="login_style text-center">Oh Dear!!</h3>
-        </div>
-        <hr class="col-6 mb-5">
-        <div class="text-center">
-            <h6 class="text-danger mb-5">It seems you are trying to access sensitive information!</h6>
-            <a class="nav-link" href="{% url 'home' %}">
-                <div class="text-center">
-                    <p class="btn btn-success w-25 my-0">Return to Home Page</p>
-                </div>
-            </a>
-        </div>
-    </div>
     {% endif %}
 {% endblock %}
 
