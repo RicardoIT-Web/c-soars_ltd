@@ -55,13 +55,11 @@
                         <strong>Updated: </strong>
                         <p class="mb-5">{{ review.updated }}</p>
                     </div>
+                    {% if request.user.is_superuser %}
+                        {% include 'includes/reviews_is_superuser.html' %}
+                    {% endif %}
                     {% if request.user == review.user %}
-                    <div class="mb-3">
-                        <a class="ml-5" href=" {% url 'edit_reviews' review.id %}">
-                            Edit
-                        </a>
-                        <a class="text-danger float-right mr-5" href="{% url 'delete_reviews' review.id %}">Delete</a>
-                    </div>
+                        {% include 'includes/reviews_is_not_superuser.html' %}
                     {% endif %}
                 </div>
             </div>

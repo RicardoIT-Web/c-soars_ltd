@@ -1,0 +1,6 @@
+<div class="mb-3">
+    <a class="ml-5" href=" {% url 'edit_reviews' review.id %}">
+        Edit
+    </a>
+    <a class="text-danger float-right mr-5" href="{% url 'delete_reviews' review.id %}">Delete</a>
+</div>
