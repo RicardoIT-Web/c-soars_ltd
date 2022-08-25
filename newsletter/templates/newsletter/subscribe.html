@@ -11,7 +11,7 @@
             <hr>
         </div>
     </div>
-    <form method="POST">
+    <form method="POST" style="width: 50%; margin-left: 25%;">
         {% csrf_token %}
         {{ form|crispy }}
         <input type="submit" class="subscribe-btn" value="Subscribe">
