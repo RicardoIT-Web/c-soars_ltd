@@ -3,11 +3,11 @@
 
 ![E-Commerce Business Model Diagram](/documents/responsive_image.jpg)
 
-## Business Intents and Marketing Strategies
+## Business Intent and Marketing Strategies
 
 C-Soars are a small business based in central London, UK. Their objectives are to increase their sales utilising an e-commerce solution. They are primarily targeting Business to Business, although their services can be provided to Business to Consumers also. Their target market are Housing Associations and Councils requiring full detailed inspections of their portfolio of properties with the aim of improving health and safety and improved energy efficiencies for their residents. Other target markets are large supermarket chains and constructions companies with live projects requiring detailed views of their project progress and safety inspections providing a much faster and safer result, eliminating the use of scaffolding and personnel working at hights.
 
-This application will allow potential clients to view services provided and once registered, clients will be able to view pricing and booking of services and make payments of such services required.
+This application will allow potential clients to view services provided and once registered, clients will be able to view pricing and booking of services and make payments of such services as required.
 
 ## e-Commerce Business Model
 
@@ -88,7 +88,6 @@ Using the Design Thinking approach to this project, some pre work was carried ou
 
 
 ## Wireframes 
-This project is created using Bootstrap and Django frameworks. The built in tools for these frameworks already assist with site responsiveness, as a result, a Desktop approach first was adopted with the aim that responsive adjustments would be minor and is applied at the end of the projects' full creation.
 
 Wireframes are created using [Balsamiq](https://balsamiq.com/wireframes/?gclid=Cj0KCQiAubmPBhCyARIsAJWNpiMYzrk_0rLzl3vgYKRLXwnX7rpqyQiUFdyt3xHGpRiHlZlozwO_pvcaAvUFEALw_wcB). 
 
@@ -239,7 +238,7 @@ The services page includes all the services that the business will be offering a
 ![The Services Page](/documents/servicespage.jpg)
 
 ### The My Accounts Page
-This navigation item works in three ways. Its closed to visitors of the site. For registered users will have access to some features:
+Access to My Account is restricted to registered users only.
 
 ![The registered User Options](/documents/normaluserlogedin.jpg)
 
@@ -265,6 +264,11 @@ For administrators of the business, these will have added links to other service
 * Bootstrap v5 is used for some of the styling on this project
 * Fontawesome is used to provide some icon features on this project
 * Google fonts is used on this project to provide font types
+
+# Testing of the site
+
+### Manual testing
+A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and methodology can be found ![here](/documents/testing/c_soars-testing-schedule.xlsx)
 
 
 # Bugs During Development
