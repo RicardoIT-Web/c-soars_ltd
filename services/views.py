@@ -78,27 +78,31 @@ def add_service(request):
 @login_required
 def edit_service(request, service_id):
     """ Edit a service """
-    service = get_object_or_404(Service, pk=service_id)
-    if request.method == 'POST':
-        form = ServiceForm(request.POST, request.FILES, instance=service)
-        if form.is_valid():
-            form.save()
-            messages.success(request, 'Update Successful!')
-            return redirect(reverse('service_detail', args=[service.id]))
+    if request.user.is_superuser:
+        service = get_object_or_404(Service, pk=service_id)
+        if request.method == 'POST':
+            form = ServiceForm(request.POST, request.FILES, instance=service)
+            if form.is_valid():
+                form.save()
+                messages.success(request, 'Update Successful!')
+                return redirect(reverse('service_detail', args=[service.id]))
+            else:
+                messages.error(request, 'Update Failed.\
+                    Please ensure the form is valid.')
         else:
-            messages.error(request, 'Update Failed.\
-                Please ensure the form is valid.')
+            form = ServiceForm(instance=service)
+            messages.info(request, f'You are editing {service.name}')
+
+        template = 'services/edit_service.html'
+        context = {
+            'form': form,
+            'service': service,
+        }
+
+        return render(request, template, context)
     else:
-        form = ServiceForm(instance=service)
-        messages.info(request, f'You are editing {service.name}')
-
-    template = 'services/edit_service.html'
-    context = {
-        'form': form,
-        'service': service,
-    }
-
-    return render(request, template, context)
+        messages.error(request, "You don't have access to this feature")
+        return redirect(reverse('home'))
 
 
 @login_required
