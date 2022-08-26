@@ -3,6 +3,8 @@
 
 ![E-Commerce Business Model Diagram](/documents/responsive_image.jpg)
 
+Click [here](https://c-soars.herokuapp.com/) to view deployed site.
+
 ## Business Intent and Marketing Strategies
 
 C-Soars are a small business based in central London, UK. Their objectives are to increase their sales utilising an e-commerce solution. They are primarily targeting Business to Business, although their services can be provided to Business to Consumers also. Their target market are Housing Associations and Councils requiring full detailed inspections of their portfolio of properties with the aim of improving health and safety and improved energy efficiencies for their residents. Other target markets are large supermarket chains and constructions companies with live projects requiring detailed views of their project progress and safety inspections providing a much faster and safer result, eliminating the use of scaffolding and personnel working at hights.
@@ -16,14 +18,12 @@ This application will allow potential clients to view services provided and once
 
 ### Social Media Marketing
 
-Click [here](https://www.facebook.com/CSoarsltd/?ref=pages_you_manage/) to view facebook page.
 
 As a requirement for this assessment, a facebook page was created for this project to enhance the company's reach further. Today, Social Media is one of the most used tools for marketing strategies of any business and this project would be no different. This facebook page provides customers with detailed description of the services provided, some detailed examples of previously completed projects and include contact details should customers wish to get in touch. 
 
 ![Social Media Home Page](/documents/c-soars-fb-page.jpg)
 
-
-Click [here](https://c-soars.herokuapp.com/) to view deployed site.
+Click [here](https://www.facebook.com/CSoarsltd/?ref=pages_you_manage/) to view facebook page.
 
 # Contents
 
@@ -270,6 +270,12 @@ For administrators of the business, these will have added links to other service
 ### Manual testing
 A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and methodology can be found [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/testing/c_soars-testing-schedule.xlsx).
 
+
+### Lighthouse
+
+A lighthouse assessment was run on the deployed site resulting in good performance ratings of this website.
+
+![Lighthouse](/documents/lighthouse_test.jpg)
 
 # Bugs During Development
 
