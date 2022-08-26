@@ -268,7 +268,7 @@ For administrators of the business, these will have added links to other service
 # Testing of the site
 
 ### Manual testing
-A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and methodology can be found ![here](/documents/testing/c_soars-testing-schedule.xlsx)
+A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and methodology can be found [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/testing/c_soars-testing-schedule.xlsx).
 
 
 # Bugs During Development
