@@ -66,7 +66,8 @@
                                                 </li>
                                                 <li class="small">
                                                     {{ item.service.description }}
-                                                    </li>
+                                                </li>
+                                                <hr>  
                                             {% endfor %}
                                         </ul>
                                     </td>
@@ -74,7 +75,7 @@
                                     <td>
                                         {% for item in order.orderitems.all %}
                                         <a class="submit-review-btn btn btn-success btn-sm" href="{% url 'submit_review' item.service.id %}">
-                                            Submit
+                                            Post Review
                                         </a>
                                         <hr>
                                         {% endfor %}
@@ -83,12 +84,12 @@
                                         <a class="review-btn btn btn-success btn-sm" href="{% url 'reviews' %}">
                                             Review
                                         </a>
-                                        <hr>
                                     </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
                     </table>
+                    <hr>
                 </div>
             </div>
         </div>
