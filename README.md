@@ -15,6 +15,10 @@ This application will allow potential clients to view services provided and once
 
 ![E-Commerce Business Model Diagram](/documents/business_model_diagram.jpg)
 
+The e-commerce business model for c-soars will be a direct approach to Business Clients (B2B) and Private Clients (B2C) and providing them with the relevant services required.
+B2B clients will range from clients such as housing associations, councils and national supermarket chains.
+B2C clients will be clients requiring detailed and high quality views of roofs, guttering inspections and energy efficiencies images of their private properties with the aim of receiving professional recommendations of works required for improvements.
+
 
 ### Social Media Marketing
 
@@ -56,6 +60,7 @@ Click [here](https://www.facebook.com/CSoarsltd/?ref=pages_you_manage/) to view 
 + [Frameworks](#Frameworks-Libraries-and-Programs-Used)
 
 [Testing](#testing)
++ [Manual Testing & Code Validation](#C-Soars-testing-schedule)
 + [Lighthouse Testing](#lighthouse-testing)
 
 [Bugs During Development](#bugs-during-development)
@@ -267,8 +272,8 @@ For administrators of the business, these will have added links to other service
 
 # Testing of the site
 
-### Manual testing
-A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and methodology can be found [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/testing/c_soars-testing-schedule.xlsx).
+### Manual testing, Code Validation and Security Implementations 
+A manual testing strategy was used for this website. A full detailed breakdown of the testing procedures and all the code validations together with the security level access implemented on this project can be found [here](https://github.com/RicardoIT-Web/c-soars_ltd/blob/main/documents/testing/c_soars-testing-schedule.xlsx).
 
 
 ### Lighthouse
