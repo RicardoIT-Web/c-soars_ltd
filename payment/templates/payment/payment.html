@@ -61,7 +61,7 @@
         <div class="col-12 mt-5">
             <form action="{% url 'payment' %}" method="POST" id="payment-form">
                 {% csrf_token %}
-                <fieldset class="text-center mb-5">
+                <fieldset class="mb-5" style="width: 100%; margin-left: 25%;">
                     <legend class="fieldset-label px-2 w-100">Invoice Details</legend>
                     {{ form.name | as_crispy_field }}
                     {{ form.email | as_crispy_field }}
