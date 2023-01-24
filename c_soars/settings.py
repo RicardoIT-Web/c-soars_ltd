@@ -30,7 +30,7 @@ DEBUG = "DEVELOPMENT" in os.environ
 
 X_FRAME_OPTIONS = "SAMEORIGIN"
 
-ALLOWED_HOSTS = ["c-soars.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ["c-soars.herokuapp.com", "localhost", "c-soars.com.up.railway.app"]
 
 
 # Application definition
